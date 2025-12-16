@@ -1,0 +1,79 @@
+// Custom Form Styles
+
+.form-control,
+.form-select {
+  border-radius: $border-radius;
+  border: 2px solid $border-color;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.15);
+  }
+
+  @include focus-visible;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: $dark;
+}
+
+.form-check-input {
+  border: 2px solid $border-color;
+
+  &:checked {
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.15);
+  }
+
+  @include focus-visible;
+}
+
+.form-check-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+// Validation styles
+.was-validated {
+  .form-control:valid,
+  .form-select:valid {
+    border-color: $success;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($success, 0.15);
+    }
+  }
+
+  .form-control:invalid,
+  .form-select:invalid {
+    border-color: $danger;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($danger, 0.15);
+    }
+  }
+}
+
+.invalid-feedback,
+.valid-feedback {
+  font-size: $font-size-sm;
+  margin-top: 0.25rem;
+}
+
+// Input group
+.input-group {
+  .input-group-text {
+    background-color: rgba($primary, 0.05);
+    border: 2px solid $border-color;
+    color: $dark;
+  }
+}

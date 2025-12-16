@@ -1,0 +1,75 @@
+// Additional reset and base styles
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Improve media defaults
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Remove default form element styling
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Accessibility: Remove animations for people who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Focus visible for keyboard navigation
+:focus-visible {
+  outline: 3px solid $primary;
+  outline-offset: 2px;
+}
+
+// Skip to main content link (accessibility)
+.skip-to-main {
+  @include visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 9999;
+    padding: 1rem;
+    background: $primary;
+    color: white;
+    text-decoration: none;
+    border-radius: $border-radius;
+    clip: auto;
+    width: auto;
+    height: auto;
+  }
+}

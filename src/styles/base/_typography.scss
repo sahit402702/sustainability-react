@@ -1,0 +1,110 @@
+// Typography styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: $dark;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3.5vw, 1.75rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: $line-height-base;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: darken($primary, 10%);
+    text-decoration: underline;
+  }
+
+  @include focus-visible;
+}
+
+// Text utilities
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+// Lead paragraph
+.lead {
+  font-size: $font-size-lg;
+  font-weight: 300;
+  line-height: $line-height-lg;
+}
+
+// Small text
+small,
+.small {
+  font-size: $font-size-sm;
+}
+
+// Mark/highlight
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: rgba($secondary, 0.2);
+}
+
+// Blockquote
+blockquote {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid $primary;
+  background-color: rgba($primary, 0.05);
+  font-style: italic;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: $font-size-sm;
+    font-style: normal;
+    color: $dark;
+
+    &::before {
+      content: "— ";
+    }
+  }
+}

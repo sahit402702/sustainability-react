@@ -1,0 +1,99 @@
+// Header Component Styles
+
+.header {
+  background-color: white;
+  box-shadow: $box-shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transition: box-shadow 0.3s ease;
+
+  &.scrolled {
+    box-shadow: $box-shadow;
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    color: $primary;
+    font-size: 1.5rem;
+
+    @include hover-transition {
+      color: darken($primary, 10%);
+      transform: scale(1.02);
+    }
+  }
+
+  .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: $dark;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: $primary;
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primary;
+
+      &::after {
+        width: 80%;
+      }
+    }
+
+    &.active {
+      color: $primary;
+
+      &::after {
+        width: 80%;
+      }
+    }
+
+    @include focus-visible;
+  }
+
+  // Mobile menu toggle
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    @include focus-visible;
+
+    .navbar-toggler-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  // Mobile menu
+  @include respond-to(md) {
+    .navbar-collapse {
+      .navbar-nav {
+        flex-direction: row;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+// Ensure navbar content is accessible
+.navbar {
+  .container,
+  .container-fluid {
+    @include flex-between;
+  }
+}

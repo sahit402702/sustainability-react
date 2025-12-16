@@ -1,0 +1,133 @@
+// Landing Page Styles
+
+.landing-page {
+  // Hero Section
+  .hero-section {
+    min-height: 600px;
+    background: linear-gradient(
+        135deg,
+        rgba($primary, 0.95) 0%,
+        rgba(darken($primary, 15%), 0.95) 100%
+      ),
+      url("/hero-bg.jpg") center/cover;
+    color: white;
+    padding: 6rem 0;
+    position: relative;
+
+    @include respond-to(md) {
+      min-height: 700px;
+      padding: 8rem 0;
+    }
+
+    .hero-content {
+      max-width: 700px;
+
+      h1 {
+        color: white;
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .lead {
+        font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .btn {
+          min-width: 180px;
+        }
+      }
+    }
+  }
+
+  // Features Section
+  .features-section {
+    padding: 5rem 0;
+    background-color: $light;
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-weight: 700;
+        color: $dark;
+      }
+
+      p {
+        color: rgba($dark, 0.7);
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @include respond-to(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  // Stats Section
+  .stats-section {
+    padding: 5rem 0;
+    background-color: white;
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @include respond-to(sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to(lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  // CTA Section
+  .cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(
+      135deg,
+      $primary 0%,
+      darken($primary, 10%) 100%
+    );
+    color: white;
+    text-align: center;
+
+    h2 {
+      color: white;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+    }
+  }
+}
