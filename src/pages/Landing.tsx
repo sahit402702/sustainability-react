@@ -119,35 +119,36 @@ const Landing: React.FC = () => {
 
               {/* Module Cards */}
               <Row className="g-4 mt-4">
-                {headings.landing.smesri.modules.map((module, index) => (
-                  <Col key={index} md={6} lg={4}>
-                    <Card
-                      className="module-card h-100 border-0"
-                      style={{ backgroundColor: module.backgroundColor }}
-                    >
-                      <Card.Body className="d-flex flex-column">
-                        <Card.Title className="module-title">
-                          {module.title}
-                        </Card.Title>
-                        <Card.Text className="module-description flex-grow-1">
-                          {module.description}
-                        </Card.Text>
-                        <Link
-                          to={
-                            index === 0
-                              ? "/sustainability"
-                              : index === 1
-                              ? "/reporting"
-                              : "/case-studies"
-                          }
-                          className="module-link"
-                        >
-                          {module.linkText} →
-                        </Link>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                ))}
+                {headings.landing.smesri.modules.map((module, index) => {
+                  const icons = ["🌿", "📊", "📚"];
+                  return (
+                    <Col key={index} md={6} lg={4}>
+                      <Card className="module-card h-100 border-0">
+                        <Card.Body className="d-flex flex-column">
+                          <div className="module-icon">{icons[index]}</div>
+                          <Card.Title className="module-title">
+                            {module.title}
+                          </Card.Title>
+                          <Card.Text className="module-description flex-grow-1">
+                            {module.description}
+                          </Card.Text>
+                          <Link
+                            to={
+                              index === 0
+                                ? "/sustainability"
+                                : index === 1
+                                ? "/reporting"
+                                : "/case-studies"
+                            }
+                            className="module-link"
+                          >
+                            {module.linkText}
+                          </Link>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  );
+                })}
               </Row>
             </Col>
           </Row>

@@ -1,4 +1,4 @@
-// Typography styles
+// Modern Typography - Corporate Design
 
 h1,
 h2,
@@ -6,18 +6,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   line-height: 1.2;
   margin-bottom: 0.75rem;
-  color: $dark;
+  color: $gray-900;
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: $font-weight-bold;
 }
 
 h2 {
   font-size: clamp(1.75rem, 4vw, 2rem);
+  font-weight: $font-weight-bold;
 }
 
 h3 {
@@ -34,25 +37,26 @@ h5 {
 
 h6 {
   font-size: 1rem;
+  font-weight: $font-weight-semibold;
 }
 
 p {
   margin-bottom: 1rem;
   line-height: $line-height-base;
+  color: $gray-700;
 }
 
 a {
-  color: $primary;
+  color: $indigo-600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: $transition-fast;
+  font-weight: $font-weight-medium;
 
   &:hover,
   &:focus {
-    color: darken($primary, 10%);
+    color: $indigo-700;
     text-decoration: underline;
   }
-
-  @include focus-visible;
 }
 
 // Text utilities

@@ -1,55 +1,76 @@
-// Custom Form Styles
+// Modern Form Styles - Corporate Design
 
 .form-control,
 .form-select {
-  border-radius: $border-radius;
-  border: 2px solid $border-color;
-  padding: 0.75rem 1rem;
-  transition: all 0.3s ease;
+  border-radius: $border-radius-lg;
+  border: 2px solid $gray-200;
+  padding: 0.875rem 1.25rem;
+  transition: $transition-fast;
+  background-color: $gray-50;
+  font-size: $font-size-base;
 
   &:focus {
-    border-color: $primary;
-    box-shadow: 0 0 0 0.2rem rgba($primary, 0.15);
+    border-color: $indigo-500;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba($indigo-500, 0.1);
+    outline: none;
   }
 
-  @include focus-visible;
+  &:hover:not(:focus) {
+    border-color: $gray-300;
+  }
+
+  &::placeholder {
+    color: $gray-500;
+  }
 }
 
 .form-label {
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   margin-bottom: 0.5rem;
-  color: $dark;
+  color: $gray-900;
+  font-size: $font-size-sm;
+  letter-spacing: 0.01em;
 }
 
 .form-check-input {
-  border: 2px solid $border-color;
+  border: 2px solid $gray-300;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  cursor: pointer;
 
   &:checked {
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $indigo-600;
+    border-color: $indigo-600;
   }
 
   &:focus {
-    border-color: $primary;
-    box-shadow: 0 0 0 0.2rem rgba($primary, 0.15);
+    border-color: $indigo-500;
+    box-shadow: 0 0 0 3px rgba($indigo-500, 0.1);
   }
 
-  @include focus-visible;
+  &:hover:not(:checked) {
+    border-color: $gray-400;
+  }
 }
 
 .form-check-label {
   cursor: pointer;
   user-select: none;
+  color: $gray-700;
+  font-size: $font-size-base;
+  padding-left: 0.5rem;
 }
 
 // Validation styles
 .was-validated {
   .form-control:valid,
   .form-select:valid {
-    border-color: $success;
+    border-color: $emerald-500;
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem rgba($success, 0.15);
+      box-shadow: 0 0 0 3px rgba($emerald-500, 0.1);
     }
   }
 
@@ -58,22 +79,58 @@
     border-color: $danger;
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem rgba($danger, 0.15);
+      box-shadow: 0 0 0 3px rgba($danger, 0.1);
     }
   }
 }
 
-.invalid-feedback,
+.invalid-feedback {
+  font-size: $font-size-sm;
+  margin-top: 0.375rem;
+  color: $danger;
+  font-weight: $font-weight-medium;
+}
+
 .valid-feedback {
   font-size: $font-size-sm;
-  margin-top: 0.25rem;
+  margin-top: 0.375rem;
+  color: $emerald-600;
+  font-weight: $font-weight-medium;
 }
 
 // Input group
 .input-group {
   .input-group-text {
-    background-color: rgba($primary, 0.05);
-    border: 2px solid $border-color;
-    color: $dark;
+    background-color: $gray-100;
+    border: 2px solid $gray-200;
+    color: $gray-700;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-lg;
+  }
+
+  .form-control {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+// Floating labels
+.form-floating {
+  > .form-control:focus ~ label,
+  > .form-control:not(:placeholder-shown) ~ label {
+    color: $indigo-600;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  }
+
+  > label {
+    color: $gray-600;
+    padding: 1rem 1.25rem;
   }
 }

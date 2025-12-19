@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Breadcrumb, Accordion, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -8,13 +8,21 @@ const FAQs: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Filter sections based on search term
+  const filteredSections = faqsContent.sections.filter((section) =>
+    section.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const handleExpandAll = () => {
-    if (expandedItems.length === faqsContent.sections.length) {
+    if (expandedItems.length === filteredSections.length) {
       setExpandedItems([]);
     } else {
-      setExpandedItems(
-        faqsContent.sections.map((_, index) => index.toString())
-      );
+      setExpandedItems(filteredSections.map((_, index) => index.toString()));
     }
   };
 
@@ -35,8 +43,8 @@ const FAQs: React.FC = () => {
         canonicalUrl="https://your-domain.com/faqs"
       />
 
-      {/* Breadcrumb Section */}
-      <nav className="breadcrumb-section" aria-label="Breadcrumb">
+      {/* Page Header */}
+      <header className="page-header">
         <Container>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
@@ -46,12 +54,7 @@ const FAQs: React.FC = () => {
               FAQs
             </Breadcrumb.Item>
           </Breadcrumb>
-        </Container>
-      </nav>
 
-      {/* Page Header */}
-      <header className="page-header-section">
-        <Container>
           <h1>{faqsContent.pageTitle}</h1>
           <p className="description">{faqsContent.description}</p>
         </Container>
@@ -93,62 +96,72 @@ const FAQs: React.FC = () => {
       <div className="accordion-section">
         <Container>
           <div className="accordion-header">
+            <h2>Frequently Asked Questions</h2>
             <button
               className="expand-all-btn"
               onClick={handleExpandAll}
               aria-label={
-                expandedItems.length === faqsContent.sections.length
+                expandedItems.length === filteredSections.length
                   ? "Collapse all sections"
                   : "Expand all sections"
               }
-              aria-expanded={
-                expandedItems.length === faqsContent.sections.length
-              }
+              aria-expanded={expandedItems.length === filteredSections.length}
             >
-              {expandedItems.length === faqsContent.sections.length
+              {expandedItems.length === filteredSections.length
                 ? faqsContent.collapseAllText
                 : faqsContent.expandAllText}
             </button>
           </div>
 
-          <Accordion activeKey={expandedItems} alwaysOpen>
-            {faqsContent.sections.map((section, index) => (
-              <Accordion.Item
-                key={index}
-                eventKey={index.toString()}
-                className="faq-item"
-              >
-                <Accordion.Header
-                  onClick={() => toggleItem(index.toString())}
-                  aria-label={`Section ${index + 1}: ${section.title}`}
+          {filteredSections.length === 0 ? (
+            <div className="no-results">
+              <p>
+                No FAQs found matching "{searchTerm}". Please try a different
+                search term.
+              </p>
+            </div>
+          ) : (
+            <Accordion activeKey={expandedItems} alwaysOpen>
+              {filteredSections.map((section, index) => (
+                <Accordion.Item
+                  key={index}
+                  eventKey={index.toString()}
+                  className="faq-item"
                 >
-                  {section.title}
-                  <svg
-                    className={`chevron-icon ${
-                      expandedItems.includes(index.toString()) ? "expanded" : ""
-                    }`}
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
+                  <Accordion.Header
+                    onClick={() => toggleItem(index.toString())}
+                    aria-label={`Section ${index + 1}: ${section.title}`}
                   >
-                    <path
-                      d="M5 7.5l5 5 5-5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <p>Content coming soon...</p>
-                </Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
+                    {section.title}
+                    <svg
+                      className={`chevron-icon ${
+                        expandedItems.includes(index.toString())
+                          ? "expanded"
+                          : ""
+                      }`}
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5 7.5l5 5 5-5"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <p>Content coming soon...</p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          )}
         </Container>
       </div>
 

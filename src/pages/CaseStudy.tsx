@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Breadcrumb, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 
 const CaseStudy: React.FC = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -22,8 +27,8 @@ const CaseStudy: React.FC = () => {
         structuredData={structuredData}
       />
 
-      {/* Breadcrumb */}
-      <section className="breadcrumb-section">
+      {/* Page Header */}
+      <section className="page-header">
         <Container>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
@@ -31,12 +36,7 @@ const CaseStudy: React.FC = () => {
             </Breadcrumb.Item>
             <Breadcrumb.Item active>Case study module</Breadcrumb.Item>
           </Breadcrumb>
-        </Container>
-      </section>
 
-      {/* Page Header */}
-      <section className="page-header">
-        <Container>
           <h1 className="page-title">Case Study Module</h1>
 
           <p className="page-description">

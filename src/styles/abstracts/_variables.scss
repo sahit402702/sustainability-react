@@ -1,34 +1,67 @@
-// Custom Variables - Override Bootstrap defaults
-// These variables will override Bootstrap's default values
+// Custom Variables - Modern Corporate Design
+// Indigo & Emerald Theme
 
-// Color System
-$primary: #2c5f2d; // Deep green for sustainability theme
-$secondary: #97bc62; // Light green
-$success: #28a745;
-$info: #17a2b8;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #212529;
+// Color System - Corporate Modern
+$primary: #4c51bf; // Indigo - innovation, trust
+$secondary: #059669; // Emerald - sustainability, compliance
+$accent: #10b981; // Green - positive actions
+$warning: #f59e0b; // Amber - attention
+$success: #10b981; // Green
+$info: #3b82f6; // Blue
+$danger: #ef4444; // Red
+$light: #fafbfc; // Almost white
+$dark: #111827; // Near black
 
-// Spacing
+// Extended Color Palette
+$indigo-50: #eef2ff;
+$indigo-100: #e0e7ff;
+$indigo-200: #c7d2fe;
+$indigo-300: #a5b4fc;
+$indigo-500: #4c51bf;
+$indigo-600: #4338ca;
+$indigo-700: #3730a3;
+$indigo-900: #312e81;
+
+$emerald-50: #ecfdf5;
+$emerald-100: #d1fae5;
+$emerald-200: #a7f3d0;
+$emerald-300: #6ee7b7;
+$emerald-500: #059669;
+$emerald-600: #047857;
+$emerald-700: #065f46;
+$emerald-900: #064e3b;
+
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-900: #111827;
+
+// Spacing - 8px grid system
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * 0.25,
-  // 4px
-  2: $spacer * 0.5,
+  1: 0.5rem,
   // 8px
-  3: $spacer,
+  2: 1rem,
   // 16px
-  4: $spacer * 1.5,
+  3: 1.5rem,
   // 24px
-  5: $spacer * 3,
+  4: 2rem,
+  // 32px
+  5: 2.5rem,
+  // 40px
+  6: 3rem,
   // 48px
-  6: $spacer * 4,
+  7: 4rem,
   // 64px
-  7: $spacer * 6,
-  // 96px
+  8: 5rem,
+  // 80px
 );
 
 // Typography
@@ -39,6 +72,7 @@ $font-family-base: $font-family-sans-serif;
 $font-size-base: 1rem; // 16px
 $font-size-sm: 0.875rem; // 14px
 $font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
 
 $h1-font-size: 2.5rem; // 40px
 $h2-font-size: 2rem; // 32px
@@ -50,6 +84,12 @@ $h6-font-size: 1rem; // 16px
 $line-height-base: 1.6;
 $line-height-sm: 1.4;
 $line-height-lg: 1.8;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
 
 // Responsive Breakpoints (Mobile-first)
 $grid-breakpoints: (
@@ -70,31 +110,49 @@ $container-max-widths: (
   xxl: 1320px,
 );
 
-// Border Radius
-$border-radius: 0.375rem; // 6px
-$border-radius-sm: 0.25rem; // 4px
-$border-radius-lg: 0.5rem; // 8px
+// Border Radius - Modern rounded corners
+$border-radius: 0.5rem; // 8px
+$border-radius-sm: 0.375rem; // 6px
+$border-radius-lg: 0.75rem; // 12px
 $border-radius-xl: 1rem; // 16px
+$border-radius-2xl: 1.5rem; // 24px
+$border-radius-full: 9999px;
 
-// Shadows
-$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+// Shadows - Modern depth
+$box-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$box-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  0 1px 2px -1px rgba(0, 0, 0, 0.1);
+$box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -4px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 8px 10px -6px rgba(0, 0, 0, 0.1);
+$box-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-// Transitions
-$transition-base: all 0.3s ease-in-out;
+// Transitions - Smooth animations
+$transition-base: all 0.2s ease-in-out;
+$transition-fast: all 0.15s ease-in-out;
+$transition-slow: all 0.3s ease-in-out;
 $transition-fade: opacity 0.15s linear;
 $transition-collapse: height 0.35s ease;
 
 // Components
 $border-width: 1px;
-$border-color: #dee2e6;
+$border-color: $gray-200;
 
-// Buttons
+// Buttons - Modern pill style
 $btn-padding-y: 0.625rem;
-$btn-padding-x: 1.25rem;
+$btn-padding-x: 1.5rem;
 $btn-font-size: $font-size-base;
-$btn-border-radius: $border-radius;
+$btn-font-weight: $font-weight-medium;
+$btn-border-radius: $border-radius-lg;
+$btn-box-shadow: $box-shadow-sm;
+
+// Cards - Modern elevated style
+$card-border-radius: $border-radius-lg;
+$card-box-shadow: $box-shadow-sm;
+$card-border-width: 0;
 
 // Navbar
 $navbar-padding-y: 1rem;

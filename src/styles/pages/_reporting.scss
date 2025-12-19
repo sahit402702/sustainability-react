@@ -1,7 +1,7 @@
-// Reporting Module Page Styles
+// Reporting Module Page Styles - Premium Corporate Design
 
 .reporting-page {
-  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, $light 0%, white 50%, $light 100%);
   min-height: 100vh;
 
   // Breadcrumb
@@ -9,43 +9,88 @@
     background-color: transparent;
     padding: 1rem 0 0.5rem;
     margin-bottom: 0;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 
     @media (min-width: 768px) {
-      font-size: 0.9375rem;
+      font-size: $font-size-base;
     }
 
     .breadcrumb-item {
       + .breadcrumb-item::before {
         content: "/";
-        color: #6c757d;
+        color: $gray-500;
       }
 
       a {
-        color: #0046be;
+        color: $indigo-600;
         text-decoration: none;
-        transition: color 0.2s ease;
+        font-weight: $font-weight-medium;
+        transition: all 0.3s ease;
 
         &:hover {
-          color: darken(#0046be, 10%);
+          color: $indigo-700;
+          text-decoration: underline;
         }
       }
 
       &.active {
-        color: #6c757d;
+        color: $gray-700;
+        font-weight: $font-weight-medium;
       }
     }
   }
 
-  // Header Section
-  .reporting-header {
-    background: white;
-    color: #1a1a1a;
-    padding: 2rem 0;
-    border-bottom: 1px solid #e9ecef;
+  // Page Header - Ultra Premium (Standardized)
+  .page-header {
+    background: linear-gradient(
+      135deg,
+      $indigo-600 0%,
+      $indigo-700 40%,
+      $emerald-600 100%
+    );
+    color: white;
+    padding: 4rem 0;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+
+    // Animated radial gradient overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at 30% 50%,
+        rgba(255, 255, 255, 0.12) 0%,
+        transparent 50%
+      );
+      animation: float 18s ease-in-out infinite;
+    }
+
+    // Floating decorative element
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      );
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: float 25s ease-in-out infinite reverse;
+    }
 
     @media (min-width: 768px) {
-      padding: 2.5rem 0 3rem;
+      padding: 5rem 0;
     }
 
     .container {
@@ -62,66 +107,54 @@
 
     .breadcrumb-item {
       a {
-        color: #0046be;
+        color: rgba(255, 255, 255, 0.9);
 
         &:hover {
-          color: darken(#0046be, 10%);
+          color: white;
         }
       }
 
       &.active {
-        color: #6c757d;
+        color: rgba(255, 255, 255, 0.8);
       }
 
       + .breadcrumb-item::before {
-        color: #6c757d;
+        color: rgba(255, 255, 255, 0.7);
       }
     }
 
+    h1,
     .page-title {
-      font-size: 1.875rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-      line-height: 1.2;
-      color: #1a1a1a;
-
-      @media (min-width: 576px) {
-        font-size: 2.25rem;
-      }
-
-      @media (min-width: 768px) {
-        font-size: 2.5rem;
-        margin-bottom: 1.25rem;
-      }
-
-      @media (min-width: 992px) {
-        font-size: 3rem;
-      }
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: $font-weight-bold;
+      color: white;
+      margin-bottom: 1.25rem;
+      margin-top: 0;
+      line-height: 1.15;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.8s ease-out;
     }
 
-    .page-subtitle {
-      font-size: 0.9375rem;
-      line-height: 1.65;
-      color: #4a4a4a;
+    .subtitle,
+    .page-subtitle,
+    p {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      color: rgba(255, 255, 255, 0.95);
       max-width: 800px;
-
-      @media (min-width: 768px) {
-        font-size: 1.0625rem;
-      }
-
-      @media (min-width: 992px) {
-        font-size: 1.125rem;
-      }
+      margin-bottom: 0;
+      line-height: $line-height-lg;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.8s ease-out 0.2s both;
     }
   }
 
-  // Content Section
+  // Content Section - Enhanced Spacing
   .reporting-content {
-    padding: 3rem 0 4rem;
+    padding: 4rem 0 5rem;
 
     @media (min-width: 768px) {
-      padding: 4rem 0 5rem;
+      padding: 5rem 0 6rem;
     }
 
     .container {
@@ -207,35 +240,124 @@
   }
 
   .question-card {
-    border: 2px solid #e9ecef;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: white;
+    position: relative;
+    overflow: hidden;
+
+    // Organic decorative shape - top right
+    &::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(
+        circle,
+        rgba($indigo-200, 0.2) 0%,
+        transparent 70%
+      );
+      border-radius: 60% 40% 60% 40%;
+      transition: all 0.4s ease;
+    }
+
+    // Organic decorative shape - bottom left
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      left: -25px;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(
+        ellipse,
+        rgba($emerald-200, 0.15) 0%,
+        transparent 65%
+      );
+      border-radius: 40% 60% 40% 60%;
+      transform: rotate(-20deg);
+      transition: all 0.4s ease;
+    }
 
     @media (min-width: 768px) {
-      border-radius: 14px;
+      border-radius: 24px;
     }
 
     &:hover {
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
-      border-color: #0046be;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+
+      &::before {
+        top: -35px;
+        right: -35px;
+        width: 110px;
+        height: 110px;
+        transform: rotate(15deg);
+      }
+
+      &::after {
+        bottom: -30px;
+        left: -30px;
+        transform: rotate(-30deg);
+      }
+    }
+
+    // Varied card colors with subtle gradients
+    &:nth-child(odd) {
+      background: linear-gradient(135deg, #ffffff 0%, #faf9ff 100%);
+
+      &::before {
+        background: radial-gradient(
+          circle,
+          rgba($indigo-300, 0.15) 0%,
+          transparent 70%
+        );
+      }
+    }
+
+    &:nth-child(even) {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+
+      &::before {
+        background: radial-gradient(
+          circle,
+          rgba($emerald-300, 0.15) 0%,
+          transparent 70%
+        );
+      }
+    }
+
+    &:nth-child(3n) {
+      background: linear-gradient(135deg, #ffffff 0%, #fffef8 100%);
+
+      &::before {
+        background: radial-gradient(
+          circle,
+          rgba(#fbbf24, 0.1) 0%,
+          transparent 70%
+        );
+      }
     }
 
     .card-body {
-      padding: 1.25rem 1rem;
+      padding: 1.75rem 1.5rem;
+      position: relative;
+      z-index: 2;
 
       @media (min-width: 576px) {
-        padding: 1.5rem 1.25rem;
+        padding: 2rem 1.75rem;
       }
 
       @media (min-width: 768px) {
-        padding: 1.75rem 1.5rem;
+        padding: 2.25rem 2rem;
       }
 
       @media (min-width: 992px) {
-        padding: 2rem 1.75rem;
+        padding: 2.5rem 2.25rem;
       }
     }
 

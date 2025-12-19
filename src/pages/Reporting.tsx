@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Row,
@@ -29,6 +29,11 @@ interface Section {
 const Reporting: React.FC = () => {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState<boolean>(false);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const sections: Section[] = [
     {
@@ -262,7 +267,7 @@ const Reporting: React.FC = () => {
         structuredData={structuredData}
       />
 
-      <div className="reporting-header">
+      <div className="page-header">
         <Container>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>

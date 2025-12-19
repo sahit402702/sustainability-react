@@ -67,6 +67,7 @@
 @import "./components/buttons";
 @import "./components/cards";
 @import "./components/forms";
+@import "./components/utilities";
 
 // 11. Import page specific styles
 @import "./pages/landing";
@@ -74,3 +75,47 @@
 @import "./pages/sustainability";
 @import "./pages/reporting";
 @import "./pages/casestudy";
+
+// 12. Animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

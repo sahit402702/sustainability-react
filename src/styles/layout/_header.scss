@@ -1,4 +1,4 @@
-// Header Component Styles
+// Modern Header Component - Corporate Design
 
 @keyframes shine {
   0%,
@@ -22,12 +22,17 @@
 }
 
 .header {
-  background: linear-gradient(135deg, #0046be 0%, #0056d6 50%, #0046be 100%);
-  box-shadow: 0 2px 8px rgba(0, 70, 190, 0.15);
+  background: linear-gradient(
+    135deg,
+    $indigo-700 0%,
+    $indigo-600 50%,
+    $indigo-700 100%
+  );
+  box-shadow: $box-shadow-md;
   position: sticky;
   top: 0;
   z-index: 1030;
-  transition: all 0.3s ease;
+  transition: $transition-base;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
 
@@ -49,8 +54,13 @@
   }
 
   &.scrolled {
-    background: linear-gradient(135deg, #003d9e 0%, #004db8 50%, #003d9e 100%);
-    box-shadow: 0 4px 20px rgba(0, 70, 190, 0.4);
+    background: linear-gradient(
+      135deg,
+      $indigo-800 0%,
+      $indigo-700 50%,
+      $indigo-800 100%
+    );
+    box-shadow: $box-shadow-lg;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
@@ -64,18 +74,18 @@
     transition: transform 0.3s ease;
     background: white;
     padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius-lg;
+    box-shadow: $box-shadow-sm;
     text-decoration: none;
 
     @media (max-width: 991px) {
       padding: 0.25rem 0.5rem;
-      border-radius: 6px;
+      border-radius: $border-radius;
     }
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: $box-shadow-md;
       text-decoration: none;
     }
 

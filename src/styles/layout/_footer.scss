@@ -1,24 +1,25 @@
-// Footer Component Styles
+// Modern Footer Component - Corporate Design
 
 .footer {
-  background-color: #ffc107;
-  color: #1a1a1a;
+  background: linear-gradient(135deg, $gray-900 0%, $gray-800 100%);
+  color: $gray-300;
   padding: 3rem 0 1.5rem;
   margin-top: auto;
-  border-top: none;
+  border-top: 3px solid $indigo-500;
 
   a {
-    color: #1a1a1a;
+    color: $gray-300;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: $transition-fast;
+    font-weight: $font-weight-medium;
 
     &:hover,
     &:focus {
-      color: #0046be;
-      text-decoration: underline;
+      color: white;
+      text-decoration: none;
+      transform: translateX(4px);
+      display: inline-block;
     }
-
-    @include focus-visible;
   }
 
   .footer-content {
@@ -38,10 +39,16 @@
 
     h3,
     h4 {
-      color: #1a1a1a;
-      font-size: 1.125rem;
+      color: white;
+      font-size: $h5-font-size;
       margin-bottom: 1rem;
-      font-weight: 600;
+      font-weight: $font-weight-semibold;
+    }
+
+    p {
+      color: $gray-400;
+      line-height: $line-height-lg;
+      margin-bottom: 0;
     }
 
     ul {

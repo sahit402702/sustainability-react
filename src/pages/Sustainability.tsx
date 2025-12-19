@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Card, Nav, Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -6,6 +6,11 @@ import sustainabilityContent from "@/content/sustainability.json";
 
 const Sustainability: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("contracts");
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
@@ -35,8 +40,8 @@ const Sustainability: React.FC = () => {
         structuredData={structuredData}
       />
 
-      {/* Breadcrumb */}
-      <nav className="breadcrumb-section" aria-label="Breadcrumb">
+      {/* Page Header */}
+      <header className="page-header">
         <Container>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
@@ -46,12 +51,7 @@ const Sustainability: React.FC = () => {
               {sustainabilityContent.pageTitle}
             </Breadcrumb.Item>
           </Breadcrumb>
-        </Container>
-      </nav>
 
-      {/* Page Header */}
-      <header className="page-header">
-        <Container>
           <h1 className="page-title">{sustainabilityContent.pageTitle}</h1>
 
           {sustainabilityContent.introText.map((text, index) => (

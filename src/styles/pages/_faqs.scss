@@ -1,133 +1,259 @@
-// FAQs Page Styles
+// Modern FAQs Page - Premium Corporate Design
 
 .faqs-page {
-  background-color: #f5f5f5;
+  background: linear-gradient(180deg, $light 0%, white 50%, $light 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
-  // Breadcrumb Section
-  .breadcrumb-section {
-    background-color: #ffffff;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e0e0e0;
+  // Page Header - Ultra Premium (Standardized)
+  .page-header {
+    background: linear-gradient(
+      135deg,
+      $indigo-600 0%,
+      $indigo-700 40%,
+      $emerald-600 100%
+    );
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+
+    // Animated gradient overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at 30% 50%,
+        rgba(255, 255, 255, 0.12) 0%,
+        transparent 50%
+      );
+      animation: float 18s ease-in-out infinite;
+    }
+
+    // Floating shapes
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      );
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: float 25s ease-in-out infinite reverse;
+    }
+
+    @media (min-width: 768px) {
+      padding: 5rem 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
 
     .breadcrumb {
-      margin-bottom: 0;
       background-color: transparent;
-      padding: 0;
-      font-size: 0.875rem;
+      padding: 0 0 0.5rem;
+      margin-bottom: 1rem;
+      font-size: $font-size-sm;
+
+      @media (min-width: 768px) {
+        font-size: $font-size-base;
+      }
 
       .breadcrumb-item {
-        color: #666666;
+        + .breadcrumb-item::before {
+          content: "/";
+          color: rgba(255, 255, 255, 0.7);
+        }
 
         a {
-          color: #666666;
+          color: rgba(255, 255, 255, 0.9);
           text-decoration: none;
-          transition: color 0.2s ease;
+          font-weight: $font-weight-medium;
+          transition: all 0.3s ease;
 
           &:hover {
-            color: #0046be;
+            color: white;
+            text-decoration: underline;
           }
         }
 
         &.active {
-          color: #333333;
-          font-weight: 500;
-        }
-
-        + .breadcrumb-item::before {
-          content: ">";
-          color: #666666;
+          color: rgba(255, 255, 255, 0.8);
+          font-weight: $font-weight-medium;
         }
       }
     }
-  }
-
-  // Page Header Section
-  .page-header-section {
-    background-color: #ffffff;
-    padding: 2rem 0 2.5rem;
-    border-bottom: 1px solid #e0e0e0;
 
     h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: #000000;
-      margin-bottom: 1rem;
-      line-height: 1.2;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: $font-weight-bold;
+      color: white;
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.8s ease-out;
     }
 
-    .description {
-      font-size: 1.0625rem;
-      color: #666666;
+    .description,
+    p {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      color: rgba(255, 255, 255, 0.95);
       margin-bottom: 0;
       max-width: 800px;
-      line-height: 1.6;
+      line-height: $line-height-lg;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.8s ease-out 0.2s both;
     }
   }
 
-  // Search Section
+  // Search Section - Modern Elevated Design
   .search-section {
-    background-color: #ffffff;
-    padding: 2rem 0 2.5rem;
+    background-color: white;
+    padding: 2.5rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        $indigo-200 50%,
+        transparent 100%
+      );
+    }
 
     .search-bar {
-      max-width: 450px;
+      max-width: 600px;
       position: relative;
 
       .form-control {
-        padding: 0.875rem 1rem;
-        font-size: 1rem;
-        border: 1px solid #d0d0d0;
-        border-radius: 8px;
-        background-color: #ffffff;
-        transition: all 0.2s ease;
+        padding: 1.125rem 3.5rem 1.125rem 1.5rem;
+        font-size: $font-size-lg;
+        border: 2px solid $gray-200;
+        border-radius: $border-radius-xl;
+        background-color: $gray-50;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 
         &:focus {
-          border-color: #0046be;
-          box-shadow: 0 0 0 3px rgba(0, 70, 190, 0.1);
+          border-color: $indigo-500;
+          background-color: white;
+          box-shadow: 0 0 0 4px rgba($indigo-500, 0.12),
+            0 4px 12px rgba($indigo-500, 0.15);
           outline: none;
+          transform: translateY(-2px);
         }
 
         &::placeholder {
-          color: #999999;
+          color: $gray-500;
         }
       }
 
       .search-icon {
         position: absolute;
-        right: 1rem;
+        right: 1.25rem;
         top: 50%;
         transform: translateY(-50%);
-        color: #666666;
+        color: $gray-600;
         pointer-events: none;
       }
     }
   }
 
-  // Accordion Section
+  // Accordion Section - Premium Design
   .accordion-section {
     flex: 1;
-    padding: 2rem 0 3rem;
+    padding: 3rem 0 5rem;
 
     .accordion-header {
       display: flex;
-      justify-content: flex-end;
-      margin-bottom: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid $gray-100;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, $indigo-600, $emerald-600);
+        border-radius: 2px;
+      }
+
+      h2 {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
 
       .expand-all-btn {
-        background: none;
-        border: none;
-        color: #0046be;
-        font-size: 0.9375rem;
-        font-weight: 500;
+        background: linear-gradient(135deg, $indigo-50, $emerald-50);
+        border: 2px solid $indigo-200;
+        color: $indigo-700;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
         cursor: pointer;
-        padding: 0.5rem 0;
-        transition: color 0.2s ease;
+        padding: 0.75rem 1.5rem;
+        border-radius: $border-radius-pill;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
 
         &:hover {
-          color: #003399;
+          background: linear-gradient(135deg, $indigo-600, $emerald-600);
+          color: white;
+          border-color: $indigo-600;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba($indigo-600, 0.3);
+
+          &::before {
+            left: 100%;
+          }
           text-decoration: underline;
         }
 
@@ -139,48 +265,91 @@
       }
     }
 
+    .no-results {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #fafbff 0%, #f3f4f6 100%);
+      border-radius: 16px;
+      margin-top: 2rem;
+
+      p {
+        color: $gray-700;
+        font-size: 1.125rem;
+        margin: 0;
+      }
+    }
+
     .accordion {
       .faq-item {
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 0;
-        margin-bottom: 0;
+        background: linear-gradient(135deg, #ffffff 0%, #fafbff 100%);
+        border: none;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(76, 81, 191, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        position: relative;
+
+        // Trendy left accent bar
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          background: linear-gradient(180deg, $indigo-500, $emerald-500);
+          transform: scaleY(0);
+          transform-origin: top;
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &:hover {
+          box-shadow: 0 4px 16px rgba(76, 81, 191, 0.15);
+          transform: translateY(-2px);
+
+          &::before {
+            transform: scaleY(1);
+          }
+        }
 
         &:first-child {
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
         }
 
         &:last-child {
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-
-        + .faq-item {
-          border-top: none;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
         }
 
         .accordion-header {
           margin-bottom: 0;
 
           button {
-            background-color: #ffffff;
-            color: #0046be;
-            font-size: 1.0625rem;
+            background: transparent;
+            color: $gray-900;
+            font-size: 1.125rem;
             font-weight: 600;
-            padding: 1.25rem 1.5rem;
+            padding: 1.5rem 1.75rem;
             border: none;
             box-shadow: none;
             position: relative;
             width: 100%;
             text-align: left;
-            transition: background-color 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 1rem;
 
             &:hover {
-              background-color: #f8f8f8;
+              background: linear-gradient(
+                135deg,
+                rgba(76, 81, 191, 0.04) 0%,
+                rgba(5, 150, 105, 0.04) 100%
+              );
+              color: $indigo-700;
             }
 
             &:focus {
@@ -189,8 +358,8 @@
             }
 
             &:focus-visible {
-              outline: 2px solid #0046be;
-              outline-offset: -2px;
+              outline: 3px solid $indigo-500;
+              outline-offset: -3px;
             }
 
             &::after {
@@ -198,33 +367,74 @@
             }
 
             .chevron-icon {
-              color: #0046be;
-              transition: transform 0.2s ease;
+              color: $indigo-600;
+              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
               flex-shrink: 0;
               margin-left: 1rem;
+              width: 24px;
+              height: 24px;
+              background: linear-gradient(
+                135deg,
+                rgba(76, 81, 191, 0.1),
+                rgba(5, 150, 105, 0.1)
+              );
+              border-radius: 50%;
+              padding: 4px;
 
               &.expanded {
                 transform: rotate(180deg);
+                background: linear-gradient(135deg, $indigo-500, $emerald-500);
+                color: white;
               }
             }
 
             &:not(.collapsed) {
-              background-color: #ffffff;
-              color: #0046be;
+              background: linear-gradient(
+                135deg,
+                rgba(76, 81, 191, 0.06) 0%,
+                rgba(5, 150, 105, 0.06) 100%
+              );
+              color: $indigo-700;
+              font-weight: 700;
             }
           }
         }
 
         .accordion-body {
-          padding: 1.5rem;
-          background-color: #ffffff;
-          border-top: 1px solid #e0e0e0;
-          color: #333333;
-          font-size: 0.9375rem;
-          line-height: 1.6;
+          padding: 0 1.75rem 1.75rem 1.75rem;
+          background: transparent;
+          border-top: none;
+          color: $gray-700;
+          font-size: 1rem;
+          line-height: 1.7;
 
           p {
-            margin-bottom: 0;
+            margin-bottom: 1rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          ul,
+          ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+
+            li {
+              margin-bottom: 0.5rem;
+              color: $gray-700;
+            }
+          }
+
+          a {
+            color: $indigo-600;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: $indigo-700;
+            }
           }
         }
       }
