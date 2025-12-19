@@ -1,0 +1,82 @@
+{
+  "landing": {
+    "hero": {
+      "title": "Building a Sustainable Future Together",
+      "subtitle": "Committed to environmental stewardship, social responsibility, and transparent reporting for a better tomorrow."
+    },
+    "features": {
+      "title": "Our Impact Areas",
+      "items": [
+        {
+          "icon": "🌍",
+          "title": "Carbon Neutral",
+          "description": "Committed to achieving net-zero emissions by 2030 through renewable energy and innovative solutions."
+        },
+        {
+          "icon": "♻️",
+          "title": "Circular Economy",
+          "description": "Implementing zero-waste initiatives and promoting sustainable resource management practices."
+        },
+        {
+          "icon": "🌱",
+          "title": "Biodiversity",
+          "description": "Protecting and restoring natural ecosystems through conservation and reforestation programs."
+        },
+        {
+          "icon": "💧",
+          "title": "Water Stewardship",
+          "description": "Reducing water consumption and ensuring clean water access for communities we serve."
+        }
+      ]
+    },
+    "stats": {
+      "title": "Our Progress",
+      "items": [
+        { "value": "45%", "label": "Carbon Reduction" },
+        { "value": "100%", "label": "Renewable Energy" },
+        { "value": "2M+", "label": "Trees Planted" },
+        { "value": "50+", "label": "Communities Served" }
+      ]
+    },
+    "cta": {
+      "title": "Join Our Mission",
+      "description": "Partner with us to create meaningful environmental impact. Together, we can build a sustainable future for generations to come."
+    }
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our sustainability initiatives, reporting practices, and how you can get involved.",
+    "noResults": "No questions found matching your search. Try different keywords or categories.",
+    "contact": {
+      "title": "Still Have Questions?",
+      "description": "Can't find what you're looking for? Our sustainability team is here to help."
+    }
+  },
+  "sustainability": {
+    "hero": {
+      "title": "UK Government Procurement Sustainability Assessment",
+      "subtitle": "Interactive questionnaire to identify which sustainability clauses (PPN 006, PPN 016, Joint Schedule 5, Call-Off Schedule 25) apply to your procurement contract."
+    },
+    "questionnaire": {
+      "title": "Sustainability Clause Assessment",
+      "subtitle": "Answer questions to determine applicable sustainability requirements"
+    }
+  },
+  "reporting": {
+    "title": "Sustainability Reports",
+    "subtitle": "Access our comprehensive sustainability reports with transparent data, measurable outcomes, and third-party verification.",
+    "stats": {
+      "title": "Reporting Highlights"
+    },
+    "filters": {
+      "title": "Filter Reports"
+    }
+  },
+  "caseStudies": {
+    "title": "Sustainability Case Studies",
+    "subtitle": "Explore real-world examples of our sustainability initiatives, the challenges we faced, solutions implemented, and measurable results achieved.",
+    "filters": {
+      "title": "Filter by Category"
+    }
+  }
+}

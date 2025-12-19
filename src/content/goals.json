@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "icon": "🌡️",
+      "title": "Climate Action",
+      "description": "Achieving carbon neutrality by 2030 through renewable energy adoption and emission reduction strategies.",
+      "target": "50% reduction by 2025"
+    },
+    {
+      "icon": "💧",
+      "title": "Water Conservation",
+      "description": "Reducing water consumption and implementing water recycling systems across all facilities.",
+      "target": "40% water savings"
+    },
+    {
+      "icon": "♻️",
+      "title": "Waste Management",
+      "description": "Zero waste to landfill initiative with comprehensive recycling and circular economy practices.",
+      "target": "80% waste diversion"
+    },
+    {
+      "icon": "🌳",
+      "title": "Biodiversity",
+      "description": "Protecting ecosystems and supporting reforestation projects to enhance biodiversity.",
+      "target": "10M trees by 2025"
+    },
+    {
+      "icon": "⚡",
+      "title": "Renewable Energy",
+      "description": "Transitioning to 100% renewable energy sources for all operations and facilities.",
+      "target": "100% renewable by 2028"
+    },
+    {
+      "icon": "🏭",
+      "title": "Sustainable Supply Chain",
+      "description": "Ensuring ethical and sustainable practices throughout our entire supply chain.",
+      "target": "95% certified suppliers"
+    }
+  ]
+}

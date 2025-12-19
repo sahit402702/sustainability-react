@@ -1,0 +1,28 @@
+{
+  "cta": {
+    "primary": "Get Started",
+    "secondary": "Learn More",
+    "explore": "Explore More",
+    "download": "Download Report",
+    "viewDetails": "View Details",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset Filters",
+    "viewAll": "View All"
+  },
+  "navigation": {
+    "home": "Home",
+    "sustainability": "Sustainability",
+    "reporting": "Reporting",
+    "caseStudies": "Case Studies",
+    "faqs": "FAQs"
+  },
+  "filter": {
+    "all": "All",
+    "year": "Year",
+    "type": "Type",
+    "category": "Category"
+  }
+}

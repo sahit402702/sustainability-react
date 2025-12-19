@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "title": "Solar Power Deployment",
+      "description": "Installing solar panels across 50+ facilities to generate clean energy and reduce grid dependency. This initiative has already helped us reduce carbon emissions by 30% in participating locations.",
+      "impact": "15MW clean energy",
+      "image": "/images/solar.jpg"
+    },
+    {
+      "title": "Ocean Cleanup Project",
+      "description": "Partnering with marine conservation organizations to remove plastic waste from oceans and prevent future pollution through education and policy advocacy.",
+      "impact": "500 tons removed",
+      "image": "/images/ocean.jpg"
+    },
+    {
+      "title": "Green Building Program",
+      "description": "Constructing and retrofitting buildings with sustainable materials, energy-efficient systems, and green certifications like LEED and BREEAM.",
+      "impact": "25 certified buildings",
+      "image": "/images/building.jpg"
+    }
+  ]
+}

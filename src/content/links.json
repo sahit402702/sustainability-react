@@ -1,0 +1,29 @@
+{
+  "social": {
+    "facebook": "https://facebook.com",
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com",
+    "instagram": "https://instagram.com"
+  },
+  "footer": {
+    "quickLinks": [
+      { "label": "About Us", "url": "/about" },
+      { "label": "Contact", "url": "/contact" },
+      { "label": "Privacy Policy", "url": "/privacy" },
+      { "label": "Terms of Service", "url": "/terms" }
+    ],
+    "resources": [
+      { "label": "Blog", "url": "/blog" },
+      { "label": "News", "url": "/news" },
+      { "label": "Downloads", "url": "/downloads" },
+      { "label": "Partners", "url": "/partners" }
+    ]
+  },
+  "navigation": {
+    "home": "/",
+    "sustainability": "/sustainability",
+    "reporting": "/reporting",
+    "caseStudies": "/case-studies",
+    "faqs": "/faqs"
+  }
+}

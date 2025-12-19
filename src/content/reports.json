@@ -1,0 +1,79 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Annual Sustainability Report 2024",
+      "type": "annual",
+      "year": "2024",
+      "date": "December 2024",
+      "description": "Comprehensive overview of our sustainability performance, achievements, and future goals for 2024.",
+      "pages": 87,
+      "size": "12.5 MB"
+    },
+    {
+      "id": 2,
+      "title": "Q3 2024 Environmental Impact Report",
+      "type": "quarterly",
+      "year": "2024",
+      "date": "September 2024",
+      "description": "Detailed analysis of environmental metrics including emissions, water usage, and waste management for Q3.",
+      "pages": 34,
+      "size": "5.2 MB"
+    },
+    {
+      "id": 3,
+      "title": "Carbon Footprint Analysis 2024",
+      "type": "special",
+      "year": "2024",
+      "date": "August 2024",
+      "description": "In-depth carbon footprint analysis across all operations with reduction strategies and targets.",
+      "pages": 45,
+      "size": "8.1 MB"
+    },
+    {
+      "id": 4,
+      "title": "Annual Sustainability Report 2023",
+      "type": "annual",
+      "year": "2023",
+      "date": "December 2023",
+      "description": "Complete sustainability performance review for 2023 with key achievements and lessons learned.",
+      "pages": 82,
+      "size": "11.8 MB"
+    },
+    {
+      "id": 5,
+      "title": "Water Conservation Report 2024",
+      "type": "special",
+      "year": "2024",
+      "date": "July 2024",
+      "description": "Comprehensive report on water usage, conservation initiatives, and efficiency improvements.",
+      "pages": 28,
+      "size": "4.3 MB"
+    },
+    {
+      "id": 6,
+      "title": "Q2 2024 Progress Report",
+      "type": "quarterly",
+      "year": "2024",
+      "date": "June 2024",
+      "description": "Quarter 2 sustainability metrics, project updates, and stakeholder engagement summary.",
+      "pages": 31,
+      "size": "5.8 MB"
+    }
+  ],
+  "stats": [
+    { "value": "24", "label": "Published Reports" },
+    { "value": "98%", "label": "Data Accuracy" },
+    { "value": "10K+", "label": "Downloads" },
+    { "value": "100%", "label": "Transparency" }
+  ],
+  "filters": {
+    "years": ["all", "2024", "2023"],
+    "types": [
+      { "id": "all", "label": "All Types" },
+      { "id": "annual", "label": "Annual Reports" },
+      { "id": "quarterly", "label": "Quarterly Reports" },
+      { "id": "special", "label": "Special Reports" }
+    ]
+  }
+}

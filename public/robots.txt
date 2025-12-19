@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Disallow admin or private pages if any in the future
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, adjust based on your needs)
+# Crawl-delay: 10

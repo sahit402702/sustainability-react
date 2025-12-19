@@ -24,6 +24,270 @@
       margin: 0 auto;
       opacity: 0.95;
     }
+
+    &.questionnaire-hero {
+      padding: 3rem 0;
+      
+      .display-4 {
+        font-weight: 700;
+      }
+
+      .lead {
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // Questionnaire Styles
+  .questionnaire-section {
+    background-color: $light;
+  }
+
+  .questionnaire-intro {
+    .alert {
+      border-left: 4px solid $info;
+    }
+  }
+
+  .category-section {
+    .category-header {
+      background: linear-gradient(135deg, $primary, darken($primary, 10%));
+      border: none;
+      color: white;
+      box-shadow: 0 2px 8px rgba($primary, 0.15);
+      
+      .category-icon {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      .text-muted {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+    }
+  }
+
+  .question-card {
+    border: 2px solid $gray-300;
+    transition: all 0.3s ease;
+    background: white;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    &.answered {
+      border-color: $gray-400;
+    }
+
+    &.answered-yes {
+      border-color: $success;
+      background: rgba($success, 0.02);
+    }
+
+    &.answered-no {
+      border-color: $gray-400;
+      opacity: 0.8;
+    }
+
+    .question-header {
+      .question-text {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: $dark;
+        line-height: 1.6;
+      }
+    }
+
+    .answer-options {
+      .form-check {
+        padding: 0.75rem 1.25rem;
+        border: 2px solid $gray-300;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: $primary;
+          background: rgba($primary, 0.05);
+        }
+
+        input[type="radio"]:checked ~ label {
+          font-weight: 600;
+        }
+
+        &.answer-yes input[type="radio"]:checked ~ label {
+          color: $success;
+        }
+
+        label {
+          cursor: pointer;
+          margin-bottom: 0;
+          font-size: 1rem;
+          user-select: none;
+        }
+      }
+    }
+
+    .impact-banner {
+      background: linear-gradient(135deg, rgba($success, 0.1), rgba($success, 0.05));
+      border-left: 4px solid $success;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      animation: slideIn 0.3s ease;
+
+      .impact-badge {
+        margin-bottom: 0.5rem;
+        
+        .badge {
+          font-size: 0.875rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+
+      .impact-text {
+        font-size: 0.95rem;
+        color: darken($success, 20%);
+
+        strong {
+          color: darken($success, 30%);
+        }
+      }
+    }
+  }
+
+  .sticky-results {
+    position: sticky;
+    top: 2rem;
+
+    @media (max-width: 991px) {
+      position: static;
+      margin-top: 2rem;
+    }
+  }
+
+  .results-panel {
+    .progress-card {
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+      h5 {
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+
+      .badge {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .results-summary {
+      border: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+      .card-header {
+        background: linear-gradient(135deg, $success, darken($success, 10%));
+        border: none;
+        color: white;
+
+        h4 {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .clause-card {
+      border: 2px solid $danger;
+      box-shadow: 0 2px 8px rgba($danger, 0.15);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba($danger, 0.25);
+      }
+
+      .clause-header {
+        .badge {
+          font-size: 0.875rem;
+          padding: 0.5rem 1rem;
+          animation: pulse 2s infinite;
+        }
+
+        h5 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: $danger;
+        }
+      }
+
+      .clause-description {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .clause-trigger {
+        background: rgba($info, 0.1);
+        padding: 0.75rem;
+        border-radius: 0.375rem;
+        font-size: 0.95rem;
+
+        strong {
+          color: darken($info, 20%);
+        }
+      }
+
+      .clause-requirements {
+        strong {
+          color: $dark;
+          font-size: 1rem;
+        }
+
+        .list-group-item {
+          border: none;
+          padding: 0.5rem 0;
+          font-size: 0.95rem;
+
+          .requirement-icon {
+            color: $success;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .alert {
+      border-left: 4px solid $warning;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
 
   .content-section {
@@ -73,8 +337,13 @@
     }
 
     .initiative-image {
-      flex: 0 0 250px;
-      height: 200px;
+      height: 300px;
+      overflow: hidden;
+
+      @include respond-to(md) {
+        flex: 0 0 250px;
+        height: 200px;
+      }
 
       img {
         width: 100%;

@@ -66,6 +66,20 @@
   }
 }
 
+// Icon styling for cards
+.card-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+
+  &.text-center {
+    margin: 0 auto;
+  }
+}
+
 // Statistics card
 .card-stat {
   background: linear-gradient(135deg, $primary 0%, darken($primary, 10%) 100%);

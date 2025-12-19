@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -7,7 +8,7 @@ import Sustainability from "./pages/Sustainability";
 import Reporting from "./pages/Reporting";
 import CaseStudy from "./pages/CaseStudy";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <a href="#main-content" className="skip-to-main">
@@ -26,6 +27,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

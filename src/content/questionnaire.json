@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "id": "governance",
+      "title": "Governance & Carbon Commitments",
+      "description": "Questions related to carbon reduction plans and Net Zero commitments",
+      "icon": "🏛️",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Is the contract value ≥ £5 million per year (incl. VAT)?",
+          "impact": "PPN 006 applies: Carbon Reduction Plan required",
+          "clause": "PPN 006"
+        },
+        {
+          "id": "q2",
+          "question": "Do tender documents mention Net Zero by 2050 commitment or Carbon Reduction Plan (CRP)?",
+          "impact": "PPN 006 and possibly Joint Schedule 5 clauses apply",
+          "clause": "PPN 006"
+        },
+        {
+          "id": "q3",
+          "question": "Does the buyer require a published CRP on your UK website?",
+          "impact": "PPN 006 mandatory",
+          "clause": "PPN 006"
+        }
+      ]
+    },
+    {
+      "id": "contract",
+      "title": "Contract-Level Carbon Requirements",
+      "description": "Questions about contract-specific carbon footprint and emissions reporting",
+      "icon": "📋",
+      "questions": [
+        {
+          "id": "q4",
+          "question": "Does the tender include PPN 016 Carbon Reduction Contract Schedule or similar wording (e.g., 'contract carbon footprint', 'Emissions Reduction Target')?",
+          "impact": "PPN 016 applies: footprint, ERT, annual reporting",
+          "clause": "PPN 016"
+        },
+        {
+          "id": "q5",
+          "question": "Are you asked to report annual GHG emissions for the contract or provide a GHG reduction plan?",
+          "impact": "PPN 016 applies",
+          "clause": "PPN 016"
+        }
+      ]
+    },
+    {
+      "id": "framework",
+      "title": "Framework-Level Sustainability Clauses",
+      "description": "Questions about framework agreements and sustainability requirements",
+      "icon": "🔗",
+      "questions": [
+        {
+          "id": "q6",
+          "question": "Is the procurement under a framework agreement that references Joint Schedule 5 (Sustainability)?",
+          "impact": "Expect optional clauses: modern slavery, equality, sustainability reporting",
+          "clause": "Joint Schedule 5"
+        },
+        {
+          "id": "q7",
+          "question": "Does the buyer require Modern Slavery Assessment Tool completion or Equality Duty compliance?",
+          "impact": "Joint Schedule 5 applies",
+          "clause": "Joint Schedule 5"
+        }
+      ]
+    },
+    {
+      "id": "waste",
+      "title": "Waste & Resource Management",
+      "description": "Questions about waste management and environmental systems",
+      "icon": "♻️",
+      "questions": [
+        {
+          "id": "q8",
+          "question": "Does the tender include Call-Off Schedule 25 or mention Waste Hierarchy compliance?",
+          "impact": "Schedule 25 applies: mandatory waste controls",
+          "clause": "Call-Off Schedule 25"
+        },
+        {
+          "id": "q9",
+          "question": "Are you required to use licensed waste carriers and provide waste data by disposal route?",
+          "impact": "Schedule 25 mandatory clauses apply",
+          "clause": "Call-Off Schedule 25"
+        },
+        {
+          "id": "q10",
+          "question": "Does the contract require environmental management systems (EMS) or ISO 14001 certification?",
+          "impact": "Schedule 25 optional clauses apply",
+          "clause": "Call-Off Schedule 25"
+        }
+      ]
+    }
+  ],
+  "clauses": {
+    "PPN 006": {
+      "name": "PPN 006 - Carbon Reduction Plan",
+      "description": "Carbon Reduction Plan (CRP) mandatory for contracts ≥ £5 million per year",
+      "trigger": "Answer 'Yes' to Q1–Q3",
+      "requirements": [
+        "Publish Carbon Reduction Plan on UK website",
+        "Commit to Net Zero by 2050",
+        "Report Scope 1, 2, and 3 emissions",
+        "Set carbon reduction targets"
+      ]
+    },
+    "PPN 016": {
+      "name": "PPN 016 - Contract Carbon Reduction",
+      "description": "Contract-level carbon obligations including footprint calculation and reduction targets",
+      "trigger": "Answer 'Yes' to Q4–Q5",
+      "requirements": [
+        "Calculate contract carbon footprint",
+        "Set Emissions Reduction Target (ERT)",
+        "Annual GHG emissions reporting",
+        "Provide GHG reduction plan"
+      ]
+    },
+    "Joint Schedule 5": {
+      "name": "Joint Schedule 5 - Sustainability",
+      "description": "Framework sustainability clauses covering social and environmental obligations",
+      "trigger": "Answer 'Yes' to Q6–Q7",
+      "requirements": [
+        "Modern slavery compliance and assessment",
+        "Equality Duty compliance",
+        "Sustainability reporting",
+        "Optional clauses as specified in framework"
+      ]
+    },
+    "Call-Off Schedule 25": {
+      "name": "Call-Off Schedule 25 - Waste Management",
+      "description": "Waste and environmental management requirements",
+      "trigger": "Answer 'Yes' to Q8–Q10",
+      "requirements": [
+        "Comply with Waste Hierarchy",
+        "Use licensed waste carriers",
+        "Provide waste data by disposal route",
+        "Environmental management systems (optional)"
+      ]
+    }
+  }
+}
