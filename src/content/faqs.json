@@ -1,4 +1,27 @@
 {
+  "pageTitle": "Frequently asked questions",
+  "description": "Essential guidelines for SMEs engaging in public sector work, including recommended software.",
+  "searchPlaceholder": "Search",
+  "expandAllText": "Expand all",
+  "collapseAllText": "Collapse all",
+  "sections": [
+    {
+      "title": "What are Governance and Carbon commitments",
+      "items": []
+    },
+    {
+      "title": "Contract-Level Carbon Requirements",
+      "items": []
+    },
+    {
+      "title": "Framework-Level Sustainability Clauses",
+      "items": []
+    },
+    {
+      "title": "Waste & Resource Management",
+      "items": []
+    }
+  ],
   "categories": [
     { "id": "all", "label": "All Questions" },
     { "id": "general", "label": "General" },

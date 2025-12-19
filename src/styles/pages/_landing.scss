@@ -3,131 +3,490 @@
 .landing-page {
   // Hero Section
   .hero-section {
-    min-height: 600px;
-    background: linear-gradient(
-        135deg,
-        rgba($primary, 0.95) 0%,
-        rgba(darken($primary, 15%), 0.95) 100%
-      ),
-      url("/hero-bg.jpg") center/cover;
-    color: white;
-    padding: 6rem 0;
-    position: relative;
+    background-color: white;
+    padding: 2rem 0;
 
-    @include respond-to(md) {
-      min-height: 700px;
-      padding: 8rem 0;
+    @media (min-width: 768px) {
+      padding: 3rem 0;
     }
 
-    .hero-content {
-      max-width: 700px;
+    @media (min-width: 992px) {
+      padding: 4rem 0;
+    }
 
-      h1 {
-        color: white;
-        font-size: clamp(2.5rem, 6vw, 3.5rem);
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.1;
+    .hero-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+
+      @media (min-width: 576px) {
+        font-size: 1.75rem;
       }
 
-      .lead {
-        font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+      @media (min-width: 768px) {
+        font-size: 2.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 2.75rem;
+        line-height: 1.2;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 3rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 0.9375rem;
+      color: #4a4a4a;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+
+      @media (min-width: 576px) {
+        font-size: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.0625rem;
         margin-bottom: 2rem;
-        opacity: 0.95;
       }
 
-      .hero-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
+      @media (min-width: 992px) {
+        font-size: 1.125rem;
+      }
 
-        .btn {
-          min-width: 180px;
+      @media (min-width: 1200px) {
+        font-size: 1.1875rem;
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+
+      @media (min-width: 768px) {
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.625rem 1.5rem;
+        font-weight: 600;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 0.9375rem;
+
+        @media (min-width: 768px) {
+          padding: 0.75rem 2rem;
+          font-size: 1rem;
+        }
+      }
+
+      .btn-primary {
+        background-color: #0046be;
+        border-color: #0046be;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 70, 190, 0.3);
+
+        &:hover {
+          background-color: darken(#0046be, 8%);
+          border-color: darken(#0046be, 8%);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 70, 190, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 8px rgba(0, 70, 190, 0.3);
+        }
+      }
+
+      .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        color: #1a1a1a;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+
+        &:hover {
+          background-color: darken(#ffc107, 8%);
+          border-color: darken(#ffc107, 8%);
+          color: #1a1a1a;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
         }
       }
     }
   }
 
-  // Features Section
-  .features-section {
-    padding: 5rem 0;
-    background-color: $light;
+  // Why Sustainability Section
+  .why-sustainability {
+    background-color: white;
+    padding: 2rem 0;
+
+    @media (min-width: 768px) {
+      padding: 3rem 0;
+    }
+
+    @media (min-width: 992px) {
+      padding: 4rem 0;
+    }
+
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      @media (min-width: 768px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    > .container > .row > .col-lg-8 {
+      background-color: #fff9e6;
+      border: 2px solid #d4c5a0;
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
+
+      @media (min-width: 576px) {
+        padding: 1.75rem 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        padding: 2rem 1.75rem;
+        border-radius: 16px;
+      }
+
+      @media (min-width: 992px) {
+        padding: 2.5rem 2.25rem;
+      }
+    }
 
     .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
 
-      h2 {
-        font-size: clamp(2rem, 5vw, 2.5rem);
-        font-weight: 700;
-        color: $dark;
+      @media (min-width: 576px) {
+        font-size: 1.5rem;
       }
 
-      p {
-        color: rgba($dark, 0.7);
-        font-size: 1.125rem;
-        max-width: 600px;
-        margin: 0 auto;
+      @media (min-width: 768px) {
+        font-size: 1.75rem;
+        margin-bottom: 0.875rem;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 1.875rem;
       }
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    .section-description {
+      font-size: 0.875rem;
+      color: #4a4a4a;
+      line-height: 1.65;
 
-      @include respond-to(md) {
-        grid-template-columns: repeat(2, 1fr);
+      @media (min-width: 576px) {
+        font-size: 0.9375rem;
       }
 
-      @include respond-to(lg) {
-        grid-template-columns: repeat(3, 1fr);
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .btn-outline-custom {
+      padding: 0.5rem 1.25rem;
+      font-weight: 500;
+      border-radius: 4px;
+      border: 2px solid #1a1a1a;
+      color: #1a1a1a;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size: 0.875rem;
+
+      @media (min-width: 576px) {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9375rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+
+      &:hover {
+        background-color: #1a1a1a;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
       }
     }
   }
 
-  // Stats Section
-  .stats-section {
-    padding: 5rem 0;
+  // SMESRI Section
+  .smesri-section {
     background-color: white;
+    padding: 2rem 0;
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    @media (min-width: 768px) {
+      padding: 3rem 0;
+    }
 
-      @include respond-to(sm) {
-        grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 992px) {
+      padding: 4rem 0 3rem;
+    }
+
+    .smesri-header {
+      margin-bottom: 2rem;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    .smesri-content {
+      padding-right: 1rem;
+
+      @media (min-width: 768px) {
+        padding-right: 2rem;
+      }
+    }
+
+    .smesri-logos-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 767px) {
+        margin-top: 1.5rem;
+      }
+    }
+
+    .smesri-logos {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+
+      @media (min-width: 576px) {
+        gap: 0.625rem;
       }
 
-      @include respond-to(lg) {
-        grid-template-columns: repeat(4, 1fr);
+      @media (min-width: 768px) {
+        gap: 0.75rem;
+      }
+    }
+
+    .smesri-logo {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+
+      @media (min-width: 576px) {
+        height: 32px;
+      }
+
+      @media (min-width: 768px) {
+        height: 36px;
+      }
+
+      @media (min-width: 992px) {
+        height: 40px;
+      }
+    }
+
+    .section-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0;
+      line-height: 1.3;
+
+      @media (min-width: 576px) {
+        font-size: 1.625rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.875rem;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 2.25rem;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .smesri-text {
+      font-size: 0.875rem;
+      color: #4a4a4a;
+      line-height: 1.65;
+      margin-bottom: 0.875rem;
+
+      @media (min-width: 576px) {
+        font-size: 0.9375rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .module-card {
+      border-radius: 12px;
+      padding: 0;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(0, 0, 0, 0.12);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+
+      @media (min-width: 768px) {
+        border-radius: 16px;
+      }
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 0, 0, 0.18);
+      }
+
+      .card-body {
+        padding: 1.5rem 1.25rem;
+
+        @media (min-width: 576px) {
+          padding: 1.625rem 1.375rem;
+        }
+
+        @media (min-width: 768px) {
+          padding: 1.75rem 1.5rem;
+        }
+
+        @media (min-width: 992px) {
+          padding: 2rem 1.75rem;
+        }
+      }
+
+      .module-title {
+        font-size: 1.0625rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+
+        @media (min-width: 576px) {
+          font-size: 1.125rem;
+          margin-bottom: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 1.1875rem;
+        }
+
+        @media (min-width: 992px) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .module-description {
+        font-size: 0.8125rem;
+        color: #4a4a4a;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+
+        @media (min-width: 576px) {
+          font-size: 0.875rem;
+          margin-bottom: 1.125rem;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 0.9375rem;
+          margin-bottom: 1.25rem;
+        }
+      }
+
+      .module-link {
+        color: #0046be;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.8125rem;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+
+        @media (min-width: 576px) {
+          font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 0.9375rem;
+        }
+
+        &:hover {
+          color: darken(#0046be, 15%);
+          transform: translateX(3px);
+        }
       }
     }
   }
 
-  // CTA Section
-  .cta-section {
-    padding: 5rem 0;
-    background: linear-gradient(
-      135deg,
-      $primary 0%,
-      darken($primary, 10%) 100%
-    );
-    color: white;
-    text-align: center;
+  // FAQ Section
+  .faq-section {
+    background-color: white;
+    padding: 3rem 0 4rem;
 
-    h2 {
-      color: white;
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: 1.5rem;
+    @media (min-width: 768px) {
+      padding: 4rem 0 5rem;
     }
 
-    p {
-      font-size: 1.125rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      opacity: 0.95;
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .section-description {
+      font-size: 1rem;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    .faq-link {
+      color: #0046be;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: darken(#0046be, 15%);
+        text-decoration: underline;
+      }
     }
   }
 }

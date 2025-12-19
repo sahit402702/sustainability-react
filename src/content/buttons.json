@@ -2,6 +2,8 @@
   "cta": {
     "primary": "Get Started",
     "secondary": "Learn More",
+    "startCompliance": "Start your compliance journey",
+    "downloadTemplates": "Download templates",
     "explore": "Explore More",
     "download": "Download Report",
     "viewDetails": "View Details",
@@ -14,10 +16,14 @@
   },
   "navigation": {
     "home": "Home",
+    "whySustainability": "Why sustainability?",
     "sustainability": "Sustainability",
+    "checklist": "Checklist",
+    "resources": "Resources",
     "reporting": "Reporting",
     "caseStudies": "Case Studies",
-    "faqs": "FAQs"
+    "faqs": "FAQs",
+    "contactUs": "Contact us"
   },
   "filter": {
     "all": "All",

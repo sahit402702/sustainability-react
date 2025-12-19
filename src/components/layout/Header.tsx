@@ -24,7 +24,18 @@ const Header: React.FC = () => {
       <Navbar expand="lg" expanded={expanded} onToggle={setExpanded}>
         <Container>
           <Navbar.Brand as={Link} to={links.navigation.home} onClick={closeNav}>
-            <span className="fw-bold">🌱 Sustainability Portal</span>
+            <div className="d-flex align-items-center gap-2">
+              <img
+                src="assets/cognizant_logo.svg"
+                alt="Cognizant"
+                className="header-logo"
+              />
+              <img
+                src="assets/birkbeck_logo.svg"
+                alt="Birkbeck"
+                className="header-logo"
+              />
+            </div>
           </Navbar.Brand>
 
           <Navbar.Toggle
@@ -53,21 +64,21 @@ const Header: React.FC = () => {
                 to={links.navigation.sustainability}
                 onClick={closeNav}
               >
-                {buttons.navigation.sustainability}
+                {buttons.navigation.whySustainability}
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
-                to={links.navigation.reporting}
+                to={links.navigation.checklist}
                 onClick={closeNav}
               >
-                {buttons.navigation.reporting}
+                {buttons.navigation.checklist}
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
-                to={links.navigation.caseStudies}
+                to={links.navigation.resources}
                 onClick={closeNav}
               >
-                {buttons.navigation.caseStudies}
+                {buttons.navigation.resources}
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
@@ -75,6 +86,13 @@ const Header: React.FC = () => {
                 onClick={closeNav}
               >
                 {buttons.navigation.faqs}
+              </Nav.Link>
+              <Nav.Link
+                as={NavLink}
+                to={links.navigation.contactUs}
+                onClick={closeNav}
+              >
+                {buttons.navigation.contactUs}
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

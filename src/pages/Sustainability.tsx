@@ -1,151 +1,356 @@
-import React, { useState, useMemo } from "react";
-import { Container, Row, Col, Card, Button, Alert } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Card, Nav, Breadcrumb } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
-import QuestionCard from "@/components/common/QuestionCard";
-import ResultsPanel from "@/components/common/ResultsPanel";
-import questionnaireData from "@/content/questionnaire.json";
+import sustainabilityContent from "@/content/sustainability.json";
 
 const Sustainability: React.FC = () => {
-  const [answers, setAnswers] = useState<Record<string, boolean>>({});
-  const [showResults, setShowResults] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>("contracts");
 
-  const handleAnswer = (questionId: string, answer: boolean) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [questionId]: answer,
-    }));
-    if (!showResults) {
-      setShowResults(true);
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent, tab: string) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setActiveTab(tab);
     }
   };
-
-  const handleReset = () => {
-    setAnswers({});
-    setShowResults(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Calculate applicable clauses
-  const applicableClauses = useMemo(() => {
-    const clauses = new Set<string>();
-    
-    questionnaireData.categories.forEach((category) => {
-      category.questions.forEach((question) => {
-        if (answers[question.id] === true) {
-          clauses.add(question.clause);
-        }
-      });
-    });
-
-    return Array.from(clauses);
-  }, [answers]);
-
-  const totalQuestions = questionnaireData.categories.reduce(
-    (sum, category) => sum + category.questions.length,
-    0
-  );
-  const answeredQuestions = Object.keys(answers).length;
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "UK Government Procurement Sustainability Clauses Questionnaire",
-    description: "Interactive tool to identify applicable PPN 006, PPN 016, Joint Schedule 5, and Call-Off Schedule 25 clauses",
+    name: sustainabilityContent.pageTitle,
+    description: sustainabilityContent.introText[0],
   };
 
   return (
     <div className="sustainability-page">
       <SEO
-        title="UK Procurement Sustainability Assessment"
-        description="Interactive questionnaire to determine which UK government procurement sustainability clauses apply to your contract"
-        keywords="PPN 006, PPN 016, Joint Schedule 5, Call-Off Schedule 25, UK procurement, sustainability clauses, carbon reduction plan"
+        title="Sustainability Module"
+        description={sustainabilityContent.introText[0]}
+        keywords="sustainability, government contracts, CCS, procurement, schedules, frameworks"
         canonicalUrl="https://your-domain.com/sustainability"
         structuredData={structuredData}
       />
 
-      <section className="page-hero questionnaire-hero" aria-labelledby="sustainability-heading">
+      {/* Breadcrumb */}
+      <nav className="breadcrumb-section" aria-label="Breadcrumb">
         <Container>
-          <h1 id="sustainability-heading" className="display-4 mb-3">
-            UK Government Procurement Sustainability Assessment
-          </h1>
-          <p className="lead">
-            Answer the following questions to identify which sustainability clauses apply to your procurement contract
-          </p>
+          <Breadcrumb>
+            <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
+              Home
+            </Breadcrumb.Item>
+            <Breadcrumb.Item active aria-current="page">
+              {sustainabilityContent.pageTitle}
+            </Breadcrumb.Item>
+          </Breadcrumb>
+        </Container>
+      </nav>
+
+      {/* Page Header */}
+      <header className="page-header">
+        <Container>
+          <h1 className="page-title">{sustainabilityContent.pageTitle}</h1>
+
+          {sustainabilityContent.introText.map((text, index) => (
+            <p key={index} className="intro-text">
+              {text}
+            </p>
+          ))}
+
+          <Card
+            className="info-box"
+            role="region"
+            aria-label="Module information"
+          >
+            <Card.Body>
+              <p className="mb-0">{sustainabilityContent.infoBoxText}</p>
+            </Card.Body>
+          </Card>
+
+          <p className="section-intro">{sustainabilityContent.sectionIntro}</p>
+
+          <nav className="topic-links" aria-label="Jump to section">
+            <a href="#contracts" className="topic-link">
+              Contracts Terminology →
+            </a>
+            <a href="#definitions" className="topic-link">
+              Sustainability Definitions →
+            </a>
+            <a href="#legislations" className="topic-link">
+              Key Legislations →
+            </a>
+          </nav>
+        </Container>
+      </header>
+
+      {/* Tab Navigation */}
+      <section className="tabs-section" id="contracts">
+        <Container>
+          <Nav
+            variant="tabs"
+            className="custom-tabs"
+            role="tablist"
+            aria-label="Sustainability content tabs"
+          >
+            <Nav.Item role="presentation">
+              <Nav.Link
+                active={activeTab === "contracts"}
+                onClick={() => handleTabChange("contracts")}
+                onKeyDown={(e) => handleKeyDown(e, "contracts")}
+                role="tab"
+                aria-selected={activeTab === "contracts"}
+                aria-controls="contracts-content"
+                id="contracts-tab"
+              >
+                Contracts Terminology
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item role="presentation">
+              <Nav.Link
+                active={activeTab === "definitions"}
+                onClick={() => handleTabChange("definitions")}
+                onKeyDown={(e) => handleKeyDown(e, "definitions")}
+                role="tab"
+                aria-selected={activeTab === "definitions"}
+                aria-controls="definitions-content"
+                id="definitions-tab"
+              >
+                Sustainability Definitions
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item role="presentation">
+              <Nav.Link
+                active={activeTab === "legislations"}
+                onClick={() => handleTabChange("legislations")}
+                onKeyDown={(e) => handleKeyDown(e, "legislations")}
+                role="tab"
+                aria-selected={activeTab === "legislations"}
+                aria-controls="legislations-content"
+                id="legislations-tab"
+              >
+                Key Legislations
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
         </Container>
       </section>
 
-      <section className="questionnaire-section py-5">
+      {/* Content Section */}
+      <section className="content-section">
         <Container>
-          <Row>
-            <Col lg={8}>
-              <div className="questionnaire-intro mb-4">
-                <Alert variant="info">
-                  <Alert.Heading>How to Use This Assessment</Alert.Heading>
-                  <p className="mb-0">
-                    Answer each question based on your tender documents and procurement requirements. 
-                    The tool will automatically identify which clauses (PPN 006, PPN 016, Joint Schedule 5, 
-                    or Call-Off Schedule 25) apply to your contract.
-                  </p>
-                </Alert>
+          {activeTab === "contracts" && (
+            <div
+              className="tab-content-wrapper"
+              role="tabpanel"
+              id="contracts-content"
+              aria-labelledby="contracts-tab"
+            >
+              <h2 className="content-title">Contracts Terminology</h2>
+
+              <div className="definitions-list" role="list">
+                {sustainabilityContent.contractsTerminology.map(
+                  (item, index) => (
+                    <Card
+                      key={index}
+                      className="definition-card"
+                      role="listitem"
+                    >
+                      <Card.Body>
+                        <div
+                          className="definition-number"
+                          aria-label={`Definition ${index + 1}`}
+                        >
+                          {index + 1}
+                        </div>
+                        <h3 className="definition-title">{item.title}</h3>
+                        <p className="definition-description">
+                          {item.description}
+                        </p>
+                      </Card.Body>
+                    </Card>
+                  )
+                )}
               </div>
 
-              {questionnaireData.categories.map((category) => (
-                <div key={category.id} className="category-section mb-5">
-                  <Card className="category-header mb-3">
-                    <Card.Body>
-                      <div className="d-flex align-items-center">
-                        <span className="category-icon me-3">{category.icon}</span>
-                        <div>
-                          <h3 className="mb-1">{category.title}</h3>
-                          <p className="text-muted mb-0 small">{category.description}</p>
+              <div
+                className="section-note"
+                role="note"
+                aria-label="Important note about schedules"
+              >
+                {sustainabilityContent.contractsNote.map((note, index) => (
+                  <p key={index}>{note}</p>
+                ))}
+              </div>
+
+              <div
+                className="reporting-link-section"
+                role="region"
+                aria-label="Additional resources"
+              >
+                <p className="reporting-link-text">
+                  Further information on the content of schedules is detailed
+                  within the SMESRI{" "}
+                  <Link to="/reporting" className="inline-link">
+                    {sustainabilityContent.reportingModuleLinkText}
+                  </Link>
+                  . This includes tools and guidance to support your business
+                  fulfil its reporting and governance obligations if these
+                  optional conditions apply to your contract.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "definitions" && (
+            <div
+              className="tab-content-wrapper"
+              role="tabpanel"
+              id="definitions-content"
+              aria-labelledby="definitions-tab"
+            >
+              <h2 className="content-title">Sustainability Definitions</h2>
+
+              <div className="definitions-list" role="list">
+                {sustainabilityContent.sustainabilityDefinitions.map(
+                  (item, index) => (
+                    <Card
+                      key={index}
+                      className="definition-card"
+                      role="listitem"
+                    >
+                      <Card.Body>
+                        <div
+                          className="definition-number"
+                          aria-label={`Definition ${index + 1}`}
+                        >
+                          {index + 1}
                         </div>
+                        <h3 className="definition-title">{item.title}</h3>
+                        <div
+                          className="definition-description"
+                          dangerouslySetInnerHTML={{ __html: item.description }}
+                        />
+
+                        {item.scopes && (
+                          <div className="scopes-container">
+                            {item.scopes.map((scope, scopeIndex) => {
+                              const descriptions =
+                                scope.description.split("\n\n");
+                              return (
+                                <div key={scopeIndex} className="scope-section">
+                                  <h4 className="scope-title">
+                                    <a href={scope.link} className="scope-link">
+                                      {scope.title}
+                                    </a>
+                                  </h4>
+                                  {descriptions.map((desc, descIndex) => (
+                                    <p
+                                      key={descIndex}
+                                      className="scope-description"
+                                    >
+                                      {desc}
+                                    </p>
+                                  ))}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+
+                        {item.points && (
+                          <div className="points-list">
+                            {item.points.map((point, pointIndex) => (
+                              <p
+                                key={pointIndex}
+                                className="definition-description"
+                              >
+                                {String.fromCharCode(97 + pointIndex)}) {point}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                      </Card.Body>
+                    </Card>
+                  )
+                )}
+              </div>
+
+              <div
+                className="reporting-link-section"
+                role="region"
+                aria-label="Additional resources"
+              >
+                <p className="reporting-link-text">
+                  {sustainabilityContent.definitionsNote}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "legislations" && (
+            <div
+              className="tab-content-wrapper"
+              role="tabpanel"
+              id="legislations-content"
+              aria-labelledby="legislations-tab"
+            >
+              <h2 className="content-title">Key Legislation</h2>
+
+              <div className="legislation-list" role="list">
+                {sustainabilityContent.keyLegislation.map((item, index) => (
+                  <Card
+                    key={index}
+                    className="legislation-card"
+                    role="listitem"
+                  >
+                    <Card.Body>
+                      <div
+                        className="legislation-number"
+                        aria-label={`Legislation ${index + 1}`}
+                      >
+                        {index + 1}
                       </div>
+                      <h3 className="legislation-title">{item.title}</h3>
+                      <p className="legislation-description">
+                        {item.description}
+                      </p>
+                      <a
+                        href={item.link}
+                        className="legislation-link"
+                        aria-label={`Learn more about ${item.title}`}
+                      >
+                        Learn more about {item.title} →
+                      </a>
                     </Card.Body>
                   </Card>
-
-                  {category.questions.map((question) => (
-                    <QuestionCard
-                      key={question.id}
-                      id={question.id}
-                      question={question.question}
-                      impact={question.impact}
-                      clause={question.clause}
-                      answer={answers[question.id] ?? null}
-                      onAnswer={handleAnswer}
-                    />
-                  ))}
-                </div>
-              ))}
-
-              {answeredQuestions > 0 && (
-                <div className="text-center mt-4">
-                  <Button
-                    variant="outline-secondary"
-                    size="lg"
-                    onClick={handleReset}
-                  >
-                    Reset Assessment
-                  </Button>
-                </div>
-              )}
-            </Col>
-
-            <Col lg={4}>
-              <div className="sticky-results">
-                <ResultsPanel
-                  applicableClauses={applicableClauses}
-                  clauseDetails={questionnaireData.clauses}
-                  totalQuestions={totalQuestions}
-                  answeredQuestions={answeredQuestions}
-                />
+                ))}
               </div>
-            </Col>
-          </Row>
+
+              <div
+                className="reporting-link-section"
+                role="region"
+                aria-label="Additional resources"
+              >
+                <p className="reporting-link-text">
+                  {sustainabilityContent.legislationNote}
+                </p>
+              </div>
+            </div>
+          )}
         </Container>
       </section>
+
+      {/* Footer Yellow Bar */}
+      <div
+        className="page-footer-bar"
+        role="presentation"
+        aria-hidden="true"
+      ></div>
     </div>
   );
 };
 
 export default Sustainability;
-

@@ -1,0 +1,139 @@
+{
+  "pageTitle": "Sustainability module",
+  "introText": [
+    "Sustainability has become a fundamental requirement for government contracts, reflecting the UK government's ambitious commitment to achieve net zero by 2050.",
+    "By fulfilling these obligations, SMEs not only comply with legal requirements but also contribute to critical environmental goals, enhancing their reputation and competitive positioning."
+  ],
+  "infoBoxText": "In this module, you will find the essential background knowledge and key schedule documents that form the foundation of the government's sustainability regulations for public sector contracts.",
+  "sectionIntro": "In this section, the definitions and background knowledge required to understand these key government standards are provided. First and foremost: what are procurement schedules? And how do they relate to the Crown Commercial Service, framework agreements, and the Public Sector Contract which underpins the end-to-end procurement process?",
+  "contractsTerminology": [
+    {
+      "title": "Crown Commercial Service (CCS)",
+      "description": "A government executive agency responsible for managing the procurement of goods and services for public sector organisations through published frame-works and standards for buyers (public sector departments)and suppliers (contractors)."
+    },
+    {
+      "title": "CCS Frameworks",
+      "description": "Provide a compliant, often industry specific, way for public sector offices to buy products or services from a pool of approved suppliers."
+    },
+    {
+      "title": "Call-Offs",
+      "description": "A contract between a buyer (a government office) and a framework supplier (SMEs) that has been placed through a framework."
+    },
+    {
+      "title": "Schedules",
+      "description": "Any attachment to the Contract which contains important information specific to each aspect of buying and selling within the public sector."
+    },
+    {
+      "title": "The Public Sector Contact (PSC)",
+      "description": "The Crown Commercial Service's (CCS) standard terms and conditions for its contracting agreements. It sets the legal conditions for both a framework contract and any call-off contracts being formed beneath it."
+    },
+    {
+      "title": "Procurement Policy Notes (PPNs)",
+      "description": "Published guidance/ documentation used to communicate new policies to be applied to public procurement activities and to support practical implementation."
+    },
+    {
+      "title": "Call-Off Schedules",
+      "description": "A schedule that forms part of the Call off contract, exclusively focusing on the relationship between the buyer and the supplier."
+    },
+    {
+      "title": "Joint Schedules",
+      "description": "A schedule that focuses on the relationship between Crown Commercial Service or the buyer and the supplier and provide contractual assurance that the supplier will meet their contractual obligations."
+    }
+  ],
+  "contractsNote": [
+    "It's important to note that adoption of schedules are optional, and if applicable, will be applied proportionately to a contract's size and delivery method. It is essential to understand which relevant schedules have been applied to your contract before planning or implementing sustainability performance plans.",
+    "Each of the primary sustainability schedules demand a prerequisite understanding of several key terms on sustainability measures that you will be required to know in order to fulfil the contractual obligations. Toggle the dropdown to view the relevant definitions."
+  ],
+  "sustainabilityDefinitions": [
+    {
+      "title": "Carbon Footprint",
+      "description": "The sum of greenhouse gas (GHG) emissions from an individual, product, organisation or country, measured in tonnes of carbon dioxide-equivalent (tCO2e)."
+    },
+    {
+      "title": "Contract Carbon Footprint",
+      "description": "The GHG emissions resulting from the execution of the contract as described by the <a href=\"#\" class=\"inline-link\">GHG Protocol Corporate Standard</a>."
+    },
+    {
+      "title": "Carbon Reduction Plan (CRP)",
+      "description": "A strategy that demonstrates how an organisation is committed to reaching net zero by 2050 in line with the Government's ambitions."
+    },
+    {
+      "title": "Emissions Reduction Target (ERT)",
+      "description": "The target for emissions reduction for each year of the contract, expressed as a percentage."
+    },
+    {
+      "title": "Reporting Scopes",
+      "description": "The following categories of GHG emissions:",
+      "scopes": [
+        {
+          "title": "Scope 1 Emissions:",
+          "description": "GHG emissions that come from the supplier directly, e.g. from burning fuel in vehicles or boilers that the supplier owns.",
+          "link": "#"
+        },
+        {
+          "title": "Scope 2 Emissions:",
+          "description": "GHG emissions from the supplier's use of electricity.",
+          "link": "#"
+        },
+        {
+          "title": "Scope 3 Emissions:",
+          "description": "Scope 3 is broken down into 15 sub-categories, including emissions associated with the goods and services you buy, financial services such as investments, and others such as waste or transportation.\n\nThere are five Scope 3 categories included in the reporting for a supplier's CRP: upstream transportation and distribution, waste generated in operations, business travel, employee commuting, and downstream transportation and distribution.",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "title": "Net Zero",
+      "description": "A scenario in which the amount of GHG emissions released into the atmosphere are balanced by the amount of GHG emissions removed."
+    },
+    {
+      "title": "Supplier Net Zero Target",
+      "description": "The date by which a supplier commits to achieving net zero."
+    },
+    {
+      "title": "Supply Chain Map",
+      "description": "Details of the Supplier and (iii) all Subcontractors and (iii) any other entity that the Supplier is aware is in its supply chain that is not a Subcontractor, setting out at least:",
+      "points": [
+        "The name, registered office and company registration number of each entity in the supply chain;",
+        "The function of each entity in the supply chain; and",
+        "The location of any premises at which an entity in the supply chain carries out a function in the supply chain."
+      ]
+    },
+    {
+      "title": "Waste Hierarchy",
+      "description": "Means prioritisation of waste management in the following order of preference as set out in the Waste(England and Wales) Regulation 2011:",
+      "points": [
+        "Prevention",
+        "Preparing for re-use",
+        "Recycling",
+        "Other Recovery; and",
+        "Disposal"
+      ]
+    }
+  ],
+  "definitionsNote": "Central to this framework are key schedule documents that set out the sustainability commitments required as part of your contract. These schedules define the level of sustainability obligations you will need to meet if they are included by the buyer.",
+  "keyLegislation": [
+    {
+      "title": "PPN 016 Carbon Reduction Schedule",
+      "description": "PPN016 contains terms and conditions to support contract specific decarbonisation objectives, including greenhouse gas emissions reduction targets and reporting requirements. Introduced in February 2025, this is the most recent, extensive and relevant piece of sustainability legislation likely to influence contracts across a wide range of departments and industries.",
+      "link": "#"
+    },
+    {
+      "title": "Joint Schedule 5",
+      "description": "JS5 explains the regulations suppliers must follow regarding responsibilities across their delivery supply chain. It includes mandatory commitments on modern slavery and may also include optional commitments related to environmental standards and achieving net zero, depending on the contract.",
+      "link": "#"
+    },
+    {
+      "title": "Call-Off Schedule 25",
+      "description": "CS25 requires suppliers to prioritise waste management in line with the waste hierarchy. It also includes a wide range of optional clauses covering responsible sourcing of supply chain materials and reporting obligations.",
+      "link": "#"
+    },
+    {
+      "title": "Call-Off Schedule 26",
+      "description": "CS26 focuses on reducing the supplier's carbon footprint throughout delivery. It may require full annual reporting of greenhouse gas (GHG) emissions and commitments to supporting the buyer's net zero targets.",
+      "link": "#"
+    }
+  ],
+  "legislationNote": "Further information on the content of these four primary schedules is detailed within the SMESRI Reporting Module. This includes tools and guidance to support your business fulfil its reporting and governance obligations if these optional conditions apply to your contract.",
+  "reportingModuleLinkText": "Reporting Module"
+}

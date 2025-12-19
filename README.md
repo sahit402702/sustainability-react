@@ -1,18 +1,18 @@
-# Sustainability React Application
+# Sustainability Portal
 
-A modern, accessible React web application built with **TypeScript**, mobile-first responsive design, featuring sustainability reporting, case studies, and environmental impact tracking. All content is organized in JSON files for easy updates without touching code.
+A modern, accessible React web application for SME sustainability compliance and reporting for UK public sector contracts. Built with TypeScript, featuring mobile-first responsive design with all content managed through JSON files.
 
 ## 🌟 Features
 
-- **TypeScript** - Full type safety with interfaces and strict checking
-- **JSON Content Management** - All content organized in category-based JSON files
-- **Reusable Components** - Component library with 8+ reusable TypeScript components
+- **TypeScript** - Full type safety with strict checking
+- **JSON Content Management** - All content organized in JSON files for easy updates
+- **Reusable Components** - Component library with 10+ reusable TypeScript components
 - **Mobile-First Responsive Design** - Built with Bootstrap 5 for seamless experience across all devices
 - **Accessibility Compliant** - WCAG 2.1 AA compliant with semantic HTML and ARIA attributes
-- **Component-Based SCSS** - Modular, maintainable styles with clear separation of concerns
-- **React Router Integration** - Client-side routing for smooth navigation
-- **SEO Optimized** - Dynamic meta tags, structured data, sitemap, and robots.txt
-- **Azure Static Web Apps Ready** - Configured for easy deployment to Azure
+- **Component-Based SCSS** - Modular, maintainable styles
+- **React Router** - Client-side routing for smooth navigation
+- **SEO Optimized** - Dynamic meta tags and structured data
+- **Azure Static Web Apps Ready** - Configured for easy deployment
 
 ## 🚀 Tech Stack
 
@@ -23,17 +23,16 @@ A modern, accessible React web application built with **TypeScript**, mobile-fir
 - **React Router 6.28** - Client-side routing
 - **React Helmet Async** - Dynamic SEO meta tags
 - **Sass** - Advanced CSS preprocessing
-- **Azure Static Web Apps** - Cloud hosting platform
 
 ## 📁 Project Structure
 
 ```
 sustainability-react/
 ├── public/              # Static assets
-│   ├── robots.txt       # SEO crawler instructions
-│   └── sitemap.xml      # Site structure for search engines
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── src/
-│   ├── components/      # TypeScript components
+│   ├── components/
 │   │   ├── common/      # Reusable components
 │   │   │   ├── PageHeader.tsx
 │   │   │   ├── FilterButtons.tsx
@@ -42,61 +41,52 @@ sustainability-react/
 │   │   │   ├── CaseStudyCard.tsx
 │   │   │   ├── FeatureCard.tsx
 │   │   │   ├── GoalCard.tsx
-│   │   │   └── StatCard.tsx
-│   │   ├── layout/      # Layout components
+│   │   │   ├── StatCard.tsx
+│   │   │   ├── QuestionCard.tsx
+│   │   │   └── ResultsPanel.tsx
+│   │   ├── layout/
 │   │   │   ├── Header.tsx
 │   │   │   └── Footer.tsx
-│   │   └── SEO.tsx      # SEO component with structured data
-│   ├── content/         # JSON content files (EDIT THESE!)
-│   │   ├── buttons.json      # Button labels & navigation
-│   │   ├── headings.json     # Page titles & subtitles
-│   │   ├── links.json        # URLs & navigation routes
-│   │   ├── faqs.json         # FAQ questions & answers
-│   │   ├── reports.json      # Reports data & stats
-│   │   ├── caseStudies.json  # Case studies
-│   │   ├── goals.json        # Sustainability goals
-│   │   └── initiatives.json  # Key initiatives
-│   ├── pages/           # TypeScript page components
+│   │   └── SEO.tsx
+│   ├── content/         # JSON content files
+│   │   ├── sustainability.json  # Sustainability module content
+│   │   ├── faqs.json            # FAQ sections
+│   │   ├── questionnaire.json   # Reporting questionnaire
+│   │   ├── buttons.json
+│   │   ├── headings.json
+│   │   ├── links.json
+│   │   ├── reports.json
+│   │   ├── caseStudies.json
+│   │   ├── goals.json
+│   │   └── initiatives.json
+│   ├── pages/           # Page components
 │   │   ├── Landing.tsx
-│   │   ├── FAQs.tsx
 │   │   ├── Sustainability.tsx
 │   │   ├── Reporting.tsx
-│   │   └── CaseStudy.tsx
+│   │   ├── CaseStudy.tsx
+│   │   └── FAQs.tsx
 │   ├── styles/          # SCSS stylesheets
 │   │   ├── abstracts/   # Variables, mixins
 │   │   ├── base/        # Reset, typography
 │   │   ├── components/  # Component styles
-│   │   ├── layout/      # Layout styles
+│   │   ├── layout/      # Header, footer
 │   │   ├── pages/       # Page-specific styles
-│   │   └── main.scss    # Main entry point
-│   ├── App.tsx          # Root component (TypeScript)
-│   └── main.tsx         # Application entry point (TypeScript)
-├── .github/
-│   └── workflows/       # GitHub Actions for CI/CD
-├── index.html           # HTML entry point
-├── vite.config.ts       # Vite configuration (TypeScript)
-├── tsconfig.json        # TypeScript configuration
-├── package.json         # Dependencies and scripts
-└── staticwebapp.config.json  # Azure SWA configuration
+│   │   └── main.scss
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── vite.config.ts
+├── tsconfig.json
+├── package.json
+└── staticwebapp.config.json
 ```
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
 
-- **Node.js 18+** (required for Vite)
+- **Node.js 18+**
 - npm or yarn
-
-⚠️ **Important**: Node.js v18 or higher is required. If you're using an older version, please upgrade:
-
-```bash
-# Using nvm (recommended)
-nvm install 18
-nvm use 18
-
-# Or download from nodejs.org
-# https://nodejs.org/en/download/
-```
 
 ### Installation
 
@@ -119,7 +109,7 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open browser at `http://localhost:3000`
 
 ## 📜 Available Scripts
 
@@ -129,46 +119,51 @@ npm run dev
 
 ## 📝 Updating Content
 
-All content is stored in JSON files in `/src/content/`. Edit these files to update content without touching component code:
+All content is stored in JSON files in `/src/content/`. Edit these files to update content without modifying components:
 
 ### Content Files
 
-- **`buttons.json`** - Button labels, navigation text, CTA text
-- **`headings.json`** - Page titles, subtitles, section headings for all pages
-- **`links.json`** - Social media URLs, navigation routes, footer links
-- **`faqs.json`** - FAQ categories and question/answer pairs
-- **`reports.json`** - Sustainability reports, statistics, filter options
-- **`caseStudies.json`** - Case study details with categories and filters
-- **`goals.json`** - Sustainability goals with icons and targets
-- **`initiatives.json`** - Key initiatives with descriptions and impact
+- **`sustainability.json`** - All sustainability module content (contracts terminology, definitions, legislation)
+- **`faqs.json`** - FAQ sections and page content
+- **`questionnaire.json`** - Reporting questionnaire sections and questions
+- **`buttons.json`** - Button labels and navigation text
+- **`headings.json`** - Page titles and subtitles
+- **`links.json`** - Navigation routes
+- **`reports.json`** - Reports data
+- **`caseStudies.json`** - Case studies
+- **`goals.json`** - Sustainability goals
+- **`initiatives.json`** - Key initiatives
 
-### Example: Updating a Button Label
+### Example: Updating Sustainability Content
 
-Edit `/src/content/buttons.json`:
+Edit `/src/content/sustainability.json`:
 
 ```json
 {
-  "cta": {
-    "primary": "Get Started", // Change this text
-    "secondary": "Learn More"
-  }
+  "pageTitle": "Sustainability module",
+  "contractsTerminology": [
+    {
+      "title": "Crown Commercial Service (CCS)",
+      "description": "Description here..."
+    }
+  ]
 }
 ```
 
 ## 🧩 Reusable Components
 
-The application includes TypeScript components with full type safety:
+TypeScript components with full type safety:
 
-### Common Components (`/src/components/common/`)
-
-- **PageHeader** - Reusable page title/subtitle
-- **FilterButtons** - Generic filter button group
-- **AccordionList** - FAQ accordion component
-- **ReportCard** - Report display card
-- **CaseStudyCard** - Case study display card
-- **FeatureCard** - Feature highlight card
-- **GoalCard** - Sustainability goal card
-- **StatCard** - Statistics display card
+- **PageHeader** - Page title/subtitle
+- **FilterButtons** - Filter button group
+- **AccordionList** - FAQ accordion
+- **ReportCard** - Report display
+- **CaseStudyCard** - Case study display
+- **FeatureCard** - Feature highlight
+- **GoalCard** - Sustainability goal
+- **StatCard** - Statistics display
+- **QuestionCard** - Questionnaire question
+- **ResultsPanel** - Assessment results
 
 ### Usage Example
 
@@ -184,70 +179,49 @@ import headings from "@/content/headings.json";
 
 ## 🔍 SEO Features
 
-- **Dynamic Meta Tags** - Page-specific SEO with react-helmet-async
-- **Structured Data** - JSON-LD for rich search results
-- **Sitemap** - XML sitemap at `/public/sitemap.xml`
-- **Robots.txt** - Crawler instructions at `/public/robots.txt`
-- **Open Graph** - Social media preview tags
-- **Twitter Cards** - Twitter-specific meta tags
+- Dynamic meta tags with react-helmet-async
+- Structured data (JSON-LD)
+- XML sitemap
+- Robots.txt
+- Open Graph tags
+- Twitter Cards
 
-## 🎨 Styling Architecture
+## 🎨 Styling
 
-The application uses a modular SCSS architecture with Bootstrap 5 customization:
+Modular SCSS architecture with Bootstrap 5:
 
-### Abstracts
+- **Abstracts**: Variables, mixins
+- **Base**: Reset, typography
+- **Components**: Button, card, form styles
+- **Layout**: Header, footer
+- **Pages**: Page-specific styles
 
-- `_variables.scss` - Global variables, colors ($primary: #2C5F2D, $secondary: #97BC62), spacing
-- `_mixins.scss` - Reusable mixins for common patterns
+## 💻 TypeScript
 
-### Base
-
-- `_reset.scss` - CSS reset and base styles
-- `_typography.scss` - Typography system
-
-### Components
-
-- Component-specific styles (buttons, cards, forms)
-
-### Layout
-
-- `_header.scss` - Header/navigation styles
-- `_footer.scss` - Footer styles
-
-### Pages
-
-- Page-specific styles for each route
-
-## 💻 TypeScript Features
-
-- **Strict Type Checking** - Enabled for maximum type safety
-- **Interfaces** - All components have typed props
-- **Path Aliases** - Clean imports with `@/` prefix
-- **Type Definitions** - Full IntelliSense support
+- Strict type checking
+- Typed component props
+- Path aliases (`@/`)
+- Full IntelliSense support
 
 ### Path Aliases
 
 ```typescript
-import SEO from "@/components/SEO"; // Instead of '../../components/SEO'
-import headings from "@/content/headings.json"; // Instead of '../../content/headings.json'
+import SEO from "@/components/SEO";
+import headings from "@/content/headings.json";
 ```
 
-## ♿ Accessibility Features
+## ♿ Accessibility
 
-- Semantic HTML5 elements
+- Semantic HTML5
 - ARIA labels and roles
-- Keyboard navigation support
-- Focus visible indicators
-- Skip to main content link
-- Alt text for images
+- Keyboard navigation
+- Focus indicators
+- Screen reader support
 - Color contrast compliance
-- Screen reader friendly
 
-## 📱 Mobile-First Approach
+## 📱 Responsive Breakpoints
 
-Breakpoints:
-
-- xs: 0px (base styles)
+- xs: 0px (base)
 - sm: 576px
 - md: 768px
 - lg: 992px
@@ -258,48 +232,19 @@ Breakpoints:
 
 ### Automatic Deployment
 
-The project is configured with GitHub Actions for automatic deployment to Azure Static Web Apps:
-
-1. Push code to `main` branch
-2. GitHub Actions automatically builds and deploys
-3. Access your app at the Azure-provided URL
+GitHub Actions automatically builds and deploys on push to `main` branch.
 
 ### Manual Deployment
 
-1. Build the project:
-
 ```bash
 npm run build
+# Deploy the dist/ folder to Azure Static Web Apps
 ```
-
-2. Deploy the `dist` folder to Azure Static Web Apps
-
-## 🌍 Environment Variables
-
-Create a `.env` file in the root directory for environment-specific configurations:
-
-```env
-VITE_API_URL=your_api_url_here
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License
 
-## 👥 Authors
+---
 
-- Your Team Name
-
-## 🙏 Acknowledgments
-
-- Bootstrap team for the excellent CSS framework
-- React team for the amazing library
-- Vite team for the blazing-fast build tool
+Built for SME sustainability compliance with UK public sector contracts.

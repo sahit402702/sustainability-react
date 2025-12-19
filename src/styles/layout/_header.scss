@@ -1,61 +1,208 @@
 // Header Component Styles
 
+@keyframes shine {
+  0%,
+  100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .header {
-  background-color: white;
-  box-shadow: $box-shadow-sm;
+  background: linear-gradient(135deg, #0046be 0%, #0056d6 50%, #0046be 100%);
+  box-shadow: 0 2px 8px rgba(0, 70, 190, 0.15);
   position: sticky;
   top: 0;
   z-index: 1030;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+    animation: shine 12s infinite;
+    pointer-events: none;
+  }
 
   &.scrolled {
-    box-shadow: $box-shadow;
+    background: linear-gradient(135deg, #003d9e 0%, #004db8 50%, #003d9e 100%);
+    box-shadow: 0 4px 20px rgba(0, 70, 190, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .navbar {
+    padding: 1rem 0;
   }
 
   .navbar-brand {
-    font-weight: 700;
-    color: $primary;
-    font-size: 1.5rem;
+    padding: 0;
+    position: relative;
+    transition: transform 0.3s ease;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 
-    @include hover-transition {
-      color: darken($primary, 10%);
-      transform: scale(1.02);
+    @media (max-width: 991px) {
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    .d-flex {
+      gap: 0.5rem;
+
+      @media (max-width: 991px) {
+        gap: 0.3rem;
+      }
+    }
+
+    .header-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      transition: all 0.3s ease;
+
+      @media (max-width: 991px) {
+        height: 24px;
+      }
+
+      @media (max-width: 480px) {
+        height: 22px;
+      }
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
   }
 
   .nav-link {
     position: relative;
-    padding: 0.5rem 1rem;
-    color: $dark;
+    padding: 0.625rem 1.25rem;
+    color: white;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 0.25rem;
+    text-decoration: none;
+    background: transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background-color: $primary;
-      transition: width 0.3s ease;
+      bottom: 4px;
+      left: 1.25rem;
+      right: 1.25rem;
+      height: 3px;
+      background: linear-gradient(90deg, #ffb733 0%, #ffa500 100%);
+      border-radius: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 10px rgba(255, 165, 0, 0.5);
+      pointer-events: none;
     }
 
     &:hover,
     &:focus {
-      color: $primary;
+      color: white;
+      background: transparent;
+      transform: translateY(-2px);
+      text-decoration: none;
+
+      &::before {
+        opacity: 0;
+      }
 
       &::after {
-        width: 80%;
+        transform: scaleX(1);
       }
     }
 
     &.active {
-      color: $primary;
+      color: white;
+      font-weight: 600;
+      background: transparent;
+      text-decoration: none;
+
+      &::before {
+        opacity: 0;
+      }
 
       &::after {
-        width: 80%;
+        transform: scaleX(1);
+        background: linear-gradient(90deg, #ffb733 0%, #ffa500 100%);
       }
     }
 
@@ -64,11 +211,20 @@
 
   // Mobile menu toggle
   .navbar-toggler {
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
 
     &:focus {
-      box-shadow: none;
+      box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.3);
     }
 
     @include focus-visible;
@@ -80,11 +236,46 @@
   }
 
   // Mobile menu
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      background: linear-gradient(135deg, #003d9e 0%, #004db8 100%);
+      padding: 1.5rem;
+      margin-top: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: slideDown 0.3s ease-out;
+
+      .nav-link {
+        margin: 0.25rem 0;
+        padding: 0.875rem 1.25rem;
+        border-radius: 8px;
+
+        &::after {
+          left: 1rem;
+          right: auto;
+          width: 3px;
+          height: calc(100% - 1.75rem);
+          top: 0.875rem;
+          bottom: auto;
+          border-radius: 3px;
+          transform: scaleY(0);
+          transform-origin: top;
+        }
+
+        &:hover::after,
+        &.active::after {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+
   @include respond-to(md) {
     .navbar-collapse {
       .navbar-nav {
         flex-direction: row;
-        gap: 0.5rem;
+        gap: 0;
       }
     }
   }
