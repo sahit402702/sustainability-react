@@ -323,7 +323,10 @@ const CarbonCalculator: React.FC = () => {
                     <div className="category-tip mt-4">
                       <div className="tip-icon">💡</div>
                       <div className="tip-content">
-                        <strong>Quick Tip:</strong> The average UK household uses about 350 kWh of electricity and 500 kWh of gas per month. Switching to renewable energy tariffs can significantly reduce your Scope 2 emissions.
+                        <strong>Quick Tip:</strong> The average UK household
+                        uses about 350 kWh of electricity and 500 kWh of gas per
+                        month. Switching to renewable energy tariffs can
+                        significantly reduce your Scope 2 emissions.
                       </div>
                     </div>
                   </div>
@@ -430,7 +433,11 @@ const CarbonCalculator: React.FC = () => {
                     <div className="category-tip mt-4">
                       <div className="tip-icon">🚲</div>
                       <div className="tip-content">
-                        <strong>Did you know?</strong> Electric vehicles produce about 70% fewer emissions than petrol cars, while trains and buses are even more efficient per passenger mile. Consider carpooling or public transport for regular commutes.
+                        <strong>Did you know?</strong> Electric vehicles produce
+                        about 70% fewer emissions than petrol cars, while trains
+                        and buses are even more efficient per passenger mile.
+                        Consider carpooling or public transport for regular
+                        commutes.
                       </div>
                     </div>
                   </div>
@@ -492,7 +499,10 @@ const CarbonCalculator: React.FC = () => {
                     <div className="category-tip mt-4">
                       <div className="tip-icon">♻️</div>
                       <div className="tip-content">
-                        <strong>Reduce Impact:</strong> Recycling actually reduces emissions compared to landfill! Composting organic waste cuts methane emissions. Aim to reduce landfill waste and increase recycling and composting.
+                        <strong>Reduce Impact:</strong> Recycling actually
+                        reduces emissions compared to landfill! Composting
+                        organic waste cuts methane emissions. Aim to reduce
+                        landfill waste and increase recycling and composting.
                       </div>
                     </div>
                   </div>
@@ -510,7 +520,9 @@ const CarbonCalculator: React.FC = () => {
                         <span className="mini-tip-icon">⚡</span>
                         <div>
                           <strong>Renewable Energy</strong>
-                          <p className="small mb-0">Switch to green tariffs to cut Scope 2 emissions</p>
+                          <p className="small mb-0">
+                            Switch to green tariffs to cut Scope 2 emissions
+                          </p>
                         </div>
                       </div>
                     </Col>
@@ -519,7 +531,9 @@ const CarbonCalculator: React.FC = () => {
                         <span className="mini-tip-icon">🚲</span>
                         <div>
                           <strong>Public Transport</strong>
-                          <p className="small mb-0">Trains and buses emit less per passenger</p>
+                          <p className="small mb-0">
+                            Trains and buses emit less per passenger
+                          </p>
                         </div>
                       </div>
                     </Col>
@@ -528,7 +542,9 @@ const CarbonCalculator: React.FC = () => {
                         <span className="mini-tip-icon">♻️</span>
                         <div>
                           <strong>Reduce & Recycle</strong>
-                          <p className="small mb-0">Minimize landfill to cut Scope 3 emissions</p>
+                          <p className="small mb-0">
+                            Minimize landfill to cut Scope 3 emissions
+                          </p>
                         </div>
                       </div>
                     </Col>
@@ -537,7 +553,9 @@ const CarbonCalculator: React.FC = () => {
                         <span className="mini-tip-icon">🏠</span>
                         <div>
                           <strong>Home Efficiency</strong>
-                          <p className="small mb-0">Better insulation reduces energy use</p>
+                          <p className="small mb-0">
+                            Better insulation reduces energy use
+                          </p>
                         </div>
                       </div>
                     </Col>
