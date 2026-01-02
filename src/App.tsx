@@ -7,6 +7,7 @@ import FAQs from "./pages/FAQs";
 import Sustainability from "./pages/Sustainability";
 import Reporting from "./pages/Reporting";
 import CaseStudy from "./pages/CaseStudy";
+import CarbonCalculator from "./pages/CarbonCalculator";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/reporting" element={<Reporting />} />
           <Route path="/case-studies" element={<CaseStudy />} />
+          <Route path="/carbon-calculator" element={<CarbonCalculator />} />
         </Routes>
       </main>
       <Footer />

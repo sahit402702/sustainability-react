@@ -80,6 +80,9 @@ const Header: React.FC = () => {
               >
                 {buttons.navigation.resources}
               </Nav.Link>
+              <Nav.Link as={NavLink} to="/carbon-calculator" onClick={closeNav}>
+                Calculator
+              </Nav.Link>
               <Nav.Link
                 as={NavLink}
                 to={links.navigation.faqs}

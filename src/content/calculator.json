@@ -1,0 +1,138 @@
+{
+  "pageTitle": "Carbon Emission Calculator",
+  "pageDescription": "Calculate your carbon footprint using official UK Government GHG conversion factors (2025). Track emissions from energy, transport, and waste activities.",
+  "categories": {
+    "energy": {
+      "title": "Energy Consumption",
+      "icon": "⚡",
+      "description": "Enter your annual energy consumption in kilowatt-hours (kWh). Check your utility bills for accurate data.",
+      "fields": {
+        "electricity": {
+          "label": "💡 Electricity (kWh/year)",
+          "placeholder": "e.g., 3500",
+          "helpText": "UK average: ~2,900 kWh/year per household"
+        },
+        "naturalGas": {
+          "label": "🔥 Natural Gas (kWh/year)",
+          "placeholder": "e.g., 12000",
+          "helpText": "UK average: ~12,000 kWh/year per household"
+        },
+        "heating": {
+          "label": "🛢️ Heating Oil (kWh/year)",
+          "placeholder": "e.g., 8000",
+          "helpText": "If applicable (rural properties)"
+        }
+      }
+    },
+    "transport": {
+      "title": "Transportation",
+      "icon": "🚗",
+      "description": "Enter your annual travel distance in miles for each transport mode.",
+      "fields": {
+        "carPetrol": {
+          "label": "🚗 Petrol Car (miles/year)",
+          "placeholder": "e.g., 8000",
+          "helpText": "Average car: 7,400 miles/year"
+        },
+        "carDiesel": {
+          "label": "🚙 Diesel Car (miles/year)",
+          "placeholder": "e.g., 10000",
+          "helpText": ""
+        },
+        "carElectric": {
+          "label": "🔌 Electric Car (miles/year)",
+          "placeholder": "e.g., 6000",
+          "helpText": "72% lower emissions vs petrol"
+        },
+        "train": {
+          "label": "🚆 Train (miles/year)",
+          "placeholder": "e.g., 2000",
+          "helpText": "79% lower emissions vs car"
+        },
+        "bus": {
+          "label": "🚌 Bus (miles/year)",
+          "placeholder": "e.g., 1500",
+          "helpText": ""
+        },
+        "flight": {
+          "label": "✈️ Flight (miles/year)",
+          "placeholder": "e.g., 3000",
+          "helpText": "Domestic flights only"
+        }
+      }
+    },
+    "waste": {
+      "title": "Waste Management",
+      "icon": "♻️",
+      "description": "Enter your annual waste production in tonnes. Recycling helps reduce emissions!",
+      "fields": {
+        "landfill": {
+          "label": "🗑️ Landfill Waste (tonnes/year)",
+          "placeholder": "e.g., 0.5",
+          "helpText": "UK average: ~0.4 tonnes/person/year"
+        },
+        "recycling": {
+          "label": "♻️ Recycled Waste (tonnes/year)",
+          "placeholder": "e.g., 0.3",
+          "helpText": "Saves carbon emissions! ✓",
+          "positive": true
+        },
+        "compost": {
+          "label": "🌱 Composted Waste (tonnes/year)",
+          "placeholder": "e.g., 0.1",
+          "helpText": "Garden and food waste"
+        }
+      }
+    }
+  },
+  "tips": {
+    "title": "💡 Tips to Reduce Your Carbon Footprint",
+    "sections": [
+      {
+        "icon": "⚡",
+        "title": "Energy Efficiency",
+        "items": [
+          "Switch to LED bulbs",
+          "Improve home insulation",
+          "Use smart thermostats",
+          "Choose renewable energy tariffs"
+        ]
+      },
+      {
+        "icon": "🚗",
+        "title": "Sustainable Transport",
+        "items": [
+          "Walk or cycle for short trips",
+          "Use public transport",
+          "Carpool when possible",
+          "Consider electric vehicles"
+        ]
+      },
+      {
+        "icon": "♻️",
+        "title": "Waste Reduction",
+        "items": [
+          "Recycle properly",
+          "Compost organic waste",
+          "Reduce single-use plastics",
+          "Buy products with less packaging"
+        ]
+      }
+    ]
+  },
+  "references": {
+    "title": "📚 Data Source",
+    "description": "This calculator uses official UK Government GHG conversion factors published in 2025 by the Department for Energy Security and Net Zero (DESNZ).",
+    "linkText": "View Official Factors →",
+    "linkUrl": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2025"
+  },
+  "context": {
+    "title": "🇬🇧 UK Context",
+    "ukAverage": "UK Average: ~6,000 kg CO₂e per person per year",
+    "parisTarget": "Paris Agreement Target: 2,300 kg CO₂e per person by 2030"
+  },
+  "comparisonText": {
+    "flightEquivalent": "That's equivalent to {flights} return flights from London to Paris 🛫",
+    "noData": "Enter your data to see results"
+  }
+}
