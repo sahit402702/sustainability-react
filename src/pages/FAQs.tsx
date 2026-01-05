@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Container, Breadcrumb, Accordion, Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Breadcrumb,
+  Accordion,
+  Form,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import faqsContent from "@/content/faqs.json";
@@ -55,8 +62,49 @@ const FAQs: React.FC = () => {
             </Breadcrumb.Item>
           </Breadcrumb>
 
-          <h1>{faqsContent.pageTitle}</h1>
-          <p className="description">{faqsContent.description}</p>
+          <Row className="align-items-start">
+            <Col lg={8}>
+              <h1>{faqsContent.pageTitle}</h1>
+              <p className="description">{faqsContent.description}</p>
+            </Col>
+            <Col
+              lg={4}
+              className="d-none d-lg-flex justify-content-end align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+                <img
+                  src="assets/cognizant_logo.svg"
+                  alt="Cognizant"
+                  className="page-header-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+                <img
+                  src="assets/birkbeck_logo.svg"
+                  alt="Birkbeck"
+                  className="page-header-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+              </div>
+            </Col>
+          </Row>
+
+          {/* Logos on mobile and tablet - left aligned */}
+          <div className="d-flex d-lg-none align-items-center mt-3">
+            <div className="d-flex align-items-center gap-2 flex-shrink-0">
+              <img
+                src="assets/cognizant_logo.svg"
+                alt="Cognizant"
+                className="page-header-logo"
+                style={{ height: "28px", maxHeight: "28px" }}
+              />
+              <img
+                src="assets/birkbeck_logo.svg"
+                alt="Birkbeck"
+                className="page-header-logo"
+                style={{ height: "28px", maxHeight: "28px" }}
+              />
+            </div>
+          </div>
         </Container>
       </header>
 

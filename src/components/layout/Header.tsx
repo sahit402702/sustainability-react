@@ -22,22 +22,7 @@ const Header: React.FC = () => {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <Navbar expand="lg" expanded={expanded} onToggle={setExpanded}>
-        <Container>
-          <Navbar.Brand as={Link} to={links.navigation.home} onClick={closeNav}>
-            <div className="d-flex align-items-center gap-2">
-              <img
-                src="assets/cognizant_logo.svg"
-                alt="Cognizant"
-                className="header-logo"
-              />
-              <img
-                src="assets/birkbeck_logo.svg"
-                alt="Birkbeck"
-                className="header-logo"
-              />
-            </div>
-          </Navbar.Brand>
-
+        <Container className="d-flex align-items-center">
           <Navbar.Toggle
             aria-controls="main-navigation"
             aria-label="Toggle navigation menu"
@@ -47,7 +32,7 @@ const Header: React.FC = () => {
 
           <Navbar.Collapse id="main-navigation">
             <Nav
-              className="ms-auto"
+              className="me-auto"
               role="navigation"
               aria-label="Main navigation"
             >
@@ -99,6 +84,15 @@ const Header: React.FC = () => {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
+
+          <Navbar.Brand
+            as={Link}
+            to={links.navigation.home}
+            onClick={closeNav}
+            className="ms-auto order-lg-last"
+          >
+            SME NetZero Hub
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </header>

@@ -276,12 +276,53 @@ const Reporting: React.FC = () => {
             <Breadcrumb.Item active>Reporting Module</Breadcrumb.Item>
           </Breadcrumb>
 
-          <h1 className="page-title">Reporting Module</h1>
-          <p className="page-subtitle">
-            Essential guidelines for SMEs engaging in public sector work,
-            including recommended software and platforms for effective
-            sustainability reporting.
-          </p>
+          <Row className="align-items-start">
+            <Col lg={8}>
+              <h1 className="page-title">Reporting Module</h1>
+              <p className="page-subtitle">
+                Essential guidelines for SMEs engaging in public sector work,
+                including recommended software and platforms for effective
+                sustainability reporting.
+              </p>
+            </Col>
+            <Col
+              lg={4}
+              className="d-none d-lg-flex justify-content-end align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+                <img
+                  src="assets/cognizant_logo.svg"
+                  alt="Cognizant"
+                  className="page-header-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+                <img
+                  src="assets/birkbeck_logo.svg"
+                  alt="Birkbeck"
+                  className="page-header-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+              </div>
+            </Col>
+          </Row>
+
+          {/* Logos on mobile and tablet - left aligned */}
+          <div className="d-flex d-lg-none align-items-center mt-3">
+            <div className="d-flex align-items-center gap-2 flex-shrink-0">
+              <img
+                src="assets/cognizant_logo.svg"
+                alt="Cognizant"
+                className="page-header-logo"
+                style={{ height: "28px", maxHeight: "28px" }}
+              />
+              <img
+                src="assets/birkbeck_logo.svg"
+                alt="Birkbeck"
+                className="page-header-logo"
+                style={{ height: "28px", maxHeight: "28px" }}
+              />
+            </div>
+          </div>
         </Container>
       </div>
 

@@ -26,15 +26,16 @@ const Landing: React.FC = () => {
       {/* Hero Section */}
       <section className="hero-section" aria-labelledby="hero-heading">
         <Container>
-          <Row>
+          <Row className="align-items-center">
             <Col lg={8}>
               <h1 id="hero-heading" className="hero-title">
                 {headings.landing.hero.title}
               </h1>
               <p className="hero-subtitle">{headings.landing.hero.subtitle}</p>
+
               <div className="hero-buttons">
                 <Button
-                  as={Link}
+                  as={Link as any}
                   to="/sustainability"
                   variant="primary"
                   size="lg"
@@ -43,7 +44,7 @@ const Landing: React.FC = () => {
                   {buttons.cta.startCompliance}
                 </Button>
                 <Button
-                  as={Link}
+                  as={Link as any}
                   to="/reporting"
                   variant="warning"
                   size="lg"
@@ -51,6 +52,43 @@ const Landing: React.FC = () => {
                 >
                   {buttons.cta.downloadTemplates}
                 </Button>
+              </div>
+
+              {/* Logos on mobile and tablet - left aligned below buttons */}
+              <div className="d-flex d-lg-none align-items-center mt-4">
+                <div className="d-flex align-items-center gap-2 flex-shrink-0">
+                  <img
+                    src="assets/cognizant_logo.svg"
+                    alt="Cognizant"
+                    className="hero-logo"
+                    style={{ height: "28px", maxHeight: "28px" }}
+                  />
+                  <img
+                    src="assets/birkbeck_logo.svg"
+                    alt="Birkbeck"
+                    className="hero-logo"
+                    style={{ height: "28px", maxHeight: "28px" }}
+                  />
+                </div>
+              </div>
+            </Col>
+            <Col
+              lg={4}
+              className="d-none d-lg-flex justify-content-end align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+                <img
+                  src="assets/cognizant_logo.svg"
+                  alt="Cognizant"
+                  className="hero-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+                <img
+                  src="assets/birkbeck_logo.svg"
+                  alt="Birkbeck"
+                  className="hero-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
               </div>
             </Col>
           </Row>
@@ -69,7 +107,7 @@ const Landing: React.FC = () => {
                 {headings.landing.whySustainability.description}
               </p>
               <Button
-                as={Link}
+                as={Link as any}
                 to="/sustainability"
                 variant="outline-dark"
                 className="mt-3 btn-outline-custom"
