@@ -226,7 +226,7 @@ const CarbonCalculator: React.FC = () => {
       />
 
       <PageHeader
-        title="Carbon Emissions Calculator"
+        title="Carbon Emission Calculator"
         subtitle="Calculate your carbon footprint using official UK Government GHG conversion factors"
         breadcrumbs={[
           { label: "Home", path: "/" },

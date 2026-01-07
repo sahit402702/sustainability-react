@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <Container>
         <Row className="footer-content">
           <Col md={8} className="footer-section">
-            <span className="footer-brand">🌱 Sustainability Portal</span>
+            <span className="footer-brand">♻️ Sustainability Portal</span>
             <p className="footer-description">
               Supporting SMEs with sustainability compliance and reporting for
               UK public sector contracts.

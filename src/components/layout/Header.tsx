@@ -53,10 +53,17 @@ const Header: React.FC = () => {
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
-                to={links.navigation.checklist}
+                to={links.navigation.sustainabilityCheck}
                 onClick={closeNav}
               >
-                {buttons.navigation.checklist}
+                {buttons.navigation.sustainabilityCheck}
+              </Nav.Link>
+              <Nav.Link
+                as={NavLink}
+                to={links.navigation.reportingModule}
+                onClick={closeNav}
+              >
+                {buttons.navigation.reportingModule}
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
@@ -74,13 +81,6 @@ const Header: React.FC = () => {
                 onClick={closeNav}
               >
                 {buttons.navigation.faqs}
-              </Nav.Link>
-              <Nav.Link
-                as={NavLink}
-                to={links.navigation.contactUs}
-                onClick={closeNav}
-              >
-                {buttons.navigation.contactUs}
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

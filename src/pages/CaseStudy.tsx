@@ -64,18 +64,18 @@ const CaseStudy: React.FC = () => {
               lg={4}
               className="d-none d-lg-flex justify-content-end align-items-center"
             >
-              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
                 <img
                   src="assets/cognizant_logo.svg"
                   alt="Cognizant"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
                 <img
                   src="assets/birkbeck_logo.svg"
                   alt="Birkbeck"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
               </div>
             </Col>
