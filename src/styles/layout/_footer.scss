@@ -83,7 +83,7 @@
   .footer-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: white;
     margin-bottom: 0.75rem;
     display: block;
 
@@ -93,7 +93,7 @@
   }
 
   .footer-description {
-    color: #1a1a1a;
+    color: $gray-300;
     margin-bottom: 0;
     line-height: 1.6;
     font-size: 0.9375rem;
@@ -111,7 +111,7 @@
 
     p {
       margin: 0;
-      color: #1a1a1a;
+      color: $gray-400;
       font-size: $font-size-sm;
     }
   }

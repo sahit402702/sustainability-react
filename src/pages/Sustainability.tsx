@@ -55,23 +55,26 @@ const Sustainability: React.FC = () => {
           <Row className="align-items-start">
             <Col lg={8}>
               <h1 className="page-title">{sustainabilityContent.pageTitle}</h1>
+              <p className="page-subtitle">
+                {sustainabilityContent.infoBoxText}
+              </p>
             </Col>
             <Col
               lg={4}
               className="d-none d-lg-flex justify-content-end align-items-center"
             >
-              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
                 <img
                   src="assets/cognizant_logo.svg"
                   alt="Cognizant"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
                 <img
                   src="assets/birkbeck_logo.svg"
                   alt="Birkbeck"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
               </div>
             </Col>
@@ -101,35 +104,7 @@ const Sustainability: React.FC = () => {
             </div>
           </div>
 
-          {sustainabilityContent.introText.map((text, index) => (
-            <p key={index} className="intro-text">
-              {text}
-            </p>
-          ))}
-
-          <Card
-            className="info-box"
-            role="region"
-            aria-label="Module information"
-          >
-            <Card.Body>
-              <p className="mb-0">{sustainabilityContent.infoBoxText}</p>
-            </Card.Body>
-          </Card>
-
           <p className="section-intro">{sustainabilityContent.sectionIntro}</p>
-
-          <nav className="topic-links" aria-label="Jump to section">
-            <a href="#contracts" className="topic-link">
-              Contracts Terminology →
-            </a>
-            <a href="#definitions" className="topic-link">
-              Sustainability Definitions →
-            </a>
-            <a href="#legislations" className="topic-link">
-              Key Legislations →
-            </a>
-          </nav>
         </Container>
       </header>
 

@@ -133,7 +133,6 @@
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: slideInLeft 0.7s ease-out;
 
     &:hover {
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -295,7 +294,6 @@
   // Calculator Tips Section (fills empty space)
   .calculator-tips {
     border-top: 2px solid $gray-100;
-    animation: fadeInUp 0.6s ease-out 0.4s backwards;
 
     .tips-title {
       font-size: 1.125rem;
@@ -307,7 +305,6 @@
 
       .tips-icon {
         font-size: 1.5rem;
-        animation: float 3s ease-in-out infinite;
       }
     }
 
@@ -319,24 +316,17 @@
       background: linear-gradient(135deg, $gray-50 0%, white 100%);
       border-radius: 10px;
       border: 1px solid $gray-200;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       height: 100%;
 
       &:hover {
         background: white;
         border-color: $indigo-200;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        transform: translateY(-2px);
-
-        .mini-tip-icon {
-          transform: scale(1.1);
-        }
       }
 
       .mini-tip-icon {
         font-size: 1.5rem;
         flex-shrink: 0;
-        transition: transform 0.3s ease;
       }
 
       strong {
@@ -526,7 +516,8 @@
           border-radius: 4px;
           position: relative;
           overflow: visible;
-          transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: width 0.3s ease-out;
+          will-change: width;
 
           &::after {
             content: "";

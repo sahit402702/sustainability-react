@@ -32,53 +32,33 @@
   "items": [
     {
       "category": "general",
-      "question": "What is the Sustainability Portal?",
-      "answer": "The Sustainability Portal is a comprehensive platform that provides transparent information about our environmental initiatives, sustainability reports, and the measurable impact of our programs. We aim to promote environmental responsibility and engage stakeholders in our sustainability journey."
-    },
-    {
-      "category": "reporting",
-      "question": "How often are sustainability reports published?",
-      "answer": "We publish comprehensive sustainability reports quarterly, with monthly updates on key metrics and initiatives. Annual reports provide a detailed overview of our progress, challenges, and future goals. All reports are available in the Reporting section of our portal."
-    },
-    {
-      "category": "sustainability",
-      "question": "What are your main sustainability goals?",
-      "answer": "Our primary goals include achieving carbon neutrality by 2030, reducing waste by 50%, transitioning to 100% renewable energy, and planting 10 million trees by 2025. We also focus on water conservation, biodiversity protection, and promoting circular economy principles."
+      "question": "What is SMESRI?",
+      "answer": "The SME Sustainability Reporting Index is a microsite repository of information and resources targeted at small to medium sized businesses seeking to understand the key sustainability regulations and contractual agreements involved in UK Government contracts. Interactive tools in the form of the SMESRI Carbon Calculator and Sustainability Assessment are provided, alongside recommended third party resources for carbon reduction planning, supply chain management and end-to-end carbon accounting procedures."
     },
     {
       "category": "general",
-      "question": "How can I access your sustainability data?",
-      "answer": "All our sustainability data is publicly available through our Reporting section. You can download detailed reports, view interactive dashboards, and access historical data. We believe in complete transparency and make all information easily accessible to stakeholders."
-    },
-    {
-      "category": "participation",
-      "question": "How can my organization partner with you?",
-      "answer": "We welcome partnerships with organizations that share our commitment to sustainability. You can reach out through our contact form, and our partnerships team will discuss collaboration opportunities, including joint initiatives, knowledge sharing, and resource pooling."
-    },
-    {
-      "category": "sustainability",
-      "question": "What is your approach to carbon offsetting?",
-      "answer": "We prioritize carbon reduction first through energy efficiency, renewable energy adoption, and process optimization. For unavoidable emissions, we invest in verified carbon offset projects including reforestation, renewable energy development, and methane capture initiatives."
-    },
-    {
-      "category": "reporting",
-      "question": "Are your reports third-party verified?",
-      "answer": "Yes, all our sustainability reports undergo third-party verification by accredited environmental auditors. We follow international reporting standards including GRI, CDP, and SASB to ensure accuracy, completeness, and credibility of our disclosures."
-    },
-    {
-      "category": "participation",
-      "question": "Can individuals contribute to your initiatives?",
-      "answer": "Absolutely! Individuals can participate through volunteering programs, community events, and our tree-planting campaigns. You can also support our initiatives through donations or by spreading awareness about sustainable practices in your community."
+      "question": "Who has authored & developed SMESRI / www.smereportingportal.org?",
+      "answer": "SMESRI is a social value project developed by Cognizant in collaboration with Birkbeck University for the benefit of SMEs based in the UK. Microsite development and content collation took place from December 2025 to January 2026, with content moderated and reviewed regularly."
     },
     {
       "category": "general",
-      "question": "What certifications do you hold?",
-      "answer": "We hold several environmental certifications including ISO 14001 (Environmental Management), B Corp Certification, Carbon Neutral Certification, and various region-specific green certifications. Details of all certifications are available in our Reports section."
+      "question": "Is SMESRI targeted at any specific industry (IT, Manufacturing, Procurement, etc.)?",
+      "answer": "The content assembled as a part of the microsite is not targeted at any individual industry per say, however the government schedules and PPNs addressed across the site may be applicable to government contracts in any industry."
+    },
+    {
+      "category": "reporting",
+      "question": "How does the SMESRI Carbon Calculator work & is it suitable for sustainability reporting?",
+      "answer": "SMESRI's Carbon Calculator is based on the Department for Energy and Net Zero and Department for Business, Energy & Industrial Strategy's 'Greenhouse gas reporting: conversion factors 2025'. The calculator provides a simple user interface to compute your businesses annual carbon consumption in alignment with the government's statistical conversion factors. The tool can be used to assist with complying with Streamlined Energy and Carbon Reporting (SECR) regulations."
     },
     {
       "category": "sustainability",
-      "question": "How do you measure your environmental impact?",
-      "answer": "We use comprehensive metrics including carbon footprint analysis, water usage tracking, waste management statistics, and biodiversity impact assessments. Our measurement framework aligns with Science-Based Targets initiative (SBTi) and follows internationally recognized methodologies."
+      "question": "How does the SMESRI Sustainability Assessment work & what are its applications?",
+      "answer": "[TO BE ADDED]"
+    },
+    {
+      "category": "general",
+      "question": "When was SMESRI last updated, and how often is its content reviewed?",
+      "answer": "www.smereportingportal.org was last updated XX/XX/XXXX, with annual content reviewed by senior policy researchers at Birkbeck University, London."
     }
   ]
 }

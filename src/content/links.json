@@ -22,7 +22,8 @@
   "navigation": {
     "home": "/",
     "sustainability": "/sustainability",
-    "checklist": "/reporting",
+    "sustainabilityCheck": "/sustainability-check",
+    "reportingModule": "/reporting",
     "resources": "/case-studies",
     "reporting": "/reporting",
     "caseStudies": "/case-studies",

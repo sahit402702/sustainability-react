@@ -1,268 +1,28 @@
-import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button,
-  Card,
-  Breadcrumb,
-} from "react-bootstrap";
+import React, { useEffect } from "react";
+import { Container, Row, Col, Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 
-interface Question {
-  id: string;
-  question: string;
-}
-
-interface Section {
-  id: string;
-  title: string;
-  questions: Question[];
-  results: {
-    title: string;
-    items: { id: string; text: string; link?: string }[];
-  };
-}
-
 const Reporting: React.FC = () => {
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [showResults, setShowResults] = useState<boolean>(false);
-
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const sections: Section[] = [
-    {
-      id: "governance",
-      title: "Governance and Carbon commitments",
-      questions: [
-        {
-          id: "gov_1",
-          question:
-            "Is the contract value more than £5 million per year (incl. VAT)?",
-        },
-        {
-          id: "gov_2",
-          question:
-            "Do tender documents mention Net Zero by 2050 commitment or Carbon Reduction Plan (CRP)?",
-        },
-        {
-          id: "gov_3",
-          question:
-            "Does the buyer require a published CRP on your UK website?",
-        },
-      ],
-      results: {
-        title: "Governance and Carbon commitments",
-        items: [
-          { id: "1", text: "PPN 006 (Carbon Reduction Plan)", link: "#" },
-          { id: "2", text: "Joint Schedule 5", link: "#" },
-        ],
-      },
-    },
-    {
-      id: "contract",
-      title: "Contract-Level Carbon Requirements",
-      questions: [
-        {
-          id: "con_1",
-          question:
-            'Does the tender include PPN 016 Carbon Reduction Contract Schedule or similar wording (e.g. "contract carbon footprint", "Emissions Reduction Target")?',
-        },
-        {
-          id: "con_2",
-          question:
-            "Are you asked to report annual GHG emissions for the contract or provide a GHG reduction plan?",
-        },
-      ],
-      results: {
-        title: "Contract-Level Carbon Requirements",
-        items: [
-          {
-            id: "3",
-            text: "PPN 016 (Footprint, ERT, Annual reporting)",
-            link: "#",
-          },
-        ],
-      },
-    },
-    {
-      id: "framework",
-      title: "Framework-Level Sustainability Clauses",
-      questions: [
-        {
-          id: "fra_1",
-          question:
-            "Is the procurement under a framework agreement that references Joint Schedule 5 (Sustainability)?",
-        },
-        {
-          id: "fra_2",
-          question:
-            "Does the buyer require Modern Slavery Assessment Tool completion or Equality Duty compliance?",
-        },
-      ],
-      results: {
-        title: "Framework-Level Sustainability Clauses",
-        items: [
-          { id: "4", text: "Optional clauses:" },
-          { id: "4a", text: "Modern slavery", link: "#" },
-          { id: "4b", text: "Equality", link: "#" },
-          { id: "4c", text: "Sustainability reporting", link: "#" },
-        ],
-      },
-    },
-    {
-      id: "waste",
-      title: "Waste and Resource Management",
-      questions: [
-        {
-          id: "was_1",
-          question:
-            "Does the tender include Call-Off Schedule 25 or mention Waste Hierarchy compliance?",
-        },
-        {
-          id: "was_2",
-          question:
-            "Are you required to use licensed waste carriers and provide waste data by disposal route?",
-        },
-        {
-          id: "was_3",
-          question:
-            "Does the contract require environmental management systems (EMS) or ISO14001 certification?",
-        },
-      ],
-      results: {
-        title: "Waste & Resource Management",
-        items: [{ id: "5", text: "Schedule 25", link: "#" }],
-      },
-    },
-    {
-      id: "recruitment",
-      title: "Recruitment and Social Value",
-      questions: [
-        {
-          id: "rec_1",
-          question:
-            "Does the tender require UK-based roles to be advertised on Find a Job?",
-        },
-        {
-          id: "rec_2",
-          question:
-            "Are there social value or equality requirements beyond technical delivery?",
-        },
-      ],
-      results: {
-        title: "Recruitment and Social Value",
-        items: [],
-      },
-    },
-  ];
-
-  const handleAnswerChange = (questionId: string, value: string) => {
-    setAnswers((prev) => ({ ...prev, [questionId]: value }));
-  };
-
-  const handleSubmit = () => {
-    setShowResults(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleReset = () => {
-    setAnswers({});
-    setShowResults(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const getRelevantResults = () => {
-    return sections.filter((section) =>
-      section.questions.some((q) => answers[q.id] === "yes")
-    );
-  };
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Reporting Module",
-    description: "Essential guidelines for SMEs engaging in public sector work",
+    description:
+      "Publicly available tools and resources for supporting your business sustainability governance and reporting requirements",
   };
-
-  if (showResults) {
-    const relevantResults = getRelevantResults();
-
-    return (
-      <div className="reporting-page">
-        <SEO
-          title="Assessment Result"
-          description="Your sustainability assessment results"
-          keywords="sustainability assessment, reporting requirements"
-          canonicalUrl="https://your-domain.com/reporting/results"
-          structuredData={structuredData}
-        />
-
-        <div className="results-header">
-          <Container>
-            <Breadcrumb>
-              <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
-                Home
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>Assessment result</Breadcrumb.Item>
-            </Breadcrumb>
-
-            <h1 className="results-title">Assessment result</h1>
-            <p className="results-subtitle">
-              Essential guidelines for SMEs engaging in public sector work,
-              including recommended software and platforms for effective
-              sustainability reporting.
-            </p>
-          </Container>
-        </div>
-
-        <div className="results-content">
-          <Container>
-            {relevantResults.map((section) => (
-              <div key={section.id} className="result-section">
-                <h2 className="result-section-title">
-                  {section.results.title}
-                </h2>
-                <ul className="result-list">
-                  {section.results.items.map((item) => (
-                    <li key={item.id}>
-                      {item.link ? (
-                        <a href={item.link} className="result-link">
-                          {item.text}
-                        </a>
-                      ) : (
-                        <span className="result-text">{item.text}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-            <div className="results-actions">
-              <Button variant="primary" size="lg" onClick={handleReset}>
-                Take Assessment Again
-              </Button>
-            </div>
-          </Container>
-        </div>
-
-        <div className="page-footer-bar"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="reporting-page">
       <SEO
         title="Reporting Module"
-        description="Essential guidelines for SMEs engaging in public sector work"
-        keywords="sustainability reporting, public sector, SME guidelines"
+        description="Publicly available tools and resources for supporting your business sustainability governance and reporting requirements"
+        keywords="sustainability reporting, public sector, SME guidelines, carbon calculator tools"
         canonicalUrl="https://your-domain.com/reporting"
         structuredData={structuredData}
       />
@@ -280,27 +40,28 @@ const Reporting: React.FC = () => {
             <Col lg={8}>
               <h1 className="page-title">Reporting Module</h1>
               <p className="page-subtitle">
-                Essential guidelines for SMEs engaging in public sector work,
-                including recommended software and platforms for effective
-                sustainability reporting.
+                In this module, you will find publicly available tools and
+                resources for supporting your business fulfil the sustainability
+                governance and reporting requirements that make up your public
+                sector contract.
               </p>
             </Col>
             <Col
               lg={4}
               className="d-none d-lg-flex justify-content-end align-items-center"
             >
-              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
                 <img
                   src="assets/cognizant_logo.svg"
                   alt="Cognizant"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
                 <img
                   src="assets/birkbeck_logo.svg"
                   alt="Birkbeck"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
               </div>
             </Col>
@@ -328,67 +89,209 @@ const Reporting: React.FC = () => {
 
       <div className="reporting-content">
         <Container>
-          {sections.map((section, sectionIndex) => (
-            <div key={section.id} className="question-section">
-              <div className="section-header">
-                <span className="section-number">
-                  {sectionIndex + 1} of {sections.length}
-                </span>
-                <h2 className="section-title">{section.title}</h2>
-              </div>
+          <p className="intro-text">
+            Once you've agreed and understood your contract's sustainability
+            requirements, it's important to know which tools are available to
+            help you meet the obligations that apply to you. Here you will find
+            UK centred tools and resources that focus on small to medium sized
+            businesses
+          </p>
 
-              <div className="questions-list">
-                {section.questions.map((question) => (
-                  <Card key={question.id} className="question-card">
-                    <Card.Body>
-                      <p className="question-text">{question.question}</p>
-                      <div className="radio-group">
-                        {["yes", "no", "not-sure"].map((option) => (
-                          <Form.Check
-                            key={option}
-                            type="radio"
-                            id={`${question.id}-${option}`}
-                            name={question.id}
-                            label={
-                              option === "yes"
-                                ? "Yes"
-                                : option === "no"
-                                ? "No"
-                                : "Not sure"
-                            }
-                            checked={answers[question.id] === option}
-                            onChange={() =>
-                              handleAnswerChange(question.id, option)
-                            }
-                            className="custom-radio"
-                          />
-                        ))}
-                      </div>
-                    </Card.Body>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          ))}
+          {/* Net-Zero Transformation Resources */}
+          <section className="resource-section">
+            <h2 className="section-title">Net-Zero Transformation Resources</h2>
+            <ul className="resource-list">
+              <li>
+                <a
+                  href="https://businessclimatehub.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  UK Business Climate Hub – businessclimatehub.uk
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Partnership between the UK government and global SME Climate
+                    Hub initiative. Provides tailored guidance including:
+                    events, finance and support, research partnerships and
+                    consultancy options.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://sciencebasedtargets.org/standards-and-guidance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  Science Based Targets Initiative (SBTi)-
+                  sciencebasedtargets.org
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    A globally recognised framework for setting
+                    emissions-reduction targets that align with the latest
+                    climate science, helping businesses credibly plan their
+                    decarbonisation journey.
+                  </li>
+                  <li>
+                    Includes open-source, sector-specific standards, tools and
+                    guidance for companies setting GHG emission reduction
+                    targets.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://www.carbonfootprint.com/sciencebasedtargets.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  Carbon Footprint – Strategic Services
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Comprehensive climate strategy reporting suite for
+                    'micro-businesses' - supporting Carbon Offsetting, Target
+                    Setting, Net Zero planning and more.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
 
-          <div className="action-buttons">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={handleSubmit}
-              disabled={Object.keys(answers).length === 0}
-            >
-              View my assessment result
-            </Button>
-            <Button
-              variant="outline-primary"
-              size="lg"
-              onClick={handleReset}
-              disabled={Object.keys(answers).length === 0}
-            >
-              Reset answers
-            </Button>
-          </div>
+          {/* Carbon Calculator Tools */}
+          <section className="resource-section">
+            <h2 className="section-title">Carbon Calculator Tools</h2>
+            <ul className="resource-list">
+              <li>
+                <a
+                  href="https://www.carbontrust.com/our-work-and-impact/guides-reports-and-tools/sme-carbon-footprint-calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  Carbon Trust – SME Carbon Footprint Calculator
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Designed specifically for UK based SMEs, this tool helps
+                    measure the annual Scope1 and Scope2 Emissions of your
+                    business.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://www.carbonfootprint.com/netzerostandard.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  Carbon Footprint – Sustrax Carbon Calculator
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Sustrax Lite offers a free service helping single-site small
+                    businesses measure, manage and report GHG emissions; Sustrax
+                    MX is available for larger organisations with complex
+                    operations and supply chains.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://smeclimatehub.org/start-measuring/#block-small-business-carbon-calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  SME Climate Hub: Small Business Carbon Calculator
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Tool for businesses with a single operating site and 1-50
+                    employees, covering Scope1, Scope2 and Scope3 emissions.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          {/* Carbon Reporting Tools */}
+          <section className="resource-section">
+            <h2 className="section-title">Carbon Reporting Tools</h2>
+            <ul className="resource-list">
+              <li>
+                <a
+                  href="https://www.seedling.earth/solution/ppn-06-21-carbon-reduction-plan-guidance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  Seedling – seedling.earth
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Subscription-based service designed to support SMEs and
+                    B-Corps with full- business carbon accounting, data
+                    management and reporting.
+                  </li>
+                  <li>
+                    Includes dedicated PPN 006 compliant carbon reduction
+                    planning tools and in- built reporting templates.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://www.ecohedge.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  EcoHedge – ecohedge.com
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    Subscription-based minimal set-up carbon accounting
+                    software, offering carbon reduction planning consultancy
+                    services targeted at SMEs seeking compliance with PPN 06
+                    issued contracts.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          {/* Education Resources */}
+          <section className="resource-section">
+            <h2 className="section-title">Education Resources</h2>
+            <ul className="resource-list">
+              <li>
+                <a
+                  href="https://www.bbk.ac.uk/courses/2025/short-courses/modules/isu-1/0000009N0/0/decarbonise-your-business-and-achieve-net-zero"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  Birkbeck University: Decarbonise Your Business and Achieve Net
+                  Zero
+                </a>
+                <ul className="sub-list">
+                  <li>
+                    A concise course from Birkbeck that imparts practical
+                    strategies and tools for small businesses to begin
+                    decarbonising operations and work toward net-zero goals via
+                    structured learning and expert insight
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
         </Container>
       </div>
 

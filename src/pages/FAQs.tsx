@@ -12,7 +12,6 @@ import SEO from "@/components/SEO";
 import faqsContent from "@/content/faqs.json";
 
 const FAQs: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
   // Scroll to top when component mounts
@@ -20,16 +19,16 @@ const FAQs: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Filter sections based on search term
-  const filteredSections = faqsContent.sections.filter((section) =>
-    section.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const sections = faqsContent.items.map((item) => ({
+    title: item.question,
+    content: item.answer,
+  }));
 
   const handleExpandAll = () => {
-    if (expandedItems.length === filteredSections.length) {
+    if (expandedItems.length === sections.length) {
       setExpandedItems([]);
     } else {
-      setExpandedItems(filteredSections.map((_, index) => index.toString()));
+      setExpandedItems(sections.map((_, index) => index.toString()));
     }
   };
 
@@ -71,18 +70,18 @@ const FAQs: React.FC = () => {
               lg={4}
               className="d-none d-lg-flex justify-content-end align-items-center"
             >
-              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
                 <img
                   src="assets/cognizant_logo.svg"
                   alt="Cognizant"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
                 <img
                   src="assets/birkbeck_logo.svg"
                   alt="Birkbeck"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  style={{ height: "35px", maxHeight: "35px" }}
                 />
               </div>
             </Col>
@@ -108,38 +107,6 @@ const FAQs: React.FC = () => {
         </Container>
       </header>
 
-      {/* Search Section */}
-      <div className="search-section">
-        <Container>
-          <div className="search-bar" role="search">
-            <Form.Control
-              type="search"
-              placeholder={faqsContent.searchPlaceholder}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              aria-label="Search FAQs"
-            />
-            <svg
-              className="search-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-        </Container>
-      </div>
-
       {/* Accordion Section */}
       <div className="accordion-section">
         <Container>
@@ -149,67 +116,56 @@ const FAQs: React.FC = () => {
               className="expand-all-btn"
               onClick={handleExpandAll}
               aria-label={
-                expandedItems.length === filteredSections.length
+                expandedItems.length === sections.length
                   ? "Collapse all sections"
                   : "Expand all sections"
               }
-              aria-expanded={expandedItems.length === filteredSections.length}
+              aria-expanded={expandedItems.length === sections.length}
             >
-              {expandedItems.length === filteredSections.length
+              {expandedItems.length === sections.length
                 ? faqsContent.collapseAllText
                 : faqsContent.expandAllText}
             </button>
           </div>
 
-          {filteredSections.length === 0 ? (
-            <div className="no-results">
-              <p>
-                No FAQs found matching "{searchTerm}". Please try a different
-                search term.
-              </p>
-            </div>
-          ) : (
-            <Accordion activeKey={expandedItems} alwaysOpen>
-              {filteredSections.map((section, index) => (
-                <Accordion.Item
-                  key={index}
-                  eventKey={index.toString()}
-                  className="faq-item"
+          <Accordion activeKey={expandedItems} alwaysOpen>
+            {sections.map((section, index) => (
+              <Accordion.Item
+                key={index}
+                eventKey={index.toString()}
+                className="faq-item"
+              >
+                <Accordion.Header
+                  onClick={() => toggleItem(index.toString())}
+                  aria-label={`Section ${index + 1}: ${section.title}`}
                 >
-                  <Accordion.Header
-                    onClick={() => toggleItem(index.toString())}
-                    aria-label={`Section ${index + 1}: ${section.title}`}
+                  {section.title}
+                  <svg
+                    className={`chevron-icon ${
+                      expandedItems.includes(index.toString()) ? "expanded" : ""
+                    }`}
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
-                    {section.title}
-                    <svg
-                      className={`chevron-icon ${
-                        expandedItems.includes(index.toString())
-                          ? "expanded"
-                          : ""
-                      }`}
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M5 7.5l5 5 5-5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    <p>Content coming soon...</p>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          )}
+                    <path
+                      d="M5 7.5l5 5 5-5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <p>{section.content}</p>
+                </Accordion.Body>
+              </Accordion.Item>
+            ))}
+          </Accordion>
         </Container>
       </div>
 
