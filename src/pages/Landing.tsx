@@ -128,22 +128,18 @@ const Landing: React.FC = () => {
               <h2 id="smesri-heading" className="section-title">
                 {headings.landing.smesri.title}
               </h2>
-              <p className="smesri-text">
-                {headings.landing.smesri.description}
-              </p>
-              <p className="smesri-text">{headings.landing.smesri.subtitle}</p>
               <p className="smesri-text mb-4">
-                {headings.landing.smesri.additionalInfo}
+                {headings.landing.smesri.description}
               </p>
             </Col>
           </Row>
 
           {/* Module Cards */}
-          <Row className="g-4 mt-4">
+          <Row className="g-4 mt-4 justify-content-center">
             {headings.landing.smesri.modules.map((module, index) => {
-              const icons = ["🌿", "📊", "📚"];
+              const icons = ["🌿", "📊"];
               return (
-                <Col key={index} md={6} lg={4}>
+                <Col key={index} md={6} lg={5} xl={5}>
                   <Card className="module-card h-100 border-0">
                     <Card.Body className="d-flex flex-column">
                       <div className="module-icon">{icons[index]}</div>
@@ -159,7 +155,7 @@ const Landing: React.FC = () => {
                             ? "/sustainability"
                             : index === 1
                             ? "/reporting"
-                            : "/case-studies"
+                            : "/faqs"
                         }
                         className="module-link"
                       >
@@ -170,6 +166,65 @@ const Landing: React.FC = () => {
                 </Col>
               );
             })}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Andy Colley Quote Section */}
+      <section
+        className="andy-quote-section"
+        aria-labelledby="andy-quote-heading"
+      >
+        <Container>
+          <Row>
+            <Col xs={12}>
+              <div className="quote-card">
+                <div className="quote-header">
+                  <img
+                    src="assets/birkbeck_logo.svg"
+                    alt="Birkbeck University"
+                    className="quote-logo"
+                  />
+                </div>
+                <blockquote className="quote-content">
+                  <p className="quote-text">
+                    "As Director of Innovation at Birkbeck, I'm proud to
+                    highlight our contribution to this microsite, created in
+                    partnership with Cognizant, to provide SMEs with practical,
+                    accessible tools to advance their ESG goals.
+                  </p>
+                  <p className="quote-text">
+                    The resources are gathered here, and include
+                    carbon-calculation software, reporting guidance, and
+                    internationally recognised frameworks such as the SME
+                    Climate Hub and Science Based Targets initiative. They offer
+                    smaller businesses clear routes to measuring impact and
+                    planning meaningful decarbonisation.
+                  </p>
+                  <p className="quote-text">
+                    Alongside these external tools, we're pleased to share
+                    Birkbeck's own support for SMEs through our Small Business
+                    Club, our short course Decarbonise Your Business and Achieve
+                    Net Zero, and the rich library of insights from our annual
+                    Climate Festival.
+                  </p>
+                  <p className="quote-text">
+                    Taken together, these resources are designed to give SMEs
+                    the confidence, clarity, and capability to make informed
+                    sustainability decisions and to turn ambition into
+                    achievable action."
+                  </p>
+                </blockquote>
+                <div className="quote-author">
+                  <div className="author-info">
+                    <p className="author-name">Andy Colley</p>
+                    <p className="author-title">
+                      Director of Innovation, Birkbeck University
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>

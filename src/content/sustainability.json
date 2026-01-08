@@ -13,7 +13,8 @@
     },
     {
       "title": "CCS Frameworks",
-      "description": "Provide a compliant, often industry specific, way for public sector offices to buy products or services from a pool of approved suppliers."
+      "description": "Provide a compliant, often industry specific, way for public sector offices to buy products or services from a pool of approved suppliers.",
+      "link": "https://www.crowncommercial.gov.uk/agreements/?&status=Live&regulation=PCR2015&page=1"
     },
     {
       "title": "Call-Offs",
@@ -51,7 +52,7 @@
     },
     {
       "title": "Contract Carbon Footprint",
-      "description": "The GHG emissions resulting from the execution of the contract as described by the <a href=\"#\" class=\"inline-link\">GHG Protocol Corporate Standard</a>."
+      "description": "The GHG emissions resulting from the execution of the contract as described by the <a href=\"https://ghgprotocol.org/corporate-standard\" class=\"inline-link\" target=\"_blank\" rel=\"noopener noreferrer\">GHG Protocol Corporate Standard</a>."
     },
     {
       "title": "Carbon Reduction Plan (CRP)",
@@ -68,17 +69,17 @@
         {
           "title": "Scope 1 Emissions:",
           "description": "GHG emissions that come from the supplier directly, e.g. from burning fuel in vehicles or boilers that the supplier owns.",
-          "link": "#"
+          "link": "https://ghgprotocol.org/sites/default/files/Guidance_Handbook_2019_FINAL.pdf"
         },
         {
           "title": "Scope 2 Emissions:",
           "description": "GHG emissions from the supplier's use of electricity.",
-          "link": "#"
+          "link": "https://ghgprotocol.org/sites/default/files/Guidance_Handbook_2019_FINAL.pdf"
         },
         {
           "title": "Scope 3 Emissions:",
           "description": "Scope 3 is broken down into 15 sub-categories, including emissions associated with the goods and services you buy, financial services such as investments, and others such as waste or transportation.\n\nThere are five Scope 3 categories included in the reporting for a supplier's CRP: upstream transportation and distribution, waste generated in operations, business travel, employee commuting, and downstream transportation and distribution.",
-          "link": "#"
+          "link": "https://ghgprotocol.org/scope-3-calculation-guidance-2"
         }
       ]
     },
@@ -116,22 +117,22 @@
     {
       "title": "PPN 016 Carbon Reduction Schedule",
       "description": "PPN016 contains terms and conditions to support contract specific decarbonisation objectives, including greenhouse gas emissions reduction targets and reporting requirements. Introduced in February 2025, this is the most recent, extensive and relevant piece of sustainability legislation likely to influence contracts across a wide range of departments and industries.",
-      "link": "#"
+      "link": "https://assets.publishing.service.gov.uk/media/67b5b8c7d15c152ea555bf8a/2025-02-04_PPN_016_Carbon_reduction_contract_schedule_and_guidance.docx__1_.pdf"
     },
     {
       "title": "Joint Schedule 5",
       "description": "JS5 explains the regulations suppliers must follow regarding responsibilities across their delivery supply chain. It includes mandatory commitments on modern slavery and may also include optional commitments related to environmental standards and achieving net zero, depending on the contract.",
-      "link": "#"
+      "link": "https://assets.publishing.service.gov.uk/media/68357753b33f68eaba953aa7/Joint_Schedule_5_-_Sustainability_v1.0_PA.pdf"
     },
     {
       "title": "Call-Off Schedule 25",
       "description": "CS25 requires suppliers to prioritise waste management in line with the waste hierarchy. It also includes a wide range of optional clauses covering responsible sourcing of supply chain materials and reporting obligations.",
-      "link": "#"
+      "link": "https://assets.publishing.service.gov.uk/media/68357dfbbaff3dab99775329/Call-Off_Schedule_25_-_Additional_Sustainability_Requirements_v1.0_PA.pdf"
     },
     {
       "title": "Call-Off Schedule 26",
       "description": "CS26 focuses on reducing the supplier's carbon footprint throughout delivery. It may require full annual reporting of greenhouse gas (GHG) emissions and commitments to supporting the buyer's net zero targets.",
-      "link": "#"
+      "link": "https://assets.publishing.service.gov.uk/media/68357e077fb7a7d9cd7752f2/Call-Off_Schedule_26_-_Carbon_Reduction_v1.0_PA.pdf"
     }
   ],
   "legislationNote": "Further information on the content of these four primary schedules is detailed within the SMESRI Reporting Module. This includes tools and guidance to support your business fulfil its reporting and governance obligations if these optional conditions apply to your contract.",

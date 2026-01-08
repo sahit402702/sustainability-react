@@ -201,72 +201,71 @@
     }
   }
 
-  // Profile Cards - Creative Sustainability Theme
+  // Profile Cards - Premium Rich UI Design
   .profile-card {
     border: none;
-    border-radius: 24px;
-    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15),
+      0 4px 12px rgba(99, 102, 241, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     margin-bottom: 2.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.15);
 
-    // Organic leaf decoration - top right
+    // Decorative gradient overlay
     &::before {
-      content: "🌿";
+      content: "";
       position: absolute;
-      top: -10px;
-      right: 20px;
-      font-size: 4rem;
-      opacity: 0.08;
-      animation: float 12s ease-in-out infinite;
-      transform-origin: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        #6366f1 0%,
+        #8b5cf6 25%,
+        #ec4899 50%,
+        #f59e0b 75%,
+        #10b981 100%
+      );
     }
 
-    // Organic accent blob - bottom left
+    // Subtle pattern overlay
     &::after {
       content: "";
       position: absolute;
-      bottom: -30px;
-      left: -30px;
-      width: 100px;
-      height: 100px;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
       background: radial-gradient(
-        circle,
-        rgba(5, 150, 105, 0.08) 0%,
+        circle at top right,
+        rgba(139, 92, 246, 0.08) 0%,
         transparent 70%
       );
-      border-radius: 60% 40% 60% 40%;
-      animation: float 15s ease-in-out infinite reverse;
+      pointer-events: none;
     }
 
     @media (min-width: 768px) {
-      border-radius: 28px;
+      border-radius: 24px;
       margin-bottom: 3rem;
-    }
-
-    &:hover {
-      box-shadow: 0 8px 28px rgba(5, 150, 105, 0.15),
-        0 4px 12px rgba(16, 185, 129, 0.08);
-      transform: translateY(-6px);
-
-      &::before {
-        animation: float 8s ease-in-out infinite;
-      }
+      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.18),
+        0 5px 15px rgba(99, 102, 241, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
 
     .card-body {
-      padding: 2rem 1.75rem;
+      padding: 2.5rem 2rem;
       position: relative;
-      z-index: 2;
+      z-index: 1;
 
       @media (min-width: 768px) {
-        padding: 2.5rem 2.25rem;
+        padding: 3rem 2.5rem;
       }
 
       @media (min-width: 992px) {
-        padding: 2.75rem 2.5rem;
+        padding: 3.5rem 3rem;
       }
     }
 
@@ -274,7 +273,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 2rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #e0e7ff 0%, #f3e8ff 50%, #fce7f3 100%) border-box;
+      border-bottom: 2px solid transparent;
+      margin-bottom: 0.5rem;
 
       @media (max-width: 575px) {
         flex-direction: column;
@@ -283,38 +288,39 @@
     }
 
     .profile-name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #065f46;
-      margin-bottom: 0.5rem;
+      font-size: 1.625rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e1b4b 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.625rem;
       line-height: 1.25;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-
-      &::before {
-        content: "👤";
-        font-size: 1.75rem;
-      }
+      letter-spacing: -0.02em;
 
       @media (min-width: 576px) {
-        font-size: 1.625rem;
+        font-size: 1.75rem;
       }
 
       @media (min-width: 768px) {
-        font-size: 1.75rem;
+        font-size: 2rem;
       }
     }
 
     .profile-title {
-      font-size: 1rem;
-      color: #059669;
+      font-size: 1.0625rem;
+      color: #6366f1;
       margin-bottom: 0;
       line-height: 1.5;
-      font-weight: 500;
+      font-weight: 600;
+      padding: 0.375rem 1rem;
+      background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+      border-radius: 20px;
+      display: inline-block;
+      border: 1px solid #c7d2fe;
 
       @media (min-width: 768px) {
-        font-size: 1.0625rem;
+        font-size: 1.125rem;
       }
     }
 
@@ -323,8 +329,11 @@
       width: auto;
       object-fit: contain;
       flex-shrink: 0;
-      filter: drop-shadow(0 2px 8px rgba(5, 150, 105, 0.15));
-      transition: all 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.2));
+      padding: 0.5rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e0e7ff;
 
       @media (min-width: 576px) {
         height: 64px;
@@ -333,123 +342,160 @@
       @media (min-width: 768px) {
         height: 72px;
       }
-
-      &:hover {
-        transform: scale(1.05);
-        filter: drop-shadow(0 4px 12px rgba(5, 150, 105, 0.25));
-      }
     }
 
-    // Highlighted variant - Enhanced Eco Theme
+    // Highlighted variant - Ultra Premium Design
     &.highlighted {
-      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-      border: 2px solid rgba(5, 150, 105, 0.2);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 6px 24px rgba(5, 150, 105, 0.2);
+      background: linear-gradient(
+        135deg,
+        #faf5ff 0%,
+        #f3e8ff 50%,
+        #fae8ff 100%
+      );
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      box-shadow: 0 20px 50px rgba(139, 92, 246, 0.25),
+        0 10px 25px rgba(168, 85, 247, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 0 rgba(139, 92, 246, 0.1);
 
-      // Animated eco pattern
       &::before {
-        content: "🌱";
-        position: absolute;
-        top: 15px;
-        right: 25px;
-        font-size: 5rem;
-        opacity: 0.12;
-        animation: float 10s ease-in-out infinite;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          #6366f1 0%,
+          #8b5cf6 20%,
+          #a855f7 40%,
+          #ec4899 60%,
+          #f59e0b 80%,
+          #10b981 100%
+        );
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
       }
 
-      // Additional organic blob
       &::after {
-        content: "";
-        position: absolute;
-        bottom: -40px;
-        right: -40px;
-        width: 140px;
-        height: 140px;
+        width: 400px;
+        height: 400px;
         background: radial-gradient(
-          circle at center,
-          rgba(16, 185, 129, 0.15) 0%,
+          circle at top right,
+          rgba(168, 85, 247, 0.15) 0%,
+          rgba(236, 72, 153, 0.08) 40%,
           transparent 70%
         );
-        border-radius: 50% 40% 50% 40%;
-        animation: float 18s ease-in-out infinite reverse;
-      }
-
-      &:hover {
-        box-shadow: 0 10px 36px rgba(5, 150, 105, 0.3),
-          0 6px 16px rgba(16, 185, 129, 0.15);
-        border-color: rgba(5, 150, 105, 0.4);
-
-        &::before {
-          animation: float 6s ease-in-out infinite;
-          opacity: 0.18;
-        }
       }
 
       .card-body {
         position: relative;
-        z-index: 2;
+        z-index: 1;
       }
 
       .profile-info {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        padding: 1.75rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 255, 255, 0.7) 100%
+        );
+        border-radius: 16px;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
 
         @media (min-width: 768px) {
-          margin-bottom: 1.75rem;
+          margin-bottom: 2.25rem;
+          padding: 2rem 2.25rem;
         }
       }
 
       .profile-name {
-        color: #064e3b;
-        font-size: 1.625rem;
-
-        &::before {
-          content: "🎓";
-          font-size: 2rem;
-        }
+        font-size: 1.875rem;
+        font-weight: 900;
+        background: linear-gradient(
+          135deg,
+          #4c1d95 0%,
+          #6366f1 40%,
+          #8b5cf6 70%,
+          #a855f7 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
 
         @media (min-width: 768px) {
-          font-size: 1.875rem;
+          font-size: 2.125rem;
         }
       }
 
       .profile-title {
-        color: #047857;
-        font-weight: 600;
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        font-weight: 700;
+        font-size: 1.0625rem;
+        padding: 0.5rem 1.25rem;
+        border: none;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+
+        @media (min-width: 768px) {
+          font-size: 1.125rem;
+          padding: 0.625rem 1.5rem;
+        }
       }
 
       .profile-quote {
-        font-size: 1.0625rem;
-        color: #065f46;
-        line-height: 1.75;
+        font-size: 1.125rem;
+        color: #1f2937;
+        line-height: 1.8;
         margin-bottom: 0;
         font-weight: 500;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.6);
+        padding: 2.25rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(249, 250, 251, 0.95) 100%
+        );
         border-radius: 16px;
-        border-left: 4px solid #10b981;
-        backdrop-filter: blur(5px);
+        border-left: 5px solid #8b5cf6;
+        border-right: 1px solid rgba(139, 92, 246, 0.2);
+        border-top: 1px solid rgba(139, 92, 246, 0.2);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
         position: relative;
 
+        // Modern quote decoration
         &::before {
+          content: "";
+          position: absolute;
+          top: 1.5rem;
+          left: 1.5rem;
+          width: 40px;
+          height: 40px;
+          background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+          opacity: 0.1;
+          border-radius: 8px;
+          transform: rotate(-6deg);
+        }
+
+        &::after {
           content: "\201C";
           position: absolute;
-          top: -10px;
-          left: 10px;
-          font-size: 3rem;
-          color: #10b981;
-          opacity: 0.3;
+          top: 0.75rem;
+          left: 1.25rem;
+          font-size: 4rem;
+          font-weight: 900;
+          color: #8b5cf6;
+          opacity: 0.15;
+          line-height: 1;
           font-family: Georgia, serif;
         }
 
         @media (min-width: 768px) {
-          font-size: 1.125rem;
-          padding: 1.75rem;
+          font-size: 1.1875rem;
+          padding: 2.5rem 2.75rem;
         }
 
         @media (min-width: 992px) {
-          font-size: 1.1875rem;
+          font-size: 1.25rem;
+          padding: 2.75rem 3rem;
         }
       }
     }
