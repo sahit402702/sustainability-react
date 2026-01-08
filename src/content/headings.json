@@ -11,9 +11,7 @@
     },
     "smesri": {
       "title": "What is SME Sustainability Reporting Index (SMESRI)?",
-      "description": "The SME Sustainability Reporting Index (SMESRI) is a social value initiative developed by Cognizant UK&I in collaboration with Birk-beck University.",
-      "subtitle": "It provides small to medium-sized enterprises with accessible information on sustainability reporting and governance requirements for public sector contracts.",
-      "additionalInfo": "Whether you're new to government contracts or looking to enhance your compliance knowledge, SMESRI serves as a comprehensive guide to fulfilling key sustainability obligations required in UK Government projects. Key topics covered include:",
+      "description": "The SME Sustainability Reporting Index (SMESRI) is a social value initiative developed by Cognizant UK&I in collaboration with Birkbeck University. It provides small to medium-sized enterprises with accessible information on sustainability reporting and governance requirements for public sector contracts. Whether you're new to government contracts or looking to enhance your compliance knowledge, SMESRI serves as a comprehensive guide to fulfilling key sustainability obligations required in UK Government projects. Key topics covered include:",
       "modules": [
         {
           "title": "Sustainability Module",
@@ -26,18 +24,12 @@
           "description": "Essential guidance for SMEs engaging in public sector work, including recommended software and platforms for effective sustainability reporting.",
           "backgroundColor": "#d4f1e8",
           "linkText": "View Reporting Module"
-        },
-        {
-          "title": "Case Study Module",
-          "description": "An end to end demonstration for SME's of how effective sustainability governance and reporting should be implemented, presented within the context of an IT service supply chain contract.",
-          "backgroundColor": "#e8e5f8",
-          "linkText": "View Case Study Module"
         }
       ]
     },
     "faqSection": {
       "title": "Visit FAQ page to learn more.",
-      "description": "The SME Sustainability Reporting Index (SMESRI) is a social value initiative developed by Cognizant UK&I in collaboration with Birk-beck University.",
+      "description": "The SME Sustainability Reporting Index (SMESRI) is a social value initiative developed by Cognizant UK&I in collaboration with Birkbeck University.",
       "linkText": "Go to FAQ page"
     },
     "features": {

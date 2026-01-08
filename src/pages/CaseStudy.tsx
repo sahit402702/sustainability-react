@@ -47,18 +47,6 @@ const CaseStudy: React.FC = () => {
                 presented within the context of an IT services supply chain
                 contract.
               </p>
-
-              <div className="topic-links">
-                <a href="#contracts" className="topic-link">
-                  Contracts Terminology →
-                </a>
-                <a href="#definitions" className="topic-link">
-                  Sustainability Definitions →
-                </a>
-                <a href="#legislations" className="topic-link">
-                  Key Legislations →
-                </a>
-              </div>
             </Col>
             <Col
               lg={4}

@@ -572,221 +572,321 @@ const CarbonCalculator: React.FC = () => {
                   <div className="total-emissions mb-4">
                     <h3 className="total-label">Total Emissions</h3>
                     <div className="total-value">
-                      {results.total.toFixed(2)}
+                      {results.total
+                        .toFixed(0)
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      <span className="total-unit-inline">kg CO₂e</span>
                     </div>
-                    <div className="total-unit">kg CO₂e / month</div>
-                    <div className="total-annual text-muted mt-2">
-                      {(results.total * 12).toFixed(2)} kg CO₂e / year
+                    <div className="total-annual">
+                      {(results.total * 12)
+                        .toFixed(0)
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      kg CO₂e / year
                     </div>
-                  </div>
 
-                  <div className="emission-breakdown">
-                    <h5 className="breakdown-title mb-3">
-                      Breakdown by Category
-                    </h5>
-                    <div className="breakdown-item">
-                      <div className="breakdown-header">
-                        <span className="breakdown-label">⚡ Energy</span>
-                        <span className="breakdown-value">
-                          {results.breakdown.energy.toFixed(2)} kg
-                        </span>
+                    <div className="emissions-mini-breakdown mt-3">
+                      <div className="mini-category">
+                        <div className="mini-category-header">
+                          <span className="mini-category-icon">⚡</span>
+                          <span className="mini-category-name">Energy</span>
+                          <span className="mini-category-percent">
+                            {results.total > 0
+                              ? (
+                                  (results.breakdown.energy / results.total) *
+                                  100
+                                ).toFixed(1)
+                              : "0.0"}
+                            %
+                          </span>
+                        </div>
+                        <div className="mini-bar-container">
+                          <div
+                            className="mini-bar mini-bar-energy"
+                            style={{
+                              width: `${
+                                results.total > 0
+                                  ? (results.breakdown.energy / results.total) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
+                          />
+                        </div>
                       </div>
-                      <ProgressBar
-                        now={(results.breakdown.energy / results.total) * 100}
-                        variant="primary"
-                      />
-                    </div>
-                    <div className="breakdown-item">
-                      <div className="breakdown-header">
-                        <span className="breakdown-label">🚗 Transport</span>
-                        <span className="breakdown-value">
-                          {results.breakdown.transport.toFixed(2)} kg
-                        </span>
+
+                      <div className="mini-category">
+                        <div className="mini-category-header">
+                          <span className="mini-category-icon">🚗</span>
+                          <span className="mini-category-name">Transport</span>
+                          <span className="mini-category-percent">
+                            {results.total > 0
+                              ? (
+                                  (results.breakdown.transport /
+                                    results.total) *
+                                  100
+                                ).toFixed(1)
+                              : "0.0"}
+                            %
+                          </span>
+                        </div>
+                        <div className="mini-bar-container">
+                          <div
+                            className="mini-bar mini-bar-transport"
+                            style={{
+                              width: `${
+                                results.total > 0
+                                  ? (results.breakdown.transport /
+                                      results.total) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
+                          />
+                        </div>
                       </div>
-                      <ProgressBar
-                        now={
-                          (results.breakdown.transport / results.total) * 100
-                        }
-                        variant="success"
-                      />
-                    </div>
-                    <div className="breakdown-item">
-                      <div className="breakdown-header">
-                        <span className="breakdown-label">♻️ Waste</span>
-                        <span className="breakdown-value">
-                          {results.breakdown.waste.toFixed(2)} kg
-                        </span>
+
+                      <div className="mini-category">
+                        <div className="mini-category-header">
+                          <span className="mini-category-icon">♻️</span>
+                          <span className="mini-category-name">Waste</span>
+                          <span className="mini-category-percent">
+                            {results.total > 0
+                              ? (
+                                  (results.breakdown.waste / results.total) *
+                                  100
+                                ).toFixed(1)
+                              : "0.0"}
+                            %
+                          </span>
+                        </div>
+                        <div className="mini-bar-container">
+                          <div
+                            className="mini-bar mini-bar-waste"
+                            style={{
+                              width: `${
+                                results.total > 0
+                                  ? (results.breakdown.waste / results.total) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
+                          />
+                        </div>
                       </div>
-                      <ProgressBar
-                        now={(results.breakdown.waste / results.total) * 100}
-                        variant="warning"
-                      />
                     </div>
                   </div>
 
                   <div className="scope-breakdown mt-4">
                     <h5 className="breakdown-title mb-3">
-                      🎯 GHG Protocol Scopes
+                      GHG Protocol Scopes
                     </h5>
 
-                    <div className="scope-item mb-3">
-                      <div className="scope-header">
-                        <div className="scope-label">
-                          <span className="scope-number text-danger">
-                            Scope 1
-                          </span>
-                          <span className="scope-description">
-                            Direct Emissions
-                          </span>
+                    <div className="scopes-unified">
+                      {/* Scope 1 */}
+                      <div className="scope-bar-item">
+                        <div className="scope-bar-header">
+                          <div className="scope-bar-left">
+                            <span className="scope-badge scope-1">Scope 1</span>
+                            <span className="scope-bar-description">
+                              Direct Emissions
+                            </span>
+                          </div>
+                          <div className="scope-bar-right">
+                            <span className="scope-bar-value">
+                              {results.scopes.scope1.toFixed(0)}
+                            </span>
+                            <span className="scope-bar-unit">kg CO₂e</span>
+                            <span className="scope-bar-percent">
+                              {results.total > 0
+                                ? (
+                                    (results.scopes.scope1 / results.total) *
+                                    100
+                                  ).toFixed(1)
+                                : "0.0"}
+                              %
+                            </span>
+                          </div>
                         </div>
-                        <span className="scope-value text-danger fw-bold">
-                          {results.scopes.scope1.toFixed(2)} kg
-                        </span>
-                      </div>
-                      <ProgressBar
-                        now={(results.scopes.scope1 / results.total) * 100}
-                        variant="danger"
-                      />
-                      {results.scopes.scope1 > 0 && (
-                        <div className="scope-details mt-2">
-                          {results.scopeDetails.scope1.naturalGas > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">Natural Gas</span>
-                              <span className="detail-value">
+                        <div className="scope-bar-container">
+                          <div
+                            className="scope-bar scope-bar-1"
+                            style={{
+                              width: `${
+                                results.total > 0
+                                  ? (results.scopes.scope1 / results.total) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
+                          >
+                            <div className="scope-bar-shine"></div>
+                          </div>
+                        </div>
+                        {results.scopes.scope1 > 0 && (
+                          <div className="scope-details-inline">
+                            {results.scopeDetails.scope1.naturalGas > 0 && (
+                              <span className="detail-badge">
+                                Natural Gas:{" "}
                                 {results.scopeDetails.scope1.naturalGas.toFixed(
-                                  2
+                                  0
                                 )}{" "}
                                 kg
                               </span>
-                            </div>
-                          )}
-                          {results.scopeDetails.scope1.heating > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">Heating Oil</span>
-                              <span className="detail-value">
-                                {results.scopeDetails.scope1.heating.toFixed(2)}{" "}
+                            )}
+                            {results.scopeDetails.scope1.heating > 0 && (
+                              <span className="detail-badge">
+                                Heating Oil:{" "}
+                                {results.scopeDetails.scope1.heating.toFixed(0)}{" "}
                                 kg
                               </span>
-                            </div>
-                          )}
-                          {results.scopeDetails.scope1.ownedVehicles > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">
-                                Owned Vehicles
-                              </span>
-                              <span className="detail-value">
+                            )}
+                            {results.scopeDetails.scope1.ownedVehicles > 0 && (
+                              <span className="detail-badge">
+                                Owned Vehicles:{" "}
                                 {results.scopeDetails.scope1.ownedVehicles.toFixed(
-                                  2
+                                  0
                                 )}{" "}
                                 kg
                               </span>
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="scope-item mb-3">
-                      <div className="scope-header">
-                        <div className="scope-label">
-                          <span className="scope-number text-warning">
-                            Scope 2
-                          </span>
-                          <span className="scope-description">
-                            Purchased Energy
-                          </span>
-                        </div>
-                        <span className="scope-value text-warning fw-bold">
-                          {results.scopes.scope2.toFixed(2)} kg
-                        </span>
+                            )}
+                          </div>
+                        )}
                       </div>
-                      <ProgressBar
-                        now={(results.scopes.scope2 / results.total) * 100}
-                        variant="warning"
-                      />
-                      {results.scopes.scope2 > 0 && (
-                        <div className="scope-details mt-2">
-                          {results.scopeDetails.scope2.electricity > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">
-                                Grid Electricity
-                              </span>
-                              <span className="detail-value">
+
+                      {/* Scope 2 */}
+                      <div className="scope-bar-item">
+                        <div className="scope-bar-header">
+                          <div className="scope-bar-left">
+                            <span className="scope-badge scope-2">Scope 2</span>
+                            <span className="scope-bar-description">
+                              Purchased Energy
+                            </span>
+                          </div>
+                          <div className="scope-bar-right">
+                            <span className="scope-bar-value">
+                              {results.scopes.scope2.toFixed(0)}
+                            </span>
+                            <span className="scope-bar-unit">kg CO₂e</span>
+                            <span className="scope-bar-percent">
+                              {results.total > 0
+                                ? (
+                                    (results.scopes.scope2 / results.total) *
+                                    100
+                                  ).toFixed(1)
+                                : "0.0"}
+                              %
+                            </span>
+                          </div>
+                        </div>
+                        <div className="scope-bar-container">
+                          <div
+                            className="scope-bar scope-bar-2"
+                            style={{
+                              width: `${
+                                results.total > 0
+                                  ? (results.scopes.scope2 / results.total) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
+                          >
+                            <div className="scope-bar-shine"></div>
+                          </div>
+                        </div>
+                        {results.scopes.scope2 > 0 && (
+                          <div className="scope-details-inline">
+                            {results.scopeDetails.scope2.electricity > 0 && (
+                              <span className="detail-badge">
+                                Grid Electricity:{" "}
                                 {results.scopeDetails.scope2.electricity.toFixed(
-                                  2
+                                  0
                                 )}{" "}
                                 kg
                               </span>
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="scope-item">
-                      <div className="scope-header">
-                        <div className="scope-label">
-                          <span className="scope-number text-info">
-                            Scope 3
-                          </span>
-                          <span className="scope-description">Value Chain</span>
-                        </div>
-                        <span className="scope-value text-info fw-bold">
-                          {results.scopes.scope3.toFixed(2)} kg
-                        </span>
+                            )}
+                          </div>
+                        )}
                       </div>
-                      <ProgressBar
-                        now={(results.scopes.scope3 / results.total) * 100}
-                        variant="info"
-                      />
-                      {results.scopes.scope3 > 0 && (
-                        <div className="scope-details mt-2">
-                          {results.scopeDetails.scope3.publicTransport > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">
-                                Public Transport
-                              </span>
-                              <span className="detail-value">
-                                {results.scopeDetails.scope3.publicTransport.toFixed(
-                                  2
-                                )}{" "}
-                                kg
-                              </span>
-                            </div>
-                          )}
-                          {results.scopeDetails.scope3.flights > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">Air Travel</span>
-                              <span className="detail-value">
-                                {results.scopeDetails.scope3.flights.toFixed(2)}{" "}
-                                kg
-                              </span>
-                            </div>
-                          )}
-                          {results.scopeDetails.scope3.electricVehicles > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">
-                                Electric Vehicles
-                              </span>
-                              <span className="detail-value">
-                                {results.scopeDetails.scope3.electricVehicles.toFixed(
-                                  2
-                                )}{" "}
-                                kg
-                              </span>
-                            </div>
-                          )}
-                          {results.scopeDetails.scope3.waste > 0 && (
-                            <div className="detail-item">
-                              <span className="detail-label">Waste</span>
-                              <span className="detail-value">
-                                {results.scopeDetails.scope3.waste.toFixed(2)}{" "}
-                                kg
-                              </span>
-                            </div>
-                          )}
+
+                      {/* Scope 3 */}
+                      <div className="scope-bar-item">
+                        <div className="scope-bar-header">
+                          <div className="scope-bar-left">
+                            <span className="scope-badge scope-3">Scope 3</span>
+                            <span className="scope-bar-description">
+                              Value Chain
+                            </span>
+                          </div>
+                          <div className="scope-bar-right">
+                            <span className="scope-bar-value">
+                              {results.scopes.scope3.toFixed(0)}
+                            </span>
+                            <span className="scope-bar-unit">kg CO₂e</span>
+                            <span className="scope-bar-percent">
+                              {results.total > 0
+                                ? (
+                                    (results.scopes.scope3 / results.total) *
+                                    100
+                                  ).toFixed(1)
+                                : "0.0"}
+                              %
+                            </span>
+                          </div>
                         </div>
-                      )}
+                        <div className="scope-bar-container">
+                          <div
+                            className="scope-bar scope-bar-3"
+                            style={{
+                              width: `${
+                                results.total > 0
+                                  ? (results.scopes.scope3 / results.total) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
+                          >
+                            <div className="scope-bar-shine"></div>
+                          </div>
+                        </div>
+                        {results.scopes.scope3 > 0 && (
+                          <div className="scope-details-inline">
+                            {results.scopeDetails.scope3.publicTransport >
+                              0 && (
+                              <span className="detail-badge">
+                                Public Transport:{" "}
+                                {results.scopeDetails.scope3.publicTransport.toFixed(
+                                  0
+                                )}{" "}
+                                kg
+                              </span>
+                            )}
+                            {results.scopeDetails.scope3.flights > 0 && (
+                              <span className="detail-badge">
+                                Air Travel:{" "}
+                                {results.scopeDetails.scope3.flights.toFixed(0)}{" "}
+                                kg
+                              </span>
+                            )}
+                            {results.scopeDetails.scope3.electricVehicles >
+                              0 && (
+                              <span className="detail-badge">
+                                Electric Vehicles:{" "}
+                                {results.scopeDetails.scope3.electricVehicles.toFixed(
+                                  0
+                                )}{" "}
+                                kg
+                              </span>
+                            )}
+                            {results.scopeDetails.scope3.waste > 0 && (
+                              <span className="detail-badge">
+                                Waste:{" "}
+                                {results.scopeDetails.scope3.waste.toFixed(0)}{" "}
+                                kg
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </Card.Body>

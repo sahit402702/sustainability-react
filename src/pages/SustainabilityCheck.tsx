@@ -61,8 +61,16 @@ const SustainabilityCheck: React.FC = () => {
       results: {
         title: "Governance and Carbon commitments",
         items: [
-          { id: "1", text: "PPN 006 (Carbon Reduction Plan)", link: "#" },
-          { id: "2", text: "Joint Schedule 5", link: "#" },
+          {
+            id: "1",
+            text: "PPN 006 (Carbon Reduction Plan)",
+            link: "/sustainability#ppn-006",
+          },
+          {
+            id: "2",
+            text: "Joint Schedule 5",
+            link: "/sustainability#joint-schedule-5",
+          },
         ],
       },
     },
@@ -87,7 +95,7 @@ const SustainabilityCheck: React.FC = () => {
           {
             id: "3",
             text: "PPN 016 (Footprint, ERT, Annual reporting)",
-            link: "#",
+            link: "/sustainability#ppn-016",
           },
         ],
       },
@@ -170,28 +178,6 @@ const SustainabilityCheck: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Check if all answers are "no"
-    const allNo = Object.values(answers).every((answer) => answer === "no");
-
-    if (allNo) {
-      setErrorMessage(
-        "Based on your responses, it appears that none of the sustainability requirements apply to your current contract. Please review the tender documents carefully or contact the procurement team for clarification."
-      );
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    // Check if there are any "yes" answers
-    const hasYes = Object.values(answers).some((answer) => answer === "yes");
-
-    if (!hasYes) {
-      setErrorMessage(
-        "Please select at least one 'Yes' answer to view relevant sustainability requirements."
-      );
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
     setErrorMessage("");
     setShowResults(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -251,26 +237,37 @@ const SustainabilityCheck: React.FC = () => {
 
         <div className="results-content">
           <Container>
-            {relevantResults.map((section) => (
-              <div key={section.id} className="result-section">
-                <h2 className="result-section-title">
-                  {section.results.title}
-                </h2>
-                <ul className="result-list">
-                  {section.results.items.map((item) => (
-                    <li key={item.id}>
-                      {item.link ? (
-                        <a href={item.link} className="result-link">
-                          {item.text}
-                        </a>
-                      ) : (
-                        <span className="result-text">{item.text}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {relevantResults.length === 0 ? (
+              <Alert variant="info" className="mb-4">
+                <Alert.Heading>No Applicable Requirements</Alert.Heading>
+                <p className="mb-0">
+                  Based on your responses, it appears that none of the
+                  sustainability requirements apply to your current contract.
+                  Please review the tender documents carefully.
+                </p>
+              </Alert>
+            ) : (
+              relevantResults.map((section) => (
+                <div key={section.id} className="result-section">
+                  <h2 className="result-section-title">
+                    {section.results.title}
+                  </h2>
+                  <ul className="result-list">
+                    {section.results.items.map((item) => (
+                      <li key={item.id}>
+                        {item.link ? (
+                          <Link to={item.link} className="result-link">
+                            {item.text}
+                          </Link>
+                        ) : (
+                          <span className="result-text">{item.text}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            )}
 
             <div className="results-actions">
               <Button variant="primary" size="lg" onClick={handleReset}>

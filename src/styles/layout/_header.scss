@@ -162,6 +162,12 @@
     text-decoration: none;
     background: transparent;
 
+    @media (min-width: 992px) and (max-width: 1199px) {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      margin: 0 0.125rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
