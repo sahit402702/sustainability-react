@@ -51,7 +51,7 @@ const FAQs: React.FC = () => {
 
       {/* Page Header */}
       <header className="page-header">
-        <Container>
+        <Container fluid>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
               Home
@@ -61,55 +61,14 @@ const FAQs: React.FC = () => {
             </Breadcrumb.Item>
           </Breadcrumb>
 
-          <Row className="align-items-start">
-            <Col lg={8}>
-              <h1>{faqsContent.pageTitle}</h1>
-              <p className="description">{faqsContent.description}</p>
-            </Col>
-            <Col
-              lg={4}
-              className="d-none d-lg-flex justify-content-end align-items-center"
-            >
-              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
-                <img
-                  src="assets/cognizant_logo.svg"
-                  alt="Cognizant"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-                <img
-                  src="assets/birkbeck_logo.svg"
-                  alt="Birkbeck"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-              </div>
-            </Col>
-          </Row>
-
-          {/* Logos on mobile and tablet - left aligned */}
-          <div className="d-flex d-lg-none align-items-center mt-3">
-            <div className="d-flex align-items-center gap-2 flex-shrink-0">
-              <img
-                src="assets/cognizant_logo.svg"
-                alt="Cognizant"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-              <img
-                src="assets/birkbeck_logo.svg"
-                alt="Birkbeck"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-            </div>
-          </div>
+          <h1>{faqsContent.pageTitle}</h1>
+          <p className="description">{faqsContent.description}</p>
         </Container>
       </header>
 
       {/* Accordion Section */}
       <div className="accordion-section">
-        <Container>
+        <Container fluid>
           <div className="accordion-header">
             <h2>Frequently Asked Questions</h2>
             <button

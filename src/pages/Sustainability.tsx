@@ -1,25 +1,64 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Nav, Breadcrumb } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SEO from "@/components/SEO";
 import sustainabilityContent from "@/content/sustainability.json";
 
 const Sustainability: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("contracts");
+  const location = useLocation();
 
-  // Scroll to top when component mounts
+  // Handle hash-based navigation whenever location changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    const hash = location.hash.replace("#", "");
+    if (hash && ["contracts", "definitions", "legislations"].includes(hash)) {
+      setActiveTab(hash);
+      // Small delay to ensure content is rendered before scrolling
+      setTimeout(() => {
+        const tabsSection = document.getElementById("tabs");
+        if (tabsSection) {
+          const headerHeight = 80; // Approximate header height
+          const elementPosition = tabsSection.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else if (!hash) {
+      // If no hash, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
+    // Update URL hash
+    window.history.pushState(null, "", `#${tab}`);
+    // Scroll to the tabs section with offset
+    setTimeout(() => {
+      const tabsSection = document.getElementById("tabs");
+      if (tabsSection) {
+        const headerHeight = 80; // Approximate header height
+        const elementPosition = tabsSection.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent, tab: string) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      setActiveTab(tab);
+      handleTabChange(tab);
     }
   };
 
@@ -42,7 +81,7 @@ const Sustainability: React.FC = () => {
 
       {/* Page Header */}
       <header className="page-header">
-        <Container>
+        <Container fluid>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
               Home
@@ -52,65 +91,21 @@ const Sustainability: React.FC = () => {
             </Breadcrumb.Item>
           </Breadcrumb>
 
-          <Row className="align-items-start">
-            <Col lg={8}>
-              <h1 className="page-title">{sustainabilityContent.pageTitle}</h1>
-              <p className="page-subtitle">
-                {sustainabilityContent.infoBoxText}
-              </p>
-            </Col>
-            <Col
-              lg={4}
-              className="d-none d-lg-flex justify-content-end align-items-center"
-            >
-              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
-                <img
-                  src="assets/cognizant_logo.svg"
-                  alt="Cognizant"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-                <img
-                  src="assets/birkbeck_logo.svg"
-                  alt="Birkbeck"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-              </div>
-            </Col>
-          </Row>
+          <h1 className="page-title">{sustainabilityContent.pageTitle}</h1>
+          <p className="page-subtitle">{sustainabilityContent.infoBoxText}</p>
 
           {sustainabilityContent.introText.map((text, index) => (
             <p key={index} className="intro-text">
               {text}
             </p>
           ))}
-
-          {/* Logos on mobile and tablet - left aligned below content */}
-          <div className="d-flex d-lg-none align-items-center mt-3 mb-3">
-            <div className="d-flex align-items-center gap-2 flex-shrink-0">
-              <img
-                src="assets/cognizant_logo.svg"
-                alt="Cognizant"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-              <img
-                src="assets/birkbeck_logo.svg"
-                alt="Birkbeck"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-            </div>
-          </div>
-
           <p className="section-intro">{sustainabilityContent.sectionIntro}</p>
         </Container>
       </header>
 
       {/* Tab Navigation */}
-      <section className="tabs-section" id="contracts">
-        <Container>
+      <section className="tabs-section" id="tabs">
+        <Container fluid>
           <Nav
             variant="tabs"
             className="custom-tabs"
@@ -162,12 +157,11 @@ const Sustainability: React.FC = () => {
 
       {/* Content Section */}
       <section className="content-section">
-        <Container>
+        <Container fluid>
           {activeTab === "contracts" && (
             <div
               className="tab-content-wrapper"
               role="tabpanel"
-              id="contracts-content"
               aria-labelledby="contracts-tab"
             >
               <h2 className="content-title">Contracts Terminology</h2>
@@ -230,7 +224,6 @@ const Sustainability: React.FC = () => {
             <div
               className="tab-content-wrapper"
               role="tabpanel"
-              id="definitions-content"
               aria-labelledby="definitions-tab"
             >
               <h2 className="content-title">Sustainability Definitions</h2>
@@ -316,7 +309,6 @@ const Sustainability: React.FC = () => {
             <div
               className="tab-content-wrapper"
               role="tabpanel"
-              id="legislations-content"
               aria-labelledby="legislations-tab"
             >
               <h2 className="content-title">Key Legislation</h2>

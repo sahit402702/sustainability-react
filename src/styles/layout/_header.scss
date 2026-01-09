@@ -22,19 +22,14 @@
 }
 
 .header {
-  background: linear-gradient(
-    135deg,
-    $indigo-700 0%,
-    $indigo-600 50%,
-    $indigo-700 100%
-  );
+  background: #000049;
   box-shadow: $box-shadow-md;
   position: sticky;
   top: 0;
   z-index: 1030;
   transition: $transition-base;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
+  overflow: visible;
 
   &::before {
     content: "";
@@ -68,19 +63,40 @@
     padding: 1rem 0;
   }
 
+  // Header Logos
+  .header-logos {
+
+    .header-logo {
+      max-height: 36px;
+      max-width: 120px;
+      width: auto;
+      object-fit: contain;
+
+      @media (max-width: 767px) {
+        max-height: 36px !important;
+      }
+    }
+  }
+
   .navbar-brand {
     padding: 0;
     position: relative;
     transition: all 0.3s ease;
-    color: white;
+    color: #ffffff !important;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
     text-decoration: none;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      font-size: 1.1rem;
+    }
 
     @media (max-width: 991px) {
       font-size: 1.25rem;
+      order: 3;
     }
 
     @media (max-width: 767px) {
@@ -88,57 +104,10 @@
     }
 
     &:hover {
-      color: rgba(255, 255, 255, 0.9);
+      color: #ffffff !important;
       transform: translateY(-2px);
       text-decoration: none;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      right: -1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
-
-      @media (max-width: 991px) {
-        display: none;
-      }
-    }
-
-    .d-flex {
-      gap: 0.5rem;
-
-      @media (max-width: 991px) {
-        gap: 0.3rem;
-      }
-    }
-
-    .header-logo {
-      height: 32px;
-      width: auto;
-      object-fit: contain;
-      transition: all 0.3s ease;
-
-      @media (max-width: 991px) {
-        height: 24px;
-      }
-
-      @media (max-width: 480px) {
-        height: 22px;
-      }
-
-      &:hover {
-        transform: scale(1.02);
-      }
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
   }
 
@@ -152,20 +121,20 @@
 
   .nav-link {
     position: relative;
-    padding: 0.625rem 1.25rem;
+    padding: 0.625rem 1rem;
     color: white;
     font-weight: 500;
     font-size: 0.95rem;
     border-radius: 6px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    margin: 0 0.25rem;
+    margin: 0 0.125rem;
     text-decoration: none;
     background: transparent;
 
     @media (min-width: 992px) and (max-width: 1199px) {
-      padding: 0.5rem 0.75rem;
+      padding: 0.5rem 0.65rem;
       font-size: 0.875rem;
-      margin: 0 0.125rem;
+      margin: 0 0.1rem;
     }
 
     &::before {
@@ -228,6 +197,208 @@
     }
 
     @include focus-visible;
+  }
+
+  // Submenu dropdown styles
+  .nav-item-with-submenu {
+    position: relative;
+    display: inline-block;
+
+    .nav-link-parent {
+      position: relative;
+      padding-right: 1.5rem !important;
+
+      // Add down arrow indicator on desktop
+      @media (min-width: 992px) {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0.75rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0;
+          height: 0;
+          border-top: 4px solid currentColor;
+          border-right: 4px solid transparent;
+          border-left: 4px solid transparent;
+          transition: transform 0.2s ease;
+          z-index: 2;
+        }
+
+        // Keep the active state indicator (::after) separate
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 4px;
+          left: 1.25rem;
+          right: 1.25rem;
+          height: 3px;
+          background: linear-gradient(90deg, #ffb733 0%, #ffa500 100%);
+          border-radius: 3px;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 2px 10px rgba(255, 165, 0, 0.5);
+          pointer-events: none;
+        }
+
+        &.active::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    &:hover .nav-link-parent::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    // Add invisible bridge between link and submenu
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 0.5rem;
+      background: transparent;
+      display: none;
+
+      @media (min-width: 992px) {
+        display: block;
+      }
+    }
+
+    .submenu {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+      min-width: 240px;
+      padding: 0.5rem 0;
+      z-index: 1050;
+      animation: slideDown 0.2s ease-out;
+      border: 1px solid rgba(99, 102, 241, 0.1);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 1.5rem;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid white;
+        filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.05));
+      }
+
+      .submenu-item {
+        display: block;
+        padding: 0.75rem 1.25rem;
+        color: $indigo-700;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        position: relative;
+        border-left: 3px solid transparent;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+          background: linear-gradient(180deg, #ffb733 0%, #ffa500 100%);
+          transform: scaleY(0);
+          transition: transform 0.2s ease;
+        }
+
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            rgba(99, 102, 241, 0.08) 0%,
+            transparent 100%
+          );
+          color: $indigo-800;
+          padding-left: 1.5rem;
+
+          &::before {
+            transform: scaleY(1);
+          }
+        }
+
+        &:active {
+          background: rgba(99, 102, 241, 0.12);
+        }
+      }
+    }
+
+    // Mobile submenu styles
+    @media (max-width: 991px) {
+      display: block;
+      width: 100%;
+
+      .nav-link-parent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: auto;
+          border-top: 5px solid currentColor;
+          border-right: 5px solid transparent;
+          border-left: 5px solid transparent;
+          transition: transform 0.2s ease;
+        }
+      }
+
+      &.show-mobile-submenu .nav-link-parent::after {
+        transform: rotate(180deg);
+      }
+
+      .submenu {
+        position: static;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        display: none;
+
+        &::before {
+          display: none;
+        }
+
+        .submenu-item {
+          color: white;
+          padding: 0.625rem 1rem;
+          font-size: 0.875rem;
+          border-radius: 6px;
+
+          &::before {
+            background: linear-gradient(180deg, #ffb733 0%, #ffa500 100%);
+          }
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding-left: 1.25rem;
+          }
+        }
+      }
+
+      &.show-mobile-submenu .submenu {
+        display: block;
+      }
+    }
   }
 
   // Mobile menu toggle

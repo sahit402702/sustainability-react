@@ -8,8 +8,8 @@
   .page-header {
     background: linear-gradient(
       135deg,
-      $indigo-600 0%,
-      $indigo-700 40%,
+      #000049 0%,
+      #1a1a6e 40%,
       $emerald-600 100%
     );
     padding: 4rem 0;
@@ -52,7 +52,7 @@
     }
 
     @media (min-width: 768px) {
-      padding: 5rem 0;
+      padding: 4rem 0;
     }
 
     .container {
@@ -101,7 +101,6 @@
       color: white;
       margin-bottom: 1rem;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 0.6s ease-out;
 
       @media (min-width: 768px) {
         margin-bottom: 1.5rem;
@@ -113,17 +112,11 @@
       color: rgba(255, 255, 255, 0.95);
       font-weight: $font-weight-medium;
       line-height: 1.6;
-      max-width: 800px;
-      animation: fadeInUp 0.6s ease-out 0.1s backwards;
 
       @media (min-width: 768px) {
         font-size: 1.25rem;
       }
     }
-  }
-
-  .calculator-content {
-    animation: fadeInUp 0.6s ease-out;
   }
 
   // Calculator Card
