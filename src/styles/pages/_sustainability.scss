@@ -1,7 +1,7 @@
 // Modern Sustainability Module - Corporate Design
 
 .sustainability-page {
-  background-color: $light;
+  background-color: #f8f9fa;
 
   // Page Header - Ultra Premium (Standardized)
   .page-header {
@@ -96,6 +96,7 @@
 
     h1,
     .page-title {
+      font-size: 3.5rem;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: $font-weight-bold;
       color: white;
@@ -107,6 +108,7 @@
 
     .intro-text,
     p {
+      font-size: 1.375rem;
       font-size: clamp(1.125rem, 2vw, 1.375rem);
       color: rgba(255, 255, 255, 0.95);
       margin-bottom: 0;
@@ -277,32 +279,25 @@
           }
 
           &:hover {
-            color: $indigo-700;
-            background: $indigo-50;
-            border-color: $indigo-300;
-            transform: translateY(-2px);
+            color: #000048;
+            background: #f0f4ff;
+            border-color: #000048;
             box-shadow: $box-shadow-sm;
+            text-decoration: none;
           }
 
           &.active {
             color: white;
-            background: linear-gradient(
-              135deg,
-              $indigo-600 0%,
-              $indigo-500 100%
-            );
-            border-color: $indigo-600;
+            background: linear-gradient(135deg, #000048 0%, #1a1a6e 100%);
+            border-color: #000048;
             font-weight: $font-weight-semibold;
             box-shadow: $box-shadow-md;
-            transform: translateY(-2px);
+            text-decoration: none;
 
             &:hover {
-              background: linear-gradient(
-                135deg,
-                $indigo-700 0%,
-                $indigo-600 100%
-              );
-              border-color: $indigo-700;
+              background: linear-gradient(135deg, #1a1a6e 0%, #000048 100%);
+              border-color: #000048;
+              text-decoration: none;
             }
           }
         }

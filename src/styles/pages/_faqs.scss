@@ -1,7 +1,7 @@
 // Modern FAQs Page - Premium Corporate Design
 
 .faqs-page {
-  background: linear-gradient(180deg, $light 0%, white 50%, $light 100%);
+  background: #f8f9fa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -97,6 +97,7 @@
     }
 
     h1 {
+      font-size: 3.5rem;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: $font-weight-bold;
       color: white;
@@ -197,9 +198,9 @@
       }
 
       .expand-all-btn {
-        background: linear-gradient(135deg, $indigo-50, $emerald-50);
-        border: 2px solid $indigo-200;
-        color: $indigo-700;
+        background: linear-gradient(135deg, #f0f4ff, #e0f2fe);
+        border: 2px solid #000048;
+        color: #000048;
         font-size: $font-size-sm;
         font-weight: $font-weight-semibold;
         cursor: pointer;
@@ -210,6 +211,9 @@
         text-transform: uppercase;
         position: relative;
         overflow: hidden;
+        text-decoration: none;
+        min-width: 160px;
+        text-align: center;
 
         &::before {
           content: "";
@@ -228,16 +232,16 @@
         }
 
         &:hover {
-          background: linear-gradient(135deg, $indigo-600, $emerald-600);
+          background: linear-gradient(135deg, #000048, #1a1a6e);
           color: white;
-          border-color: $indigo-600;
+          border-color: #000048;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba($indigo-600, 0.3);
+          box-shadow: 0 4px 12px rgba(0, 0, 72, 0.3);
+          text-decoration: none;
 
           &::before {
             left: 100%;
           }
-          text-decoration: underline;
         }
 
         &:focus-visible {

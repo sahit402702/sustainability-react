@@ -1,7 +1,7 @@
 // Case Study Module Page Styles - Premium Corporate Design
 
 .casestudy-page {
-  background: linear-gradient(180deg, $light 0%, white 50%, $light 100%);
+  background: #f8f9fa;
   min-height: 100vh;
 
   // Page Header - Ultra Premium (Standardized)
@@ -104,6 +104,7 @@
 
     .page-title,
     h1 {
+      font-size: 3.5rem;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: $font-weight-bold;
       color: white;
@@ -201,13 +202,13 @@
   .profile-card {
     border: none;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15),
-      0 4px 12px rgba(99, 102, 241, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 72, 0.15), 0 4px 12px rgba(0, 0, 72, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
     margin-bottom: 2.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(0, 0, 72, 0.15);
 
     // Decorative gradient overlay
     &::before {
@@ -219,10 +220,10 @@
       height: 3px;
       background: linear-gradient(
         90deg,
-        #6366f1 0%,
-        #8b5cf6 25%,
-        #ec4899 50%,
-        #f59e0b 75%,
+        #000048 0%,
+        #1a1a6e 25%,
+        #2d3e8e 50%,
+        #047857 75%,
         #10b981 100%
       );
     }
@@ -286,7 +287,7 @@
     .profile-name {
       font-size: 1.625rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #1e1b4b 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #000048 0%, #1a1a6e 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -305,15 +306,15 @@
 
     .profile-title {
       font-size: 1.0625rem;
-      color: #6366f1;
+      color: #000048;
       margin-bottom: 0;
       line-height: 1.5;
       font-weight: 600;
       padding: 0.375rem 1rem;
-      background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+      background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
       border-radius: 20px;
       display: inline-block;
-      border: 1px solid #c7d2fe;
+      border: 1px solid #d4dbff;
 
       @media (min-width: 768px) {
         font-size: 1.125rem;
@@ -344,28 +345,27 @@
     &.highlighted {
       background: linear-gradient(
         135deg,
-        #faf5ff 0%,
-        #f3e8ff 50%,
-        #fae8ff 100%
+        #f8faff 0%,
+        #f0f4ff 50%,
+        #e8eeff 100%
       );
-      border: 2px solid rgba(139, 92, 246, 0.3);
-      box-shadow: 0 20px 50px rgba(139, 92, 246, 0.25),
-        0 10px 25px rgba(168, 85, 247, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 1),
-        inset 0 -1px 0 rgba(139, 92, 246, 0.1);
+      border: 2px solid rgba(0, 0, 72, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 72, 0.25),
+        0 10px 25px rgba(26, 26, 110, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(0, 0, 72, 0.1);
 
       &::before {
         height: 5px;
         background: linear-gradient(
           90deg,
-          #6366f1 0%,
-          #8b5cf6 20%,
-          #a855f7 40%,
-          #ec4899 60%,
-          #f59e0b 80%,
-          #10b981 100%
+          #000048 0%,
+          #1a1a6e 20%,
+          #2d3e8e 40%,
+          #047857 60%,
+          #10b981 80%,
+          #34d399 100%
         );
-        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+        box-shadow: 0 2px 8px rgba(0, 0, 72, 0.4);
       }
 
       &::after {
@@ -407,10 +407,10 @@
         font-weight: 900;
         background: linear-gradient(
           135deg,
-          #4c1d95 0%,
-          #6366f1 40%,
-          #8b5cf6 70%,
-          #a855f7 100%
+          #000048 0%,
+          #1a1a6e 40%,
+          #2d3e8e 70%,
+          #3b4ba0 100%
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -422,13 +422,13 @@
       }
 
       .profile-title {
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        background: linear-gradient(135deg, #000048 0%, #1a1a6e 100%);
         color: white;
         font-weight: 700;
         font-size: 1.0625rem;
         padding: 0.5rem 1.25rem;
         border: none;
-        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 72, 0.3);
 
         @media (min-width: 768px) {
           font-size: 1.125rem;
@@ -449,11 +449,11 @@
           rgba(249, 250, 251, 0.95) 100%
         );
         border-radius: 16px;
-        border-left: 5px solid #8b5cf6;
-        border-right: 1px solid rgba(139, 92, 246, 0.2);
-        border-top: 1px solid rgba(139, 92, 246, 0.2);
-        border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-        box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15),
+        border-left: 5px solid #1a1a6e;
+        border-right: 1px solid rgba(0, 0, 72, 0.2);
+        border-top: 1px solid rgba(0, 0, 72, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 72, 0.2);
+        box-shadow: 0 8px 24px rgba(0, 0, 72, 0.15),
           inset 0 1px 0 rgba(255, 255, 255, 1);
         position: relative;
 
@@ -465,7 +465,7 @@
           left: 1.5rem;
           width: 40px;
           height: 40px;
-          background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+          background: linear-gradient(135deg, #000048 0%, #1a1a6e 100%);
           opacity: 0.1;
           border-radius: 8px;
           transform: rotate(-6deg);
@@ -478,10 +478,9 @@
           left: 1.25rem;
           font-size: 4rem;
           font-weight: 900;
-          color: #8b5cf6;
+          color: #1a1a6e;
           opacity: 0.15;
           line-height: 1;
-          font-family: Georgia, serif;
         }
 
         @media (min-width: 768px) {

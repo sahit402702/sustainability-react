@@ -23,9 +23,7 @@ const SEO: React.FC<SEOProps> = ({
   const baseUrl = "https://your-domain.com";
   const defaultImage = `${baseUrl}/og-image.jpg`;
 
-  const fullTitle = title
-    ? `${title} - Sustainability Portal`
-    : "Sustainability Portal - Environmental Reporting & Impact Tracking";
+  const fullTitle = "SME NetZero Hub";
 
   const defaultDescription =
     "Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data.";

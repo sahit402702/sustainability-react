@@ -8,6 +8,14 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 16px;
+
+  // Ensure consistent font rendering across browsers
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -18,8 +26,25 @@ body {
   font-smooth: always;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // Windows-specific font rendering
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  // Additional cross-browser font rendering
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-optical-sizing: auto;
 }
 
 // Improve media defaults
