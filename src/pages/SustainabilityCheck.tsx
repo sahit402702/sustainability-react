@@ -218,7 +218,7 @@ const SustainabilityCheck: React.FC = () => {
         />
 
         <div className="results-header">
-          <Container>
+          <Container fluid>
             <Breadcrumb>
               <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
                 Home
@@ -236,7 +236,7 @@ const SustainabilityCheck: React.FC = () => {
         </div>
 
         <div className="results-content">
-          <Container>
+          <Container fluid>
             {relevantResults.length === 0 ? (
               <Alert variant="info" className="mb-4">
                 <Alert.Heading>No Applicable Requirements</Alert.Heading>
@@ -293,7 +293,7 @@ const SustainabilityCheck: React.FC = () => {
       />
 
       <div className="page-header">
-        <Container>
+        <Container fluid>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
               Home
@@ -301,62 +301,21 @@ const SustainabilityCheck: React.FC = () => {
             <Breadcrumb.Item active>Sustainability Check</Breadcrumb.Item>
           </Breadcrumb>
 
-          <Row className="align-items-start">
-            <Col lg={8}>
-              <h1 className="page-title">
-                Is your Business Sustainability-Ready for Public Sector Bids
-              </h1>
-              <p className="page-subtitle">
-                Public sector contracts increasingly require compliance with
-                sustainability standards like Net Zero commitments, Carbon
-                Reduction Plans, and social value obligations. Use our quick
-                self-assessment tool below to check if your business meets these
-                requirements before your bid.
-              </p>
-            </Col>
-            <Col
-              lg={4}
-              className="d-none d-lg-flex justify-content-end align-items-center"
-            >
-              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
-                <img
-                  src="assets/cognizant_logo.svg"
-                  alt="Cognizant"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-                <img
-                  src="assets/birkbeck_logo.svg"
-                  alt="Birkbeck"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-              </div>
-            </Col>
-          </Row>
-
-          {/* Logos on mobile and tablet - left aligned */}
-          <div className="d-flex d-lg-none align-items-center mt-3">
-            <div className="d-flex align-items-center gap-2 flex-shrink-0">
-              <img
-                src="assets/cognizant_logo.svg"
-                alt="Cognizant"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-              <img
-                src="assets/birkbeck_logo.svg"
-                alt="Birkbeck"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-            </div>
-          </div>
+          <h1 className="page-title">
+            Is your Business Sustainability-Ready for Public Sector Bids
+          </h1>
+          <p className="page-subtitle">
+            Public sector contracts increasingly require compliance with
+            sustainability standards like Net Zero commitments, Carbon Reduction
+            Plans, and social value obligations. Use our quick self-assessment
+            tool below to check if your business meets these requirements before
+            your bid.
+          </p>
         </Container>
       </div>
 
       <div className="reporting-content">
-        <Container>
+        <Container fluid>
           {errorMessage && (
             <Alert variant="warning" className="mb-4">
               <Alert.Heading>

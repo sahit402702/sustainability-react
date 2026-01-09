@@ -29,7 +29,7 @@ const CaseStudy: React.FC = () => {
 
       {/* Page Header */}
       <section className="page-header">
-        <Container>
+        <Container fluid>
           <Breadcrumb>
             <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
               Home
@@ -37,61 +37,20 @@ const CaseStudy: React.FC = () => {
             <Breadcrumb.Item active>Case study module</Breadcrumb.Item>
           </Breadcrumb>
 
-          <Row className="align-items-start">
-            <Col lg={8}>
-              <h1 className="page-title">Case Study Module</h1>
+          <h1 className="page-title">Case Study Module</h1>
 
-              <p className="page-description">
-                An end to end demonstration for SME's of how effective
-                sustainability governance and reporting should be implemented,
-                presented within the context of an IT services supply chain
-                contract.
-              </p>
-            </Col>
-            <Col
-              lg={4}
-              className="d-none d-lg-flex justify-content-end align-items-center"
-            >
-              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0">
-                <img
-                  src="assets/cognizant_logo.svg"
-                  alt="Cognizant"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-                <img
-                  src="assets/birkbeck_logo.svg"
-                  alt="Birkbeck"
-                  className="page-header-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-              </div>
-            </Col>
-          </Row>
-
-          {/* Logos on mobile and tablet - left aligned */}
-          <div className="d-flex d-lg-none align-items-center mt-3">
-            <div className="d-flex align-items-center gap-2 flex-shrink-0">
-              <img
-                src="assets/cognizant_logo.svg"
-                alt="Cognizant"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-              <img
-                src="assets/birkbeck_logo.svg"
-                alt="Birkbeck"
-                className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
-              />
-            </div>
-          </div>
+          <p className="page-description">
+            An end to end demonstration for SME's of how effective
+            sustainability governance and reporting should be implemented,
+            presented within the context of an IT services supply chain
+            contract.
+          </p>
         </Container>
       </section>
 
       {/* Main Content */}
       <section className="case-study-content">
-        <Container>
+        <Container fluid>
           {/* Profile Card 1 */}
           <Card className="profile-card">
             <Card.Body>
@@ -102,11 +61,6 @@ const CaseStudy: React.FC = () => {
                     Director of Innovation at Birkbeck
                   </p>
                 </div>
-                <img
-                  src="assets/birkbeck_logo.svg"
-                  alt="Birkbeck University"
-                  className="profile-logo"
-                />
               </div>
             </Card.Body>
           </Card>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Container, Row, Col, Button, Card, Breadcrumb } from "react-bootstrap";
 import SEO from "@/components/SEO";
 import headings from "@/content/headings.json";
 import buttons from "@/content/buttons.json";
@@ -25,9 +25,15 @@ const Landing: React.FC = () => {
 
       {/* Hero Section */}
       <section className="hero-section" aria-labelledby="hero-heading">
-        <Container>
-          <Row className="align-items-start g-4">
-            <Col lg={7} xl={8} className="pe-lg-4 pe-xl-5">
+        <Container fluid>
+          <Breadcrumb>
+            <Breadcrumb.Item active aria-current="page">
+              Home
+            </Breadcrumb.Item>
+          </Breadcrumb>
+
+          <Row className="align-items-start g-0">
+            <Col xs={12}>
               <h1 id="hero-heading" className="hero-title">
                 {headings.landing.hero.title}
               </h1>
@@ -41,55 +47,26 @@ const Landing: React.FC = () => {
                   size="lg"
                   className="btn-shadow"
                 >
+                  {buttons.navigation.whySustainability}
+                </Button>
+                <Button
+                  as={Link as any}
+                  to="/sustainability-check"
+                  variant="primary"
+                  size="lg"
+                  className="btn-shadow"
+                >
                   {buttons.cta.startCompliance}
                 </Button>
                 <Button
                   as={Link as any}
                   to="/reporting"
-                  variant="warning"
+                  variant="primary"
                   size="lg"
                   className="btn-shadow"
                 >
                   {buttons.cta.downloadTemplates}
                 </Button>
-              </div>
-
-              {/* Logos on mobile and tablet - left aligned below buttons */}
-              <div className="d-flex d-lg-none align-items-center mt-4">
-                <div className="d-flex align-items-center gap-2 flex-shrink-0">
-                  <img
-                    src="assets/cognizant_logo.svg"
-                    alt="Cognizant"
-                    className="hero-logo"
-                    style={{ height: "28px", maxHeight: "28px" }}
-                  />
-                  <img
-                    src="assets/birkbeck_logo.svg"
-                    alt="Birkbeck"
-                    className="hero-logo"
-                    style={{ height: "28px", maxHeight: "28px" }}
-                  />
-                </div>
-              </div>
-            </Col>
-            <Col
-              lg={5}
-              xl={4}
-              className="d-none d-lg-flex justify-content-end align-items-start"
-            >
-              <div className="d-flex align-items-center gap-3 gap-xl-4 flex-shrink-0 mt-2">
-                <img
-                  src="assets/cognizant_logo.svg"
-                  alt="Cognizant"
-                  className="hero-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
-                <img
-                  src="assets/birkbeck_logo.svg"
-                  alt="Birkbeck"
-                  className="hero-logo"
-                  style={{ height: "35px", maxHeight: "35px" }}
-                />
               </div>
             </Col>
           </Row>
@@ -98,8 +75,8 @@ const Landing: React.FC = () => {
 
       {/* Why Sustainability Matters Section */}
       <section className="why-sustainability" aria-labelledby="why-heading">
-        <Container>
-          <Row>
+        <Container fluid>
+          <Row className="g-0">
             <Col>
               <h2 id="why-heading" className="section-title">
                 {headings.landing.whySustainability.title}
@@ -122,8 +99,8 @@ const Landing: React.FC = () => {
 
       {/* SMESRI Section */}
       <section className="smesri-section" aria-labelledby="smesri-heading">
-        <Container>
-          <Row>
+        <Container fluid>
+          <Row className="g-0">
             <Col>
               <h2 id="smesri-heading" className="section-title">
                 {headings.landing.smesri.title}
@@ -135,7 +112,7 @@ const Landing: React.FC = () => {
           </Row>
 
           {/* Module Cards */}
-          <Row className="g-4 mt-4 justify-content-center">
+          <Row className="g-0 mt-4 justify-content-center">
             {headings.landing.smesri.modules.map((module, index) => {
               const icons = ["🌿", "📊"];
               return (
@@ -175,17 +152,10 @@ const Landing: React.FC = () => {
         className="andy-quote-section"
         aria-labelledby="andy-quote-heading"
       >
-        <Container>
-          <Row>
+        <Container fluid>
+          <Row className="g-0">
             <Col xs={12}>
               <div className="quote-card">
-                <div className="quote-header">
-                  <img
-                    src="assets/birkbeck_logo.svg"
-                    alt="Birkbeck University"
-                    className="quote-logo"
-                  />
-                </div>
                 <blockquote className="quote-content">
                   <p className="quote-text">
                     "As Director of Innovation at Birkbeck, I'm proud to
@@ -231,8 +201,8 @@ const Landing: React.FC = () => {
 
       {/* FAQ Section */}
       <section className="faq-section" aria-labelledby="faq-heading">
-        <Container>
-          <Row>
+        <Container fluid>
+          <Row className="g-0">
             <Col lg={8}>
               <h2 id="faq-heading" className="section-title">
                 {headings.landing.faqSection.title}

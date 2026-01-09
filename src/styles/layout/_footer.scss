@@ -97,9 +97,29 @@
     margin-bottom: 0;
     line-height: 1.6;
     font-size: 0.9375rem;
+  }
 
-    @media (min-width: 768px) {
-      font-size: 1rem;
+  .footer-logos {
+    margin-top: 1rem;
+
+    .footer-logo {
+      background: white;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      max-height: 40px;
+      width: auto;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      @media (max-width: 767px) {
+        max-height: 32px;
+        padding: 0.4rem 0.6rem;
+      }
     }
   }
 

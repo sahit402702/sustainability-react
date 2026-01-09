@@ -252,6 +252,9 @@
 // Logo styling for page headers
 .page-header-logo {
   transition: all 0.3s ease;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
 
   &:hover {
     transform: scale(1.05);

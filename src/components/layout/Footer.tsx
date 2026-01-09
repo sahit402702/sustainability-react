@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="footer" role="contentinfo">
-      <Container>
+      <Container fluid>
         <Row className="footer-content">
           <Col md={8} className="footer-section">
             <span className="footer-brand">♻️ Sustainability Portal</span>

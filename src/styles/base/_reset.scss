@@ -53,6 +53,12 @@ select {
   }
 }
 
+// Container fluid - full width
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 // Focus visible for keyboard navigation
 :focus-visible {
   outline: 3px solid $primary;
