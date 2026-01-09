@@ -232,9 +232,10 @@ const CarbonCalculator: React.FC = () => {
           { label: "Home", path: "/" },
           { label: "Carbon Calculator", path: "/carbon-calculator" },
         ]}
+        showLogos={false}
       />
 
-      <Container fluid className="calculator-content py-5">
+      <Container fluid className="calculator-content py-4">
         <Row className="g-4">
           <Col lg={7} xl={7} className="mb-4 mb-lg-0">
             <Card className="calculator-card">

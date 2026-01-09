@@ -24,13 +24,13 @@
   }
 }
 
-// Primary Button - Indigo
+// Primary Button - Cognizant Blue
 .btn-primary {
-  background: linear-gradient(135deg, $indigo-600 0%, $indigo-500 100%);
+  background: linear-gradient(135deg, #000048 0%, #1a1a6e 100%);
   color: white;
 
   &:hover {
-    background: linear-gradient(135deg, $indigo-700 0%, $indigo-600 100%);
+    background: linear-gradient(135deg, #1a1a6e 0%, #000048 100%);
   }
 
   &:focus {
@@ -54,13 +54,13 @@
 
 // Outline Button
 .btn-outline-primary {
-  border: 2px solid $primary;
-  color: $primary;
+  border: 2px solid #000048;
+  color: #000048;
   background: transparent;
   box-shadow: none;
 
   &:hover {
-    background: $primary;
+    background: #000048;
     color: white;
     box-shadow: $box-shadow-md;
   }

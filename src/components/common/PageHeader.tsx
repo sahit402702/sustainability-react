@@ -7,6 +7,7 @@ export interface PageHeaderProps {
   subtitle?: string;
   breadcrumbs?: Array<{ label: string; path?: string }>;
   className?: string;
+  showLogos?: boolean;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({
@@ -14,10 +15,11 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   subtitle,
   breadcrumbs,
   className = "",
+  showLogos = true,
 }) => {
   return (
     <div className={`page-header ${className}`}>
-      <Container>
+      <Container fluid>
         {breadcrumbs && breadcrumbs.length > 0 && (
           <Breadcrumb>
             {breadcrumbs.map((crumb, index) => (
@@ -34,48 +36,52 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         )}
 
         <Row className="align-items-start">
-          <Col lg={8}>
+          <Col lg={showLogos ? 8 : 12}>
             <h1 className="page-title">{title}</h1>
             {subtitle && <p className="page-subtitle">{subtitle}</p>}
           </Col>
-          <Col
-            lg={4}
-            className="d-none d-lg-flex justify-content-end align-items-center"
-          >
-            <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+          {showLogos && (
+            <Col
+              lg={4}
+              className="d-none d-lg-flex justify-content-end align-items-center"
+            >
+              <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
+                <img
+                  src="assets/cognizant_logo.svg"
+                  alt="Cognizant"
+                  className="page-header-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+                <img
+                  src="assets/birkbeck_logo.svg"
+                  alt="Birkbeck"
+                  className="page-header-logo"
+                  style={{ height: "30px", maxHeight: "30px" }}
+                />
+              </div>
+            </Col>
+          )}
+        </Row>
+
+        {/* Logos on mobile and tablet - left aligned */}
+        {showLogos && (
+          <div className="d-flex d-lg-none align-items-center mt-3">
+            <div className="d-flex align-items-center gap-2 flex-shrink-0">
               <img
                 src="assets/cognizant_logo.svg"
                 alt="Cognizant"
                 className="page-header-logo"
-                style={{ height: "30px", maxHeight: "30px" }}
+                style={{ height: "28px", maxHeight: "28px" }}
               />
               <img
                 src="assets/birkbeck_logo.svg"
                 alt="Birkbeck"
                 className="page-header-logo"
-                style={{ height: "30px", maxHeight: "30px" }}
+                style={{ height: "28px", maxHeight: "28px" }}
               />
             </div>
-          </Col>
-        </Row>
-
-        {/* Logos on mobile and tablet - left aligned */}
-        <div className="d-flex d-lg-none align-items-center mt-3">
-          <div className="d-flex align-items-center gap-2 flex-shrink-0">
-            <img
-              src="assets/cognizant_logo.svg"
-              alt="Cognizant"
-              className="page-header-logo"
-              style={{ height: "28px", maxHeight: "28px" }}
-            />
-            <img
-              src="assets/birkbeck_logo.svg"
-              alt="Birkbeck"
-              className="page-header-logo"
-              style={{ height: "28px", maxHeight: "28px" }}
-            />
           </div>
-        </div>
+        )}
       </Container>
     </div>
   );

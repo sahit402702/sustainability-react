@@ -22,42 +22,17 @@
 }
 
 .header {
-  background: #000049;
+  background: #000048;
   box-shadow: $box-shadow-md;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1030;
   transition: $transition-base;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   overflow: visible;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.08),
-      transparent
-    );
-    animation: shine 12s infinite;
-    pointer-events: none;
-  }
-
-  &.scrolled {
-    background: linear-gradient(
-      135deg,
-      $indigo-800 0%,
-      $indigo-700 50%,
-      $indigo-800 100%
-    );
-    box-shadow: $box-shadow-lg;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
+  width: 100%;
+  will-change: transform;
 
   .navbar {
     padding: 1rem 0;
@@ -129,6 +104,7 @@
     margin: 0 0.125rem;
     text-decoration: none;
     background: transparent;
+    cursor: pointer;
 
     @media (min-width: 992px) and (max-width: 1199px) {
       padding: 0.5rem 0.65rem;
@@ -195,6 +171,10 @@
     }
 
     @include focus-visible;
+
+    &:last-child::after {
+      display: none;
+    }
   }
 
   // Submenu dropdown styles
@@ -271,13 +251,15 @@
       top: calc(100% + 0.5rem);
       left: 0;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
-      min-width: 240px;
-      padding: 0.5rem 0;
-      z-index: 1050;
+      border-radius: 12px;
+      box-shadow: 0 12px 36px rgba(0, 0, 72, 0.15),
+        0 8px 20px rgba(0, 0, 72, 0.08);
+      min-width: 260px;
+      padding: 0.5rem;
+      z-index: 9999;
       animation: slideDown 0.2s ease-out;
-      border: 1px solid rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(0, 0, 72, 0.1);
+      overflow: hidden;
 
       &::before {
         content: "";
@@ -289,48 +271,38 @@
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
         border-bottom: 8px solid white;
-        filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.05));
+        filter: drop-shadow(0 -2px 3px rgba(0, 0, 72, 0.1));
       }
 
       .submenu-item {
         display: block;
         padding: 0.75rem 1.25rem;
-        color: $indigo-700;
+        color: #000048;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.9375rem;
         text-decoration: none;
-        transition: all 0.2s ease;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
-        border-left: 3px solid transparent;
+        cursor: pointer;
+        border-radius: 8px;
+        margin: 0.125rem 0;
+        border-bottom: 1px solid rgba(0, 0, 72, 0.1);
 
-        &::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 3px;
-          background: linear-gradient(180deg, #ffb733 0%, #ffa500 100%);
-          transform: scaleY(0);
-          transition: transform 0.2s ease;
+        &:last-child {
+          border-bottom: none;
         }
 
         &:hover {
-          background: linear-gradient(
-            90deg,
-            rgba(99, 102, 241, 0.08) 0%,
-            transparent 100%
-          );
-          color: $indigo-800;
-          padding-left: 1.5rem;
-
-          &::before {
-            transform: scaleY(1);
-          }
+          background: #000048;
+          color: white;
+          transform: translateX(4px);
         }
 
-        &:active {
-          background: rgba(99, 102, 241, 0.12);
+        &:active,
+        &.active {
+          background: #000048;
+          color: white;
+          font-weight: 600;
         }
       }
     }

@@ -1,7 +1,7 @@
 // Reporting Module Page Styles - Premium Corporate Design
 
 .reporting-page {
-  background: linear-gradient(180deg, $light 0%, white 50%, $light 100%);
+  background: #f8f9fa;
   min-height: 100vh;
 
   // Page Header - Ultra Premium (Standardized)
@@ -81,19 +81,26 @@
 
     h1,
     .page-title {
+      font-size: 3.5rem;
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: $font-weight-bold;
       color: white;
       margin-bottom: 1.25rem;
       margin-top: 0;
-      line-height: 1.15;
+      line-height: 1.25;
       text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       letter-spacing: -0.02em;
+      text-wrap: balance;
+      max-width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: manual;
     }
 
     .subtitle,
     .page-subtitle,
     p {
+      font-size: 1.375rem;
       font-size: clamp(1.125rem, 2vw, 1.375rem);
       color: rgba(255, 255, 255, 0.95);
       margin-bottom: 0;
@@ -169,21 +176,22 @@
           }
 
           .resource-link {
-            color: $indigo-600;
-            font-weight: $font-weight-semibold;
-            font-size: 1.0625rem;
+            color: #000048;
+            font-weight: 700;
+            font-size: 1.125rem;
             text-decoration: none;
             display: inline-block;
             margin-bottom: 0.75rem;
             transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
 
             @media (min-width: 768px) {
-              font-size: 1.125rem;
+              font-size: 1.1875rem;
             }
 
             &:hover {
-              color: $indigo-700;
-              text-decoration: underline;
+              color: #1a1a6e;
+              border-bottom-color: #1a1a6e;
               transform: translateX(4px);
             }
           }
@@ -205,8 +213,9 @@
                 content: "●";
                 position: absolute;
                 left: 0;
-                color: $emerald-600;
-                font-size: 0.875rem;
+                color: #000048;
+                font-size: 1.125rem;
+                font-weight: 700;
               }
 
               &:last-child {

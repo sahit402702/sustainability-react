@@ -127,15 +127,25 @@ const Header: React.FC = () => {
                         >
                           Key Legislations
                         </Link>
+                        <Link
+                          to={links.navigation.sustainabilityCheck}
+                          className="submenu-item"
+                          onClick={() => {
+                            closeNav();
+                            setShowSubmenu(false);
+                          }}
+                        >
+                          {buttons.navigation.sustainabilityCheck}
+                        </Link>
                       </div>
                     )}
                   </div>
                   <Nav.Link
                     as={NavLink}
-                    to={links.navigation.sustainabilityCheck}
+                    to={links.navigation.carbonCalculator}
                     onClick={closeNav}
                   >
-                    {buttons.navigation.sustainabilityCheck}
+                    {buttons.navigation.carbonCalculator}
                   </Nav.Link>
                   <Nav.Link
                     as={NavLink}
