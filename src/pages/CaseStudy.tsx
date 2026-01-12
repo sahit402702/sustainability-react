@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
-import { Container, Row, Col, Breadcrumb, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Container, Card } from "react-bootstrap";
 import SEO from "@/components/SEO";
+import PageHeader from "@/components/common/PageHeader";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const CaseStudy: React.FC = () => {
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -27,26 +25,14 @@ const CaseStudy: React.FC = () => {
         structuredData={structuredData}
       />
 
-      {/* Page Header */}
-      <section className="page-header">
-        <Container fluid>
-          <Breadcrumb>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
-              Home
-            </Breadcrumb.Item>
-            <Breadcrumb.Item active>Case study module</Breadcrumb.Item>
-          </Breadcrumb>
-
-          <h1 className="page-title">Case Study Module</h1>
-
-          <p className="page-description">
-            An end to end demonstration for SME's of how effective
-            sustainability governance and reporting should be implemented,
-            presented within the context of an IT services supply chain
-            contract.
-          </p>
-        </Container>
-      </section>
+      <PageHeader
+        title="Case Study Module"
+        subtitle="An end to end demonstration for SME's of how effective sustainability governance and reporting should be implemented, presented within the context of an IT services supply chain contract."
+        breadcrumbs={[
+          { label: "Home", path: "/" },
+          { label: "Case study module" },
+        ]}
+      />
 
       {/* Main Content */}
       <section className="case-study-content">

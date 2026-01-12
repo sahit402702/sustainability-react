@@ -12,7 +12,7 @@
       #1a1a6e 40%,
       $emerald-600 100%
     );
-    padding: 3rem 0;
+    padding: 4rem 0;
     border-bottom: none;
     position: relative;
     overflow: hidden;
@@ -52,7 +52,7 @@
     }
 
     @media (min-width: 768px) {
-      padding: 3rem 0;
+      padding: 4rem 0;
     }
 
     .container {
@@ -163,6 +163,27 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transform: translateY(-2px);
           }
+        }
+      }
+
+      .reset-btn {
+        background: transparent !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        padding: 0.75rem 1.25rem;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background: transparent !important;
+          border: none !important;
+          color: white !important;
+          box-shadow: none !important;
+          transform: none !important;
         }
       }
     }
@@ -1496,5 +1517,10 @@
         color: $gray-900;
       }
     }
+  }
+
+  // Progress bar styling
+  .progress-thin {
+    height: 8px;
   }
 }

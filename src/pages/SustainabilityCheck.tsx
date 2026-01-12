@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button,
-  Card,
-  Breadcrumb,
-  Alert,
-} from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Form, Button, Card, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import PageHeader from "@/components/common/PageHeader";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 interface Question {
   id: string;
@@ -31,11 +24,7 @@ const SustainabilityCheck: React.FC = () => {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   const sections: Section[] = [
     {
@@ -217,23 +206,14 @@ const SustainabilityCheck: React.FC = () => {
           structuredData={structuredData}
         />
 
-        <div className="results-header">
-          <Container fluid>
-            <Breadcrumb>
-              <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
-                Home
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>Assessment result</Breadcrumb.Item>
-            </Breadcrumb>
-
-            <h1 className="results-title">Assessment result</h1>
-            <p className="results-subtitle">
-              Essential guidelines for SMEs engaging in public sector work,
-              including recommended software and platforms for effective
-              sustainability reporting.
-            </p>
-          </Container>
-        </div>
+        <PageHeader
+          title="Assessment result"
+          subtitle="Essential guidelines for SMEs engaging in public sector work, including recommended software and platforms for effective sustainability reporting."
+          breadcrumbs={[
+            { label: "Home", path: "/" },
+            { label: "Assessment result" },
+          ]}
+        />
 
         <div className="results-content">
           <Container fluid>
@@ -292,27 +272,14 @@ const SustainabilityCheck: React.FC = () => {
         structuredData={structuredData}
       />
 
-      <div className="page-header">
-        <Container fluid>
-          <Breadcrumb>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
-              Home
-            </Breadcrumb.Item>
-            <Breadcrumb.Item active>Sustainability Check</Breadcrumb.Item>
-          </Breadcrumb>
-
-          <h1 className="page-title">
-            Is your Business Sustainability-Ready for Public Sector Bids
-          </h1>
-          <p className="page-subtitle">
-            Public sector contracts increasingly require compliance with
-            sustainability standards like Net Zero commitments, Carbon Reduction
-            Plans, and social value obligations. Use our quick self-assessment
-            tool below to check if your business meets these requirements before
-            your bid.
-          </p>
-        </Container>
-      </div>
+      <PageHeader
+        title="Is your Business Sustainability-Ready for Public Sector Bids"
+        subtitle="Public sector contracts increasingly require compliance with sustainability standards like Net Zero commitments, Carbon Reduction Plans, and social value obligations. Use our quick self-assessment tool below to check if your business meets these requirements before your bid."
+        breadcrumbs={[
+          { label: "Home", path: "/" },
+          { label: "Sustainability Check" },
+        ]}
+      />
 
       <div className="reporting-content">
         <Container fluid>

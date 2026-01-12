@@ -228,6 +228,37 @@
     }
   }
 
+  // Intro Section - Light background with dark text (outside header)
+  .sustainability-intro {
+    background: white;
+    padding: 3rem 0;
+    border-bottom: 1px solid $gray-200;
+
+    @media (min-width: 768px) {
+      padding: 4rem 0;
+    }
+
+    .intro-text {
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      color: $gray-800;
+      line-height: $line-height-lg;
+      margin-bottom: 1.5rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .section-intro {
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      color: $gray-700;
+      line-height: $line-height-lg;
+      margin-top: 2rem;
+      margin-bottom: 0;
+      font-weight: $font-weight-medium;
+    }
+  }
+
   // Modern Pill-Style Tab Navigation
   .tabs-section {
     background: linear-gradient(to bottom, white 0%, $gray-50 100%);

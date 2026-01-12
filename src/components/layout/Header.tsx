@@ -39,7 +39,7 @@ const Header: React.FC = () => {
                   height="24"
                 />
                 <img
-                  src="/assets/birkbeck_logo.svg"
+                  src="/assets/birkbeck_logo.jpg"
                   alt="Birkbeck University of London"
                   className="header-logo"
                   height="24"
@@ -79,22 +79,16 @@ const Header: React.FC = () => {
                     }`}
                     onMouseEnter={() => setShowSubmenu(true)}
                     onMouseLeave={() => setShowSubmenu(false)}
-                    onClick={(e) => {
-                      // On mobile, toggle submenu on click
-                      if (window.innerWidth < 992) {
-                        e.preventDefault();
-                        setShowSubmenu(!showSubmenu);
-                      }
-                    }}
                   >
-                    <Nav.Link
-                      as={NavLink}
+                    <NavLink
                       to={links.navigation.sustainability}
                       onClick={closeNav}
-                      className="nav-link-parent"
+                      className={({ isActive }) =>
+                        `nav-link nav-link-parent ${isActive ? "active" : ""}`
+                      }
                     >
                       {buttons.navigation.whySustainability}
-                    </Nav.Link>
+                    </NavLink>
                     {showSubmenu && (
                       <div className="submenu">
                         <Link

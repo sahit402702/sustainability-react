@@ -92,7 +92,6 @@ const Sustainability: React.FC = () => {
           </Breadcrumb>
 
           <h1 className="page-title">{sustainabilityContent.pageTitle}</h1>
-          <p className="page-subtitle">{sustainabilityContent.infoBoxText}</p>
 
           {sustainabilityContent.introText.map((text, index) => (
             <p key={index} className="intro-text">

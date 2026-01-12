@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                 height="32"
               />
               <img
-                src="/assets/birkbeck_logo.svg"
+                src="/assets/birkbeck_logo.jpg"
                 alt="Birkbeck University of London"
                 className="footer-logo"
                 height="32"
@@ -62,10 +62,6 @@ const Footer: React.FC = () => {
             </p>
           </Col>
         </Row>
-
-        <div className="footer-bottom">
-          <p>©2026 Cognizant, all rights reserved</p>
-        </div>
       </Container>
     </footer>
   );
