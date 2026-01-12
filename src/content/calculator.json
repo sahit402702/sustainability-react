@@ -27,7 +27,7 @@
     "transport": {
       "title": "Transportation",
       "icon": "🚗",
-      "description": "Enter your annual travel distance in miles for each transport mode.",
+      "description": "Enter your annual travel distance. Cars: miles, Public transport & flights: kilometers.",
       "fields": {
         "carPetrol": {
           "label": "🚗 Petrol Car (miles/year)",
@@ -45,18 +45,18 @@
           "helpText": "72% lower emissions vs petrol"
         },
         "train": {
-          "label": "🚆 Train (miles/year)",
-          "placeholder": "e.g., 2000",
+          "label": "🚆 Train (km/year)",
+          "placeholder": "e.g., 3200",
           "helpText": "79% lower emissions vs car"
         },
         "bus": {
-          "label": "🚌 Bus (miles/year)",
-          "placeholder": "e.g., 1500",
+          "label": "🚌 Bus (km/year)",
+          "placeholder": "e.g., 2400",
           "helpText": ""
         },
         "flight": {
-          "label": "✈️ Flight (miles/year)",
-          "placeholder": "e.g., 3000",
+          "label": "✈️ Flight (km/year)",
+          "placeholder": "e.g., 4800",
           "helpText": "Domestic flights only"
         }
       }

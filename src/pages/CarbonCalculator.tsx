@@ -13,6 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import PageHeader from "@/components/common/PageHeader";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 interface EmissionInput {
   energy: {
@@ -61,6 +62,7 @@ interface EmissionResults {
 
 const CarbonCalculator: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("energy");
+  const [transportUnit, setTransportUnit] = useState<"km" | "miles">("km");
   const [inputs, setInputs] = useState<EmissionInput>({
     energy: { electricity: 0, naturalGas: 0, heating: 0 },
     transport: {
@@ -89,25 +91,77 @@ const CarbonCalculator: React.FC = () => {
     },
   });
 
+  // Handle unit toggle with value conversion
+  const handleUnitToggle = (newUnit: "km" | "miles") => {
+    if (newUnit === transportUnit) return;
+
+    const conversionFactor = newUnit === "miles" ? 0.621371 : 1.60934;
+
+    setInputs((prev) => ({
+      ...prev,
+      transport: {
+        carPetrol: prev.transport.carPetrol
+          ? Math.round(prev.transport.carPetrol * conversionFactor * 100) / 100
+          : 0,
+        carDiesel: prev.transport.carDiesel
+          ? Math.round(prev.transport.carDiesel * conversionFactor * 100) / 100
+          : 0,
+        carElectric: prev.transport.carElectric
+          ? Math.round(prev.transport.carElectric * conversionFactor * 100) /
+            100
+          : 0,
+        train: prev.transport.train
+          ? Math.round(prev.transport.train * conversionFactor * 100) / 100
+          : 0,
+        bus: prev.transport.bus
+          ? Math.round(prev.transport.bus * conversionFactor * 100) / 100
+          : 0,
+        flight: prev.transport.flight
+          ? Math.round(prev.transport.flight * conversionFactor * 100) / 100
+          : 0,
+      },
+    }));
+
+    setTransportUnit(newUnit);
+  };
+
+  // Handle reset - clear all inputs
+  const handleReset = () => {
+    setInputs({
+      energy: { electricity: 0, naturalGas: 0, heating: 0 },
+      transport: {
+        carPetrol: 0,
+        carDiesel: 0,
+        carElectric: 0,
+        train: 0,
+        bus: 0,
+        flight: 0,
+      },
+      waste: { landfill: 0, recycling: 0, compost: 0 },
+    });
+    setTransportUnit("km");
+    setActiveTab("energy");
+  };
+
   // UK GHG 2025 Conversion Factors (kg CO2e per unit)
   const conversionFactors = {
     energy: {
-      electricity: 0.21233, // kg CO2e per kWh (UK grid average)
-      naturalGas: 0.18316, // kg CO2e per kWh
-      heating: 0.21615, // kg CO2e per kWh (heating oil)
+      electricity: 0.177, // kg CO2e per kWh (UK grid average)
+      naturalGas: 0.18296, // kg CO2e per kWh
+      heating: 0.24677, // kg CO2e per kWh (heating oil)
     },
     transport: {
-      carPetrol: 0.17212, // kg CO2e per mile (average petrol car)
-      carDiesel: 0.16885, // kg CO2e per mile (average diesel car)
-      carElectric: 0.04738, // kg CO2e per mile (UK electric car)
-      train: 0.03694, // kg CO2e per mile (national rail)
-      bus: 0.10312, // kg CO2e per mile (local bus)
-      flight: 0.24587, // kg CO2e per mile (domestic flight)
+      carPetrol: 0.16267, // kg CO2e per km (average petrol car) - converted from 0.26187 per mile
+      carDiesel: 0.17303, // kg CO2e per km (average diesel car) - converted from 0.27849 per mile
+      carElectric: 0.03662, // kg CO2e per km (UK electric car) - converted from 0.05894 per mile
+      train: 0.05894, // kg CO2e per km (national rail)
+      bus: 0.10385, // kg CO2e per km (local bus)
+      flight: 0.22928, // kg CO2e per km (domestic flight)
     },
     waste: {
-      landfill: 467.13, // kg CO2e per tonne
-      recycling: -21.35, // kg CO2e per tonne (negative = carbon saving)
-      compost: 8.65, // kg CO2e per tonne
+      landfill: 497.24244, // kg CO2e per tonne
+      recycling: 4.68568, // kg CO2e per tonne
+      compost: 8.98311, // kg CO2e per tonne
     },
   };
 
@@ -119,13 +173,28 @@ const CarbonCalculator: React.FC = () => {
       inputs.energy.naturalGas * conversionFactors.energy.naturalGas +
       inputs.energy.heating * conversionFactors.energy.heating;
 
+    // Convert miles to km for all transport if user selected miles
+    const transportMultiplier = transportUnit === "miles" ? 1.60934 : 1;
+
     const transportEmissions =
-      inputs.transport.carPetrol * conversionFactors.transport.carPetrol +
-      inputs.transport.carDiesel * conversionFactors.transport.carDiesel +
-      inputs.transport.carElectric * conversionFactors.transport.carElectric +
-      inputs.transport.train * conversionFactors.transport.train +
-      inputs.transport.bus * conversionFactors.transport.bus +
-      inputs.transport.flight * conversionFactors.transport.flight;
+      inputs.transport.carPetrol *
+        transportMultiplier *
+        conversionFactors.transport.carPetrol +
+      inputs.transport.carDiesel *
+        transportMultiplier *
+        conversionFactors.transport.carDiesel +
+      inputs.transport.carElectric *
+        transportMultiplier *
+        conversionFactors.transport.carElectric +
+      inputs.transport.train *
+        transportMultiplier *
+        conversionFactors.transport.train +
+      inputs.transport.bus *
+        transportMultiplier *
+        conversionFactors.transport.bus +
+      inputs.transport.flight *
+        transportMultiplier *
+        conversionFactors.transport.flight;
 
     const wasteEmissions =
       inputs.waste.landfill * conversionFactors.waste.landfill +
@@ -212,10 +281,7 @@ const CarbonCalculator: React.FC = () => {
   };
 
   const [activeTab, setActiveTab] = useState<string>("energy");
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   return (
     <div className="carbon-calculator-page">
@@ -240,32 +306,37 @@ const CarbonCalculator: React.FC = () => {
           <Col lg={7} xl={7} className="mb-4 mb-lg-0">
             <Card className="calculator-card">
               <Card.Header>
-                <Nav variant="pills" className="category-tabs">
-                  <Nav.Item>
-                    <Nav.Link
-                      active={activeTab === "energy"}
-                      onClick={() => setActiveTab("energy")}
-                    >
-                      ⚡ Energy
-                    </Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link
-                      active={activeTab === "transport"}
-                      onClick={() => setActiveTab("transport")}
-                    >
-                      🚗 Transport
-                    </Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link
-                      active={activeTab === "waste"}
-                      onClick={() => setActiveTab("waste")}
-                    >
-                      ♻️ Waste
-                    </Nav.Link>
-                  </Nav.Item>
-                </Nav>
+                <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                  <Nav variant="pills" className="category-tabs flex-grow-1">
+                    <Nav.Item>
+                      <Nav.Link
+                        active={activeTab === "energy"}
+                        onClick={() => setActiveTab("energy")}
+                      >
+                        ⚡ Energy
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link
+                        active={activeTab === "transport"}
+                        onClick={() => setActiveTab("transport")}
+                      >
+                        🚗 Transport
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link
+                        active={activeTab === "waste"}
+                        onClick={() => setActiveTab("waste")}
+                      >
+                        ♻️ Waste
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                  <Button size="sm" onClick={handleReset} className="reset-btn">
+                    🔄 Reset
+                  </Button>
+                </div>
               </Card.Header>
               <Card.Body>
                 {activeTab === "energy" && (
@@ -337,9 +408,56 @@ const CarbonCalculator: React.FC = () => {
                   <div className="category-section transport-section">
                     <h4 className="section-title mb-4">Transportation</h4>
 
+                    <div className="mb-4 p-3 bg-light rounded">
+                      <Form.Label className="d-block mb-2 fw-semibold">
+                        Distance Unit for All Transport
+                      </Form.Label>
+                      <div
+                        className="btn-group"
+                        role="group"
+                        aria-label="Distance unit selector"
+                      >
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="unitToggle"
+                          id="unitKm"
+                          autoComplete="off"
+                          checked={transportUnit === "km"}
+                          onChange={() => handleUnitToggle("km")}
+                        />
+                        <label
+                          className="btn btn-outline-primary"
+                          htmlFor="unitKm"
+                        >
+                          Kilometers (km)
+                        </label>
+
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="unitToggle"
+                          id="unitMiles"
+                          autoComplete="off"
+                          checked={transportUnit === "miles"}
+                          onChange={() => handleUnitToggle("miles")}
+                        />
+                        <label
+                          className="btn btn-outline-primary"
+                          htmlFor="unitMiles"
+                        >
+                          Miles
+                        </label>
+                      </div>
+                      <Form.Text className="text-muted d-block mt-2">
+                        Select your preferred unit for all transport distances
+                        (cars, trains, buses, flights).
+                      </Form.Text>
+                    </div>
+
                     <Form.Group className="mb-4">
                       <Form.Label>
-                        Car - Petrol (miles/month)
+                        Car - Petrol ({transportUnit}/month)
                         <span className="text-muted ms-2">
                           Personal vehicle
                         </span>
@@ -356,7 +474,7 @@ const CarbonCalculator: React.FC = () => {
 
                     <Form.Group className="mb-4">
                       <Form.Label>
-                        Car - Diesel (miles/month)
+                        Car - Diesel ({transportUnit}/month)
                         <span className="text-muted ms-2">
                           Personal vehicle
                         </span>
@@ -373,7 +491,7 @@ const CarbonCalculator: React.FC = () => {
 
                     <Form.Group className="mb-4">
                       <Form.Label>
-                        Car - Electric (miles/month)
+                        Car - Electric ({transportUnit}/month)
                         <span className="text-muted ms-2">Battery EV</span>
                       </Form.Label>
                       <Form.Control
@@ -388,7 +506,7 @@ const CarbonCalculator: React.FC = () => {
 
                     <Form.Group className="mb-4">
                       <Form.Label>
-                        Train (miles/month)
+                        Train ({transportUnit}/month)
                         <span className="text-muted ms-2">Rail travel</span>
                       </Form.Label>
                       <Form.Control
@@ -403,7 +521,7 @@ const CarbonCalculator: React.FC = () => {
 
                     <Form.Group className="mb-4">
                       <Form.Label>
-                        Bus (miles/month)
+                        Bus ({transportUnit}/month)
                         <span className="text-muted ms-2">Local bus</span>
                       </Form.Label>
                       <Form.Control
@@ -418,7 +536,7 @@ const CarbonCalculator: React.FC = () => {
 
                     <Form.Group className="mb-4">
                       <Form.Label>
-                        Flights (miles/month)
+                        Flights ({transportUnit}/month)
                         <span className="text-muted ms-2">Air travel</span>
                       </Form.Label>
                       <Form.Control
@@ -562,6 +680,81 @@ const CarbonCalculator: React.FC = () => {
                     </Col>
                   </Row>
                 </div>
+
+                {/* UK Context Card */}
+                <Card className="mt-4 info-card">
+                  <Card.Body>
+                    <h5 className="mb-3">🇬🇧 UK Context</h5>
+                    <div className="uk-context-stats">
+                      <div className="context-stat mb-3">
+                        <div className="d-flex justify-content-between align-items-center">
+                          <span className="stat-label">
+                            UK Average per person:
+                          </span>
+                          <span className="stat-value">6,000 kg CO₂e/year</span>
+                        </div>
+                        <div className="progress mt-2 progress-thin">
+                          <div
+                            className="progress-bar bg-info"
+                            role="progressbar"
+                            style={{ width: "100%" }}
+                            aria-valuenow={6000}
+                            aria-valuemin={0}
+                            aria-valuemax={6000}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className="context-stat">
+                        <div className="d-flex justify-content-between align-items-center">
+                          <span className="stat-label">
+                            Paris Agreement Target (2030):
+                          </span>
+                          <span className="stat-value text-success">
+                            2,300 kg CO₂e/year
+                          </span>
+                        </div>
+                        <div className="progress mt-2 progress-thin">
+                          <div
+                            className="progress-bar bg-success"
+                            role="progressbar"
+                            style={{ width: "38%" }}
+                            aria-valuenow={2300}
+                            aria-valuemin={0}
+                            aria-valuemax={6000}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    {results.total > 0 && (
+                      <div className="mt-3 pt-3 border-top">
+                        <p className="small mb-2">
+                          <strong>Your monthly footprint:</strong>
+                        </p>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <span className="stat-label">
+                            {results.total > 500
+                              ? "⚠️ Above"
+                              : results.total > 192
+                              ? "📊 Near"
+                              : "✅ Below"}{" "}
+                            UK average
+                          </span>
+                          <span
+                            className={`stat-value ${
+                              results.total > 500
+                                ? "text-danger"
+                                : results.total > 192
+                                ? "text-warning"
+                                : "text-success"
+                            }`}
+                          >
+                            {((results.total / 500) * 100).toFixed(0)}%
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  </Card.Body>
+                </Card>
               </Card.Body>
             </Card>
           </Col>

@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
-import { Container, Row, Col, Breadcrumb } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import SEO from "@/components/SEO";
+import PageHeader from "@/components/common/PageHeader";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Reporting: React.FC = () => {
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -27,23 +25,15 @@ const Reporting: React.FC = () => {
         structuredData={structuredData}
       />
 
-      <div className="page-header">
-        <Container fluid>
-          <Breadcrumb>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
-              Home
-            </Breadcrumb.Item>
-            <Breadcrumb.Item active>Reporting Module</Breadcrumb.Item>
-          </Breadcrumb>
-
-          <h1 className="page-title">Reporting Module</h1>
-          <p className="page-subtitle">
-            In this module, you will find publicly available tools and resources
-            for supporting your business fulfil the sustainability governance
-            and reporting requirements that make up your public sector contract.
-          </p>
-        </Container>
-      </div>
+      <PageHeader
+        title="Reporting Module"
+        subtitle="In this module, you will find publicly available tools and resources for supporting your business fulfil the sustainability governance and reporting requirements that make up your public sector contract."
+        breadcrumbs={[
+          { label: "Home", path: "/" },
+          { label: "Reporting Module" },
+        ]}
+        showLogos={false}
+      />
 
       <div className="reporting-content">
         <Container fluid>

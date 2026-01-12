@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Breadcrumb,
-  Accordion,
-  Form,
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Container, Row, Col, Accordion, Form } from "react-bootstrap";
 import SEO from "@/components/SEO";
+import PageHeader from "@/components/common/PageHeader";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 import faqsContent from "@/content/faqs.json";
 
 const FAQs: React.FC = () => {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   const sections = faqsContent.items.map((item) => ({
     title: item.question,
@@ -49,22 +39,12 @@ const FAQs: React.FC = () => {
         canonicalUrl="https://your-domain.com/faqs"
       />
 
-      {/* Page Header */}
-      <header className="page-header">
-        <Container fluid>
-          <Breadcrumb>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
-              Home
-            </Breadcrumb.Item>
-            <Breadcrumb.Item active aria-current="page">
-              FAQs
-            </Breadcrumb.Item>
-          </Breadcrumb>
-
-          <h1>{faqsContent.pageTitle}</h1>
-          <p className="description">{faqsContent.description}</p>
-        </Container>
-      </header>
+      <PageHeader
+        title={faqsContent.pageTitle}
+        subtitle={faqsContent.description}
+        breadcrumbs={[{ label: "Home", path: "/" }, { label: "FAQs" }]}
+        showLogos={false}
+      />
 
       {/* Accordion Section */}
       <div className="accordion-section">

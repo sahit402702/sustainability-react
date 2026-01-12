@@ -53,7 +53,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                   style={{ height: "30px", maxHeight: "30px" }}
                 />
                 <img
-                  src="assets/birkbeck_logo.svg"
+                  src="assets/birkbeck_logo.jpg"
                   alt="Birkbeck"
                   className="page-header-logo"
                   style={{ height: "30px", maxHeight: "30px" }}
@@ -74,7 +74,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                 style={{ height: "28px", maxHeight: "28px" }}
               />
               <img
-                src="assets/birkbeck_logo.svg"
+                src="assets/birkbeck_logo.jpg"
                 alt="Birkbeck"
                 className="page-header-logo"
                 style={{ height: "28px", maxHeight: "28px" }}
