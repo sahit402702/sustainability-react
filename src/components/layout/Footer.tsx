@@ -60,6 +60,19 @@ const Footer: React.FC = () => {
               compliance tools, and reporting frameworks to help SMEs meet
               public sector requirements.
             </p>
+            <nav aria-label="Legal links" className="mt-3">
+              <ul className="legal-links">
+                <li>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
+                </li>
+                <li>
+                  <Link to="/cookie-policy">Cookie Policy</Link>
+                </li>
+                <li>
+                  <Link to="/terms-of-service">Terms of Service</Link>
+                </li>
+              </ul>
+            </nav>
           </Col>
         </Row>
       </Container>

@@ -1,0 +1,159 @@
+// Cookie Consent Banner Styles
+.cookie-consent-banner {
+  background: #ffffff !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15) !important;
+  z-index: 9999 !important;
+  border-top: 4px solid #000048 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+
+  // Content wrapper
+  .cookie-content-wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto 1.5rem auto;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #000048;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      color: #0b0c0c;
+      font-size: 16px;
+      line-height: 1.5;
+
+      &:last-of-type {
+        margin-bottom: 1rem;
+      }
+    }
+
+    details {
+      margin-bottom: 0;
+
+      summary {
+        color: #1d70b8;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 16px;
+        list-style: none;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &::before {
+          content: "▸ ";
+          display: inline-block;
+          transition: transform 0.2s;
+        }
+      }
+
+      &[open] summary::before {
+        transform: rotate(90deg);
+      }
+
+      .details-content {
+        margin-top: 1rem;
+        padding-left: 1rem;
+        border-left: 4px solid #b1b4b6;
+
+        p {
+          margin-bottom: 0.5rem;
+          color: #0b0c0c;
+
+          a {
+            color: #1d70b8;
+            text-decoration: none;
+            font-weight: 400;
+
+            &:hover {
+              color: #003078;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Button wrapper - buttons should be centered and side by side
+  .cookie-banner-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    max-width: 960px !important;
+
+    button {
+      margin: 0 !important;
+      font-size: 16px !important;
+      border-radius: 0 !important;
+      padding: 0.625rem 1.25rem !important;
+      cursor: pointer !important;
+      font-weight: 600 !important;
+      white-space: nowrap !important;
+
+      &:first-child {
+        // Reject button
+        background: #f3f2f1 !important;
+        color: #0b0c0c !important;
+        border: 1px solid #0b0c0c !important;
+        font-weight: 400 !important;
+
+        &:hover {
+          background: #e6e5e4 !important;
+        }
+      }
+
+      &:last-child {
+        // Accept button
+        background: #000048 !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 2px 0 rgba(0, 0, 72, 0.4) !important;
+
+        &:hover {
+          background: #00003a !important;
+        }
+      }
+    }
+  }
+
+  // Override default library styles
+  > div:first-child {
+    flex: none !important;
+    margin: 0 !important;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .cookie-consent-banner {
+    padding: 1rem !important;
+
+    .cookie-content-wrapper {
+      margin-bottom: 1rem;
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+    .cookie-banner-buttons {
+      flex-direction: column;
+      gap: 0.75rem !important;
+
+      button {
+        width: 100% !important;
+      }
+    }
+  }
+}
