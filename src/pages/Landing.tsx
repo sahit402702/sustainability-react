@@ -131,8 +131,8 @@ const Landing: React.FC = () => {
                           index === 0
                             ? "/sustainability"
                             : index === 1
-                            ? "/reporting"
-                            : "/faqs"
+                              ? "/reporting"
+                              : "/faqs"
                         }
                         className="module-link"
                       >
@@ -147,15 +147,52 @@ const Landing: React.FC = () => {
         </Container>
       </section>
 
-      {/* Andy Colley Quote Section */}
+      {/* Leadership Quote Section */}
       <section
         className="andy-quote-section"
-        aria-labelledby="andy-quote-heading"
+        aria-labelledby="leadership-quote-heading"
       >
         <Container fluid>
-          <Row className="g-0">
-            <Col xs={12}>
-              <div className="quote-card">
+          <Row className="g-4 quote-cards-row">
+            <Col xs={12} lg={6}>
+              <div className="quote-card h-100">
+                <blockquote className="quote-content">
+                  <p className="quote-text">
+                    "At Cognizant, we recognise that SMEs are central to the
+                    UK's economic resilience, innovation, and long‑term
+                    sustainability. In collaboration with Birkbeck University,
+                    our new sustainability microsite has been created with one
+                    goal in mind: to give small and medium enterprises
+                    practical, accessible, and immediately usable tools that
+                    help them navigate change with confidence.
+                  </p>
+                  <p className="quote-text">
+                    This platform provides step‑by‑step guidance, proven
+                    techniques, and actionable strategies to support
+                    organisations in reducing their environmental impact,
+                    building operational resilience, and adapting to evolving
+                    industry expectations.
+                  </p>
+                  <p className="quote-text">
+                    Alongside this, we're equipping SMEs with an ongoing digital
+                    toolkit they can revisit as they strengthen their
+                    sustainability journey. Our commitment is to empower every
+                    organisation regardless of size with the knowledge and
+                    capability to thrive in a greener, more sustainable future."
+                  </p>
+                </blockquote>
+                <div className="quote-author">
+                  <div className="author-info">
+                    <p className="author-name">Yatin Mahandru</p>
+                    <p className="author-title">
+                      Vice President of Public Sector & Health, Cognizant
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col xs={12} lg={6}>
+              <div className="quote-card h-100">
                 <blockquote className="quote-content">
                   <p className="quote-text">
                     "As Director of Innovation at Birkbeck, I'm proud to

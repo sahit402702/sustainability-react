@@ -1,0 +1,81 @@
+// Policy page styles
+.policy-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  .intro-text {
+    font-size: 1rem;
+    color: $gray-600;
+    margin-bottom: 2rem;
+  }
+
+  .policy-section {
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000048;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e6f0ff;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #000048;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $gray-700;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+
+      li {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: $gray-700;
+        margin-bottom: 0.5rem;
+
+        strong {
+          color: #000048;
+        }
+      }
+    }
+
+    a {
+      color: #3366cc;
+      text-decoration: underline;
+      font-weight: 500;
+
+      &:hover {
+        color: #6699ff;
+      }
+    }
+  }
+
+  .policy-note {
+    background: #f0f4ff !important;
+    border: 2px solid #cce0ff;
+    border-radius: 8px;
+
+    p {
+      color: #000048;
+      font-size: 0.95rem;
+
+      strong {
+        color: #000048;
+      }
+    }
+  }
+}
