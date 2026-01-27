@@ -149,12 +149,6 @@
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.3);
           transform: translate(-50%, -50%);
-          transition: width 0.6s, height 0.6s;
-        }
-
-        &:hover::before {
-          width: 300px;
-          height: 300px;
         }
 
         @media (min-width: 768px) {
@@ -167,12 +161,6 @@
         background: white;
         color: #000048;
         border: none;
-
-        &:hover {
-          background: $gray-100;
-          transform: scale(1.02);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-        }
       }
 
       .btn-warning {
@@ -181,13 +169,6 @@
         color: #1a1a1a;
         font-weight: 600;
         box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
-
-        &:hover {
-          background-color: darken(#ffc107, 8%);
-          border-color: darken(#ffc107, 8%);
-          color: #1a1a1a;
-          box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
-        }
 
         &:active {
           transform: translateY(0);
@@ -198,12 +179,6 @@
 
     // Logo styling for hero section
     .hero-logo {
-      transition: all 0.3s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-
       // Cognizant logo with white background
       &[alt="Cognizant"] {
         background-color: white;
@@ -302,18 +277,15 @@
       border: 2px solid #000048;
       color: #000048;
       background: white;
-      transition: all 0.3s ease;
       font-size: 0.9375rem;
       position: relative;
       z-index: 2;
       text-decoration: none;
 
-      &:hover,
       &:focus {
         background: #000048;
         color: white;
         border-color: #000048;
-        transform: translateY(-2px);
         text-decoration: none;
       }
 
@@ -449,12 +421,18 @@
     .module-card {
       border-radius: 24px;
       padding: 0;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden;
       margin-bottom: 2rem;
+      transition: none !important;
+      transform: none !important;
+
+      &:hover {
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+      }
 
       @media (min-width: 768px) {
         border-radius: 28px;
@@ -466,63 +444,6 @@
       @media (min-width: 992px) {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
-      }
-
-      // Leafy decorative corner accent
-      &::before {
-        content: "";
-        position: absolute;
-        top: -40px;
-        right: -40px;
-        width: 120px;
-        height: 120px;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.4) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        transition: all 0.5s ease;
-      }
-
-      // Bottom left organic shape
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -30px;
-        left: -30px;
-        width: 100px;
-        height: 100px;
-        background: radial-gradient(
-          ellipse at center,
-          rgba(255, 255, 255, 0.3) 0%,
-          transparent 60%
-        );
-        border-radius: 60% 40% 40% 60%;
-        transform: rotate(25deg);
-        transition: all 0.5s ease;
-      }
-
-      &:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-
-        &::before {
-          top: -50px;
-          right: -50px;
-          width: 140px;
-          height: 140px;
-        }
-
-        &::after {
-          bottom: -40px;
-          left: -40px;
-          transform: rotate(35deg);
-        }
-
-        .module-icon {
-          transform: scale(1.2) rotate(-5deg);
-        }
       }
 
       .card-body {
@@ -555,7 +476,6 @@
         background: rgba(255, 255, 255, 0.6);
         border-radius: 50% 40% 50% 40%;
         backdrop-filter: blur(10px);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
 
@@ -603,64 +523,56 @@
       }
 
       .module-link {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
         font-weight: 600;
         color: $gray-900;
         text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
+        padding: 0.625rem 1.5rem;
         background: rgba(255, 255, 255, 0.9);
         border-radius: 50px;
         backdrop-filter: blur(5px);
         position: relative;
         z-index: 2;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        width: auto;
+        align-self: flex-start;
 
         @media (min-width: 576px) {
-          font-size: 0.9375rem;
+          font-size: 0.875rem;
+          padding: 0.625rem 1.5rem;
         }
 
         @media (min-width: 768px) {
-          font-size: 1rem;
-        }
-
-        &:hover {
-          background: rgba(255, 255, 255, 1);
-          transform: translateX(6px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-          color: $gray-900;
+          font-size: 0.9375rem;
+          padding: 0.75rem 1.75rem;
         }
 
         &::after {
           content: "→";
-          transition: transform 0.3s ease;
-        }
-
-        &:hover::after {
-          transform: translateX(4px);
         }
       }
 
-      // First card - Purple/Lavender theme
+      // First card - Light Blue theme to complement navy header
       &:nth-child(1) {
-        background: linear-gradient(135deg, #e8d5f2 0%, #d4b5e0 100%);
+        background: linear-gradient(135deg, #e6f0ff 0%, #cce0ff 100%);
 
         .module-icon {
-          background: linear-gradient(135deg, #b794c9, #a77eb8);
-          color: #4a1d6b;
+          background: linear-gradient(135deg, #99c2ff, #6699ff);
+          color: #000048;
         }
       }
 
-      // Second card - Mint/Emerald theme
+      // Second card - Soft Teal theme to complement navy header
       &:nth-child(2) {
-        background: linear-gradient(135deg, #b8e6d5 0%, #9dd4c1 100%);
+        background: linear-gradient(135deg, #e0f5f5 0%, #b3e6e6 100%);
 
         .module-icon {
-          background: linear-gradient(135deg, #8dd4b8, #6bc4a0);
-          color: #0d6e4f;
+          background: linear-gradient(135deg, #80d4d4, #4dc4c4);
+          color: #004d4d;
         }
       }
 
@@ -777,8 +689,9 @@
       font-weight: $font-weight-semibold;
       font-size: 1.0625rem;
       border-radius: 50px;
-      box-shadow: 0 4px 12px rgba(0, 0, 72, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 72, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
       cursor: pointer !important;
@@ -796,10 +709,8 @@
       }
 
       .arrow {
-        transition: transform 0.3s ease;
       }
 
-      // Shine effect
       &::before {
         content: "";
         position: absolute;
@@ -813,24 +724,7 @@
           rgba(255, 255, 255, 0.3),
           transparent
         );
-        transition: left 0.5s ease;
         pointer-events: none;
-      }
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 72, 0.4),
-          0 4px 8px rgba(0, 0, 0, 0.15);
-        color: white !important;
-        text-decoration: none !important;
-
-        .arrow {
-          transform: translateX(4px);
-        }
-
-        &::before {
-          left: 100%;
-        }
       }
 
       &:active {
@@ -853,7 +747,7 @@
   // Andy Colley Quote Section - Premium Handwritten Style
   .andy-quote-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #e8eeff 100%);
+    background: linear-gradient(135deg, #e6f0ff 0%, #cce0ff 50%, #b3d1ff 100%);
     position: relative;
     overflow: hidden;
 
@@ -867,7 +761,7 @@
       bottom: 0;
       background-image: radial-gradient(
         circle at 20px 20px,
-        rgba(139, 92, 246, 0.03) 1px,
+        rgba(255, 255, 255, 0.05) 1px,
         transparent 1px
       );
       background-size: 40px 40px;
@@ -882,23 +776,36 @@
       padding: 7rem 0;
     }
 
+    .quote-cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
     .quote-card {
       background: white;
       border-radius: 24px;
-      padding: 3rem 2rem;
-      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2),
-        0 10px 30px rgba(168, 85, 247, 0.15),
+      padding: 2.5rem 1.5rem;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 72, 0.4),
+        0 10px 30px rgba(0, 0, 72, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 1);
-      border: 2px solid rgba(139, 92, 246, 0.2);
+      border: 2px solid rgba(102, 153, 255, 0.3);
       position: relative;
+      display: flex;
+      flex-direction: column;
 
       @media (min-width: 768px) {
-        padding: 4rem 3rem;
+        padding: 3rem 2rem;
         border-radius: 32px;
       }
 
       @media (min-width: 992px) {
-        padding: 5rem 4rem;
+        padding: 3rem 2.5rem;
+      }
+
+      @media (min-width: 1200px) {
+        padding: 4rem 3rem;
       }
 
       // Decorative corner accent
@@ -911,14 +818,14 @@
         height: 6px;
         background: linear-gradient(
           90deg,
-          #6366f1 0%,
-          #8b5cf6 25%,
-          #a855f7 50%,
-          #ec4899 75%,
-          #f59e0b 100%
+          #000048 0%,
+          #3366cc 25%,
+          #6699ff 50%,
+          #3366cc 75%,
+          #000048 100%
         );
         border-radius: 24px 24px 0 0;
-        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+        box-shadow: 0 2px 8px rgba(0, 0, 72, 0.5);
 
         @media (min-width: 768px) {
           border-radius: 32px 32px 0 0;
@@ -935,7 +842,7 @@
         height: 300px;
         background: radial-gradient(
           circle at top right,
-          rgba(168, 85, 247, 0.08) 0%,
+          rgba(102, 153, 255, 0.12) 0%,
           transparent 70%
         );
         pointer-events: none;
@@ -956,7 +863,7 @@
       .quote-logo {
         height: 48px;
         width: auto;
-        filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.2));
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 72, 0.3));
         opacity: 0.9;
 
         @media (min-width: 768px) {
@@ -975,6 +882,7 @@
       border: none;
       position: relative;
       z-index: 1;
+      flex-grow: 1;
 
       // Large opening quote mark
       &::before {
@@ -982,37 +890,52 @@
         position: absolute;
         top: -1.5rem;
         left: -0.5rem;
-        font-size: 6rem;
+        font-size: 5rem;
         font-weight: 900;
-        color: #a855f7;
+        color: #6699ff;
         opacity: 0.15;
         line-height: 1;
         font-family: "Brush Script MT", "Lucida Handwriting", cursive;
         z-index: -1;
 
         @media (min-width: 768px) {
-          font-size: 8rem;
+          font-size: 6rem;
+          left: -0.75rem;
+          top: -1.5rem;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 7rem;
           left: -1rem;
           top: -2rem;
         }
       }
 
       .quote-text {
-        font-family: "Inter", system-ui, -apple-system, sans-serif;
-        font-size: 1.125rem;
-        line-height: 1.8;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 1rem;
+        line-height: 1.75;
         color: #1f2937;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
         font-weight: 400;
         letter-spacing: 0.01em;
 
         @media (min-width: 768px) {
-          font-size: 1.1875rem;
-          line-height: 1.85;
+          font-size: 1.0625rem;
+          line-height: 1.8;
         }
 
         @media (min-width: 992px) {
-          font-size: 1.25rem;
+          font-size: 1.125rem;
+          line-height: 1.85;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 1.1875rem;
           line-height: 1.9;
         }
 
@@ -1022,31 +945,33 @@
 
         // First word emphasis
         &:first-of-type::first-letter {
-          font-size: 1.6em;
+          font-size: 1.5em;
           font-weight: 700;
-          color: #8b5cf6;
+          color: #3366cc;
         }
       }
     }
 
     .quote-author {
-      margin-top: 2.5rem;
-      padding-top: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
       border-top: 2px solid transparent;
-      background: linear-gradient(white, white) padding-box,
+      background:
+        linear-gradient(white, white) padding-box,
         linear-gradient(
             90deg,
-            rgba(139, 92, 246, 0.3) 0%,
-            rgba(168, 85, 247, 0.1) 100%
+            rgba(0, 0, 72, 0.4) 0%,
+            rgba(102, 153, 255, 0.2) 100%
           )
           border-box;
       border-top: 2px solid transparent;
       position: relative;
       z-index: 1;
+      flex-shrink: 0;
 
       @media (min-width: 768px) {
-        margin-top: 3rem;
-        padding-top: 2.5rem;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
       }
 
       .author-info {
@@ -1054,15 +979,19 @@
       }
 
       .author-name {
-        font-family: "Inter", system-ui, -apple-system, sans-serif;
-        font-size: 1.375rem;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 1.25rem;
         font-weight: 700;
         background: linear-gradient(
           135deg,
-          #4c1d95 0%,
-          #6366f1 40%,
-          #8b5cf6 70%,
-          #a855f7 100%
+          #000048 0%,
+          #000866 40%,
+          #3366cc 70%,
+          #6699ff 100%
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
