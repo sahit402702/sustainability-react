@@ -156,10 +156,10 @@
         &:focus {
           border-color: $indigo-500;
           background-color: white;
-          box-shadow: 0 0 0 4px rgba($indigo-500, 0.12),
+          box-shadow:
+            0 0 0 4px rgba($indigo-500, 0.12),
             0 4px 12px rgba($indigo-500, 0.15);
           outline: none;
-          transform: translateY(-2px);
         }
 
         &::placeholder {
@@ -208,7 +208,7 @@
         border-radius: $border-radius-pill;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         letter-spacing: 0.01em;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         position: relative;
         overflow: hidden;
         text-decoration: none;
@@ -235,7 +235,6 @@
           background: linear-gradient(135deg, #000048, #1a1a6e);
           color: white;
           border-color: #000048;
-          transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 72, 0.3);
           text-decoration: none;
 
@@ -293,7 +292,6 @@
 
         &:hover {
           box-shadow: 0 4px 16px rgba(76, 81, 191, 0.15);
-          transform: translateY(-2px);
 
           &::before {
             transform: scaleY(1);

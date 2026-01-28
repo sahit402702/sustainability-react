@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Form,
-  Button,
-  Breadcrumb,
-  Nav,
-  ProgressBar,
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col, Card, Form, Button, Nav } from "react-bootstrap";
 import SEO from "@/components/SEO";
 import PageHeader from "@/components/common/PageHeader";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -61,7 +50,6 @@ interface EmissionResults {
 }
 
 const CarbonCalculator: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>("energy");
   const [transportUnit, setTransportUnit] = useState<"km" | "miles">("km");
   const [inputs, setInputs] = useState<EmissionInput>({
     energy: { electricity: 0, naturalGas: 0, heating: 0 },
@@ -140,7 +128,6 @@ const CarbonCalculator: React.FC = () => {
       waste: { landfill: 0, recycling: 0, compost: 0 },
     });
     setTransportUnit("km");
-    setActiveTab("energy");
   };
 
   // UK GHG 2025 Conversion Factors (kg CO2e per unit)
@@ -268,7 +255,7 @@ const CarbonCalculator: React.FC = () => {
 
   const handleInputChange = (
     category: string,
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const { name, value } = e.target;
     setInputs((prev) => ({
@@ -354,7 +341,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="electricity"
                         value={inputs.energy.electricity || ""}
-                        onChange={(e) => handleInputChange("energy", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "energy",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 350"
                         min="0"
                       />
@@ -369,7 +361,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="naturalGas"
                         value={inputs.energy.naturalGas || ""}
-                        onChange={(e) => handleInputChange("energy", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "energy",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 500"
                         min="0"
                       />
@@ -386,7 +383,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="heating"
                         value={inputs.energy.heating || ""}
-                        onChange={(e) => handleInputChange("energy", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "energy",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 100"
                         min="0"
                       />
@@ -466,7 +468,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="carPetrol"
                         value={inputs.transport.carPetrol || ""}
-                        onChange={(e) => handleInputChange("transport", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "transport",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 400"
                         min="0"
                       />
@@ -483,7 +490,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="carDiesel"
                         value={inputs.transport.carDiesel || ""}
-                        onChange={(e) => handleInputChange("transport", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "transport",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 400"
                         min="0"
                       />
@@ -498,7 +510,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="carElectric"
                         value={inputs.transport.carElectric || ""}
-                        onChange={(e) => handleInputChange("transport", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "transport",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 400"
                         min="0"
                       />
@@ -513,7 +530,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="train"
                         value={inputs.transport.train || ""}
-                        onChange={(e) => handleInputChange("transport", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "transport",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 100"
                         min="0"
                       />
@@ -528,7 +550,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="bus"
                         value={inputs.transport.bus || ""}
-                        onChange={(e) => handleInputChange("transport", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "transport",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 50"
                         min="0"
                       />
@@ -543,7 +570,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="flight"
                         value={inputs.transport.flight || ""}
-                        onChange={(e) => handleInputChange("transport", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "transport",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 200"
                         min="0"
                       />
@@ -577,7 +609,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="landfill"
                         value={inputs.waste.landfill || ""}
-                        onChange={(e) => handleInputChange("waste", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "waste",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 50"
                         min="0"
                       />
@@ -594,7 +631,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="recycling"
                         value={inputs.waste.recycling || ""}
-                        onChange={(e) => handleInputChange("waste", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "waste",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 30"
                         min="0"
                       />
@@ -609,7 +651,12 @@ const CarbonCalculator: React.FC = () => {
                         type="number"
                         name="compost"
                         value={inputs.waste.compost || ""}
-                        onChange={(e) => handleInputChange("waste", e)}
+                        onChange={(e) =>
+                          handleInputChange(
+                            "waste",
+                            e as React.ChangeEvent<HTMLInputElement>,
+                          )
+                        }
                         placeholder="e.g., 20"
                         min="0"
                       />
@@ -735,8 +782,8 @@ const CarbonCalculator: React.FC = () => {
                             {results.total > 500
                               ? "⚠️ Above"
                               : results.total > 192
-                              ? "📊 Near"
-                              : "✅ Below"}{" "}
+                                ? "📊 Near"
+                                : "✅ Below"}{" "}
                             UK average
                           </span>
                           <span
@@ -744,8 +791,8 @@ const CarbonCalculator: React.FC = () => {
                               results.total > 500
                                 ? "text-danger"
                                 : results.total > 192
-                                ? "text-warning"
-                                : "text-success"
+                                  ? "text-warning"
+                                  : "text-success"
                             }`}
                           >
                             {((results.total / 500) * 100).toFixed(0)}%
@@ -753,6 +800,26 @@ const CarbonCalculator: React.FC = () => {
                         </div>
                       </div>
                     )}
+                  </Card.Body>
+                </Card>
+
+                {/* Data Source Card */}
+                <Card className="mt-4 info-card">
+                  <Card.Body>
+                    <h5 className="mb-3">📊 Data Source</h5>
+                    <p className="small mb-3">
+                      Calculations based on UK Government GHG Conversion Factors
+                      2025, providing the most accurate and up-to-date emission
+                      factors.
+                    </p>
+                    <a
+                      href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2025"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-sm btn-outline-primary w-100"
+                    >
+                      View Official Factors →
+                    </a>
                   </Card.Body>
                 </Card>
               </Card.Body>
@@ -922,7 +989,7 @@ const CarbonCalculator: React.FC = () => {
                               <span className="detail-badge">
                                 Natural Gas:{" "}
                                 {results.scopeDetails.scope1.naturalGas.toFixed(
-                                  0
+                                  0,
                                 )}{" "}
                                 kg
                               </span>
@@ -938,7 +1005,7 @@ const CarbonCalculator: React.FC = () => {
                               <span className="detail-badge">
                                 Owned Vehicles:{" "}
                                 {results.scopeDetails.scope1.ownedVehicles.toFixed(
-                                  0
+                                  0,
                                 )}{" "}
                                 kg
                               </span>
@@ -993,7 +1060,7 @@ const CarbonCalculator: React.FC = () => {
                               <span className="detail-badge">
                                 Grid Electricity:{" "}
                                 {results.scopeDetails.scope2.electricity.toFixed(
-                                  0
+                                  0,
                                 )}{" "}
                                 kg
                               </span>
@@ -1049,7 +1116,7 @@ const CarbonCalculator: React.FC = () => {
                               <span className="detail-badge">
                                 Public Transport:{" "}
                                 {results.scopeDetails.scope3.publicTransport.toFixed(
-                                  0
+                                  0,
                                 )}{" "}
                                 kg
                               </span>
@@ -1066,7 +1133,7 @@ const CarbonCalculator: React.FC = () => {
                               <span className="detail-badge">
                                 Electric Vehicles:{" "}
                                 {results.scopeDetails.scope3.electricVehicles.toFixed(
-                                  0
+                                  0,
                                 )}{" "}
                                 kg
                               </span>
@@ -1083,25 +1150,6 @@ const CarbonCalculator: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                </Card.Body>
-              </Card>
-
-              <Card className="info-card">
-                <Card.Body>
-                  <h5 className="mb-3">📊 Data Source</h5>
-                  <p className="small mb-3">
-                    Calculations based on UK Government GHG Conversion Factors
-                    2025, providing the most accurate and up-to-date emission
-                    factors.
-                  </p>
-                  <a
-                    href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2025"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-sm btn-outline-primary w-100"
-                  >
-                    View Official Factors →
-                  </a>
                 </Card.Body>
               </Card>
 

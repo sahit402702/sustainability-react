@@ -120,13 +120,16 @@
   .calculator-card {
     border: none;
     border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      0 2px 8px rgba(0, 0, 0, 0.04);
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.06);
-      transform: translateY(-2px);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .card-header {
@@ -153,7 +156,6 @@
           &:hover {
             color: white;
             background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
           }
 
           &.active {
@@ -161,7 +163,6 @@
             background-color: white;
             border-color: white;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
           }
         }
       }
@@ -259,7 +260,6 @@
         border-color: $indigo-500;
         box-shadow: 0 0 0 4px rgba($indigo-500, 0.1);
         background-color: white;
-        transform: translateY(-1px);
       }
 
       &::placeholder {
@@ -370,15 +370,18 @@
   .results-card {
     border: none;
     border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.07),
+      0 2px 4px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     background: white;
     transition: all 0.3s ease;
     border: 1px solid #e5e7eb;
 
     &:hover {
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.07);
-      transform: translateY(-2px);
+      box-shadow:
+        0 8px 12px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.07);
     }
 
     .card-body {
@@ -422,7 +425,7 @@
       font-weight: 600;
       color: $gray-600;
       margin-bottom: 1rem;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       letter-spacing: 1px;
       position: relative;
       z-index: 1;
@@ -437,7 +440,11 @@
       position: relative;
       z-index: 1;
       animation: countUp 1s ease-out;
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        sans-serif;
     }
 
     .total-unit-inline {
@@ -615,7 +622,7 @@
       margin-bottom: 1.25rem;
       padding-bottom: 0;
       border-bottom: none;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
@@ -644,7 +651,6 @@
         background: white;
         border-color: $indigo-200;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        transform: translateX(4px);
       }
 
       .breakdown-header {
@@ -776,7 +782,6 @@
 
     &:hover {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
     }
 
     h5 {
@@ -797,7 +802,6 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
       &:hover {
-        transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba($indigo-600, 0.3);
       }
     }
@@ -821,7 +825,6 @@
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
           &:hover {
-            transform: scale(1.1) rotate(360deg);
           }
 
           &.scope-1 {
@@ -929,7 +932,6 @@
         background: white;
         border-color: $indigo-200;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        transform: translateY(-4px);
       }
 
       h6 {
@@ -1200,7 +1202,7 @@
       font-size: 0.75rem;
       font-weight: 600;
       color: $gray-600;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       letter-spacing: 0.3px;
     }
 
@@ -1253,7 +1255,6 @@
     }
 
     &:hover {
-      transform: translateX(4px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
   }
@@ -1311,7 +1312,11 @@
     font-size: 1.5rem;
     font-weight: 800;
     color: $gray-900;
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
 
   .scope-bar-unit {
@@ -1408,13 +1413,18 @@
     background: white;
     border-radius: 12px;
     padding: 1.75rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     border: 1px solid #e5e7eb;
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+      box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.06);
     }
   }
 
