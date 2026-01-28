@@ -56,15 +56,6 @@ const CookiePolicy: React.FC = () => {
             <section className="policy-section">
               <h2>Types of Cookies We Use</h2>
 
-              <h3>Strictly necessary cookies</h3>
-              <p>
-                These are cookies that are required for the operation of our
-                website. These essential cookies are always enabled because our
-                website won't work properly without them. You can switch off
-                these cookies in your browser settings but you may then not be
-                able to access all or parts of our website.
-              </p>
-
               <h3>Analytical or performance cookies</h3>
               <p>
                 These allow us to recognise and count the number of visitors and
