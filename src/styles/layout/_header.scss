@@ -79,7 +79,6 @@
 
     &:hover {
       color: #ffffff !important;
-      transform: translateY(-2px);
       text-decoration: none;
       text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
@@ -143,7 +142,6 @@
     &:focus {
       color: white;
       background: transparent;
-      transform: translateY(-2px);
       text-decoration: none;
 
       &::before {
@@ -180,10 +178,6 @@
     }
 
     @include focus-visible;
-
-    &:last-child::after {
-      display: none;
-    }
   }
 
   // Additional specificity for active nav links
@@ -275,7 +269,8 @@
       left: 0;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 12px 36px rgba(0, 0, 72, 0.15),
+      box-shadow:
+        0 12px 36px rgba(0, 0, 72, 0.15),
         0 8px 20px rgba(0, 0, 72, 0.08);
       min-width: 260px;
       padding: 0.5rem;
@@ -318,7 +313,6 @@
         &:hover {
           background: #000048;
           color: white;
-          transform: translateX(4px);
         }
 
         &:active,
@@ -405,7 +399,6 @@
     &:hover {
       background: rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
     }
 
     &:focus {

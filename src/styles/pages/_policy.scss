@@ -56,7 +56,10 @@
     a {
       color: #3366cc;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
       font-weight: 500;
+      border-bottom: none;
 
       &:hover {
         color: #6699ff;

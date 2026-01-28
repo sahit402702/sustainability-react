@@ -17,8 +17,6 @@
     &:focus {
       color: white;
       text-decoration: none;
-      transform: translateX(4px);
-      display: inline-block;
     }
   }
 
@@ -116,7 +114,6 @@
       transition: all 0.3s ease;
 
       &:hover {
-        transform: translateY(-2px);
         opacity: 0.9;
       }
 
@@ -153,9 +150,8 @@
     a {
       font-size: 0.875rem;
       color: rgba(255, 255, 255, 0.7);
-
       &:hover {
-        color: #99c2ff;
+        color: white;
       }
     }
 

@@ -147,10 +147,18 @@ const TermsOfService: React.FC = () => {
             <section className="policy-section">
               <h2>How You May Use Material on Our Site</h2>
               <p>
-                We and/or Birkbeck are the owner or the licensee of all
-                intellectual property rights in the site, and in the material
-                published on it. Those works are protected by copyright laws and
-                treaties around the world. All such rights are reserved.
+                We and/or Birkbeck are the owner or the licensee of, or are
+                otherwise permitted to use, all intellectual property rights in
+                the site, and in the material published on it. The site contains
+                public sector information licensed under the{" "}
+                <a
+                  href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                  target="blank"
+                >
+                  Open Government Licence v3.0
+                </a>
+                . Those works are protected by copyright laws and treaties
+                around the world. All such rights are reserved.
               </p>
               <p>
                 You may print off one copy, and may download extracts, of any
@@ -180,7 +188,8 @@ const TermsOfService: React.FC = () => {
                 our site will cease immediately and you must, at our option,
                 return or destroy any copies of the materials you have made
                 (except that you are permitted to print off a copy of these
-                terms of service).
+                terms of service).e permitted to print off a copy of these terms
+                of service).
               </p>
             </section>
 
@@ -324,7 +333,6 @@ const TermsOfService: React.FC = () => {
             <section className="policy-section">
               <h2>Our Responsibility for Loss or Damage Suffered by You</h2>
 
-              <h3>Whether you are a consumer or a business user:</h3>
               <p>
                 We do not exclude or limit in any way our liability to you where
                 it would be unlawful to do so. This includes liability for death
@@ -332,38 +340,29 @@ const TermsOfService: React.FC = () => {
                 our employees, agents or subcontractors and for fraud or
                 fraudulent misrepresentation.
               </p>
-
-              <h3>If you are a business user:</h3>
+              <p>
+                We exclude all implied conditions, warranties, representations
+                or other terms that may apply to our site or any content on it.
+              </p>
+              <p>
+                We will not be liable to you for any loss or damage, whether in
+                contract, tort (including negligence), breach of statutory duty,
+                or otherwise, even if foreseeable, arising under or in
+                connection with:
+              </p>
               <ul>
+                <li>use of, or inability to use, our site; or</li>
                 <li>
-                  We exclude all implied conditions, warranties, representations
-                  or other terms that may apply to our site or any content on
-                  it.
+                  use of or reliance on any content displayed on our site.
                 </li>
+                <li>In particular, we will not be liable for:</li>
+                <li>loss of profits, sales, business, or revenue;</li>
+                <li>business interruption;</li>
+                <li>loss of anticipated savings;</li>
                 <li>
-                  We will not be liable to you for any loss or damage, whether
-                  in contract, tort (including negligence), breach of statutory
-                  duty, or otherwise, even if foreseeable, arising under or in
-                  connection with use of, or inability to use, our site; or use
-                  of or reliance on any content displayed on our site.
+                  loss of business opportunity, goodwill or reputation; or
                 </li>
-                <li>
-                  In particular, we will not be liable for: loss of profits,
-                  sales, business, or revenue; business interruption; loss of
-                  anticipated savings; loss of business opportunity, goodwill or
-                  reputation; or any indirect or consequential loss or damage.
-                </li>
-              </ul>
-
-              <h3>If you are a consumer user:</h3>
-              <ul>
-                <li>
-                  We only provide our site for domestic and private use. You
-                  agree not to use our site for any commercial or business
-                  purposes, and we have no liability to you for any loss of
-                  profit, loss of business, business interruption, or loss of
-                  business opportunity.
-                </li>
+                <li>any indirect or consequential loss or damage.</li>
               </ul>
             </section>
 

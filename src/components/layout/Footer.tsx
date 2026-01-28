@@ -38,13 +38,13 @@ const Footer: React.FC = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/sustainability">Sustainability</Link>
-                </li>
-                <li>
-                  <Link to="/reporting">Reporting</Link>
+                  <Link to="/sustainability">Sustainability module</Link>
                 </li>
                 <li>
                   <Link to="/carbon-calculator">Carbon Calculator</Link>
+                </li>
+                <li>
+                  <Link to="/reporting">Reporting module</Link>
                 </li>
                 <li>
                   <Link to="/faqs">FAQs</Link>
