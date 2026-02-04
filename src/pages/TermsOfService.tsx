@@ -284,11 +284,17 @@ const TermsOfService: React.FC = () => {
             <section className="policy-section">
               <h2>We Are Not Responsible for Websites We Link To</h2>
               <p>
-                Where our site contains links to other sites and resources
-                provided by third parties, these links are provided for your
-                information only. Such links should not be interpreted as
-                approval by us of those linked websites or information you may
-                obtain from them.
+                Aside from links to Birkbeck’s own website, our site includes
+                links solely to publicly accessible third-party websites. No
+                ownership, control, or licensing rights are claimed by us in
+                respect of the content available via those third-party links.
+                Such links are provided for information purposes only, and all
+                copyright, intellectual property, and other rights in the linked
+                content remain with the respective third-party owners, as
+                identified on the relevant websites. Such links should not be
+                interpreted as approval by us of those linked websites or
+                information you may obtain from them. We have no control over
+                the contents of those sites or resources.
               </p>
               <p>
                 We have no control over the contents of those sites or

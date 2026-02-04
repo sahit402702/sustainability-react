@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <Col lg={4} md={6} className="footer-section">
             <div className="footer-logos">
               <img
-                src="/assets/cognizant_logo.jpg"
+                src="/assets/cognizant_logo.png"
                 alt="Cognizant"
                 className="footer-logo"
                 height="32"

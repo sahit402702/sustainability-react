@@ -265,14 +265,11 @@ const PrivacyPolicy: React.FC = () => {
                 the UK to countries which have laws that do not provide the same
                 level of data protection as UK law. For example, data processed
                 by Google Analytics may be transferred to and stored in the
-                United States or other countries where Google operates.
-              </p>
-              <p>
-                Whenever we transfer your personal data out of the UK to service
+                United States or other countries where Google operates. Whenever
+                we transfer your personal data out of the UK to service
                 providers, we ensure a similar degree of protection is afforded
-                to it by using appropriate safeguards, such as Standard
-                Contractual Clauses approved by the UK Information
-                Commissioner’s Office.
+                to it by using appropriate safeguards, including the EU-US Data
+                Privacy Framework (and UK Extension).
               </p>
             </section>
 
