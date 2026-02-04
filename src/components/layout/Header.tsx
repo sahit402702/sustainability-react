@@ -33,7 +33,7 @@ const Header: React.FC = () => {
             <Col xs={6} lg={3} xl={2} className="d-flex align-items-center">
               <div className="header-logos d-flex align-items-center">
                 <img
-                  src="/assets/cognizant_logo.jpg"
+                  src="/assets/cognizant_logo.png"
                   alt="Cognizant"
                   className="header-logo"
                   height="24"

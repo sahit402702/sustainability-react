@@ -47,7 +47,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
             >
               <div className="d-flex align-items-center gap-2 gap-lg-3 flex-shrink-0">
                 <img
-                  src="assets/cognizant_logo.svg"
+                  src="assets/cognizant_logo.png"
                   alt="Cognizant"
                   className="page-header-logo"
                   style={{ height: "30px", maxHeight: "30px" }}
@@ -68,7 +68,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
           <div className="d-flex d-lg-none align-items-center mt-3">
             <div className="d-flex align-items-center gap-2 flex-shrink-0">
               <img
-                src="assets/cognizant_logo.svg"
+                src="assets/cognizant_logo.png"
                 alt="Cognizant"
                 className="page-header-logo"
                 style={{ height: "28px", maxHeight: "28px" }}

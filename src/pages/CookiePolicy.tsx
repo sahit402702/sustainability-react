@@ -134,11 +134,8 @@ const CookiePolicy: React.FC = () => {
               </p>
               <ul>
                 <li>
-                  <strong>Strictly necessary cookies:</strong> ALWAYS ACTIVE
-                </li>
-                <li>
-                  <strong>Analytical or performance cookies:</strong> You can
-                  choose to accept or reject
+                  <strong>Analytical cookies:</strong> You can choose to accept
+                  or reject
                 </li>
               </ul>
               <p>
