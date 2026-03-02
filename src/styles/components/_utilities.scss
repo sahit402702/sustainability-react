@@ -266,3 +266,15 @@
     border-radius: 2px;
   }
 }
+
+// Performance Optimizations
+.performance-optimize {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+// Reduce layout shift for sections
+section {
+  contain: layout style;
+  will-change: auto;
+}

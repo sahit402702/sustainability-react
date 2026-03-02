@@ -35,7 +35,13 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             role="img"
             aria-label={caseStudy.title}
           >
-            <img src={caseStudy.image} alt={caseStudy.title} />
+            <img 
+              src={caseStudy.image} 
+              alt={caseStudy.title}
+              width="400"
+              height="300"
+              loading="lazy"
+            />
           </div>
         </Col>
         <Col md={8}>

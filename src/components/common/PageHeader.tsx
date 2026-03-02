@@ -50,13 +50,19 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                   src="assets/cognizant_logo.png"
                   alt="Cognizant"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  width="120"
+                  height="30"
+                  loading="lazy"
+                  style={{ height: "30px", maxHeight: "30px", width: "auto" }}
                 />
                 <img
                   src="assets/birkbeck_logo.jpg"
                   alt="Birkbeck"
                   className="page-header-logo"
-                  style={{ height: "30px", maxHeight: "30px" }}
+                  width="120"
+                  height="30"
+                  loading="lazy"
+                  style={{ height: "30px", maxHeight: "30px", width: "auto" }}
                 />
               </div>
             </Col>
@@ -71,13 +77,19 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                 src="assets/cognizant_logo.png"
                 alt="Cognizant"
                 className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
+                width="112"
+                height="28"
+                loading="lazy"
+                style={{ height: "28px", maxHeight: "28px", width: "auto" }}
               />
               <img
                 src="assets/birkbeck_logo.jpg"
                 alt="Birkbeck"
                 className="page-header-logo"
-                style={{ height: "28px", maxHeight: "28px" }}
+                width="112"
+                height="28"
+                loading="lazy"
+                style={{ height: "28px", maxHeight: "28px", width: "auto" }}
               />
             </div>
           </div>

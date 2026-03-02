@@ -36,13 +36,17 @@ const Header: React.FC = () => {
                   src="/assets/cognizant_logo.png"
                   alt="Cognizant"
                   className="header-logo"
+                  width="96"
                   height="24"
+                  loading="eager"
                 />
                 <img
                   src="/assets/birkbeck_logo.jpg"
                   alt="Birkbeck University of London"
                   className="header-logo"
+                  width="96"
                   height="24"
+                  loading="eager"
                 />
               </div>
             </Col>

@@ -15,13 +15,17 @@ const Footer: React.FC = () => {
                 src="/assets/cognizant_logo.png"
                 alt="Cognizant"
                 className="footer-logo"
+                width="128"
                 height="32"
+                loading="lazy"
               />
               <img
                 src="/assets/birkbeck_logo.jpg"
                 alt="Birkbeck University of London"
                 className="footer-logo"
+                width="128"
                 height="32"
+                loading="lazy"
               />
             </div>
             <p className="footer-description mt-3">
