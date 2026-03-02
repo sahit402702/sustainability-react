@@ -25,12 +25,10 @@ const CookieConsentBanner: React.FC = () => {
   const handleAccept = () => {
     // Initialize Google Analytics when user accepts
     initGA();
-    console.log("Analytics enabled");
   };
 
   const handleDecline = () => {
     // User declined - don't initialize analytics
-    console.log("Analytics declined");
   };
 
   if (!ENABLE_COOKIE_BANNER || !showBanner) return null;

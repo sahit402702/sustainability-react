@@ -123,3 +123,15 @@ blockquote {
     }
   }
 }
+
+// Typography Base Styles
+
+// Fallback font metrics to match Inter and prevent CLS
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-optical-sizing: auto;
+  // Use system font as fallback with similar metrics
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

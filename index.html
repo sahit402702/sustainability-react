@@ -2,32 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Use local Cognizant favicon to avoid third-party cookies -->
     <link
       rel="icon"
       type="image/x-icon"
-      href="https://www.cognizant.com/favicon.ico"
+      href="/cognizant-favicon.ico?v=2"
     />
+    
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
     />
+    <meta name="theme-color" content="#047857" />
 
-    <!-- Preload critical fonts for better performance -->
-    <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    <!-- Google Fonts - GDS Compliant -->
+    <!-- Preconnect to external resources for faster DNS resolution -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Optimized Google Fonts - Using display=optional to prevent layout shift -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional"
       rel="stylesheet"
     />
+    
+    <!-- Preload critical images to reduce LCP -->
+    <link rel="preload" href="/assets/birkbeck_logo.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/assets/cognizant_logo.svg" as="image" type="image/svg+xml" />
 
     <!-- Primary Meta Tags -->
     <title>SME NetZero Hub</title>
@@ -48,12 +50,13 @@
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://your-domain.com/" />
+    <!-- Canonical URL - Update with your actual domain before deployment -->
+    <!-- <link rel="canonical" href="https://your-actual-domain.com/" /> -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://your-domain.com/" />
+    <!-- Update with your actual domain before deployment -->
+    <!-- <meta property="og:url" content="https://your-actual-domain.com/" /> -->
     <meta
       property="og:title"
       content="Sustainability Portal - Environmental Reporting & Impact Tracking"
@@ -62,7 +65,8 @@
       property="og:description"
       content="Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data."
     />
-    <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
+    <!-- Update with your actual domain and image before deployment -->
+    <!-- <meta property="og:image" content="https://your-actual-domain.com/og-image.jpg" /> -->
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Sustainability Portal" />
@@ -70,7 +74,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://your-domain.com/" />
+    <!-- Update with your actual domain before deployment -->
+    <!-- <meta name="twitter:url" content="https://your-actual-domain.com/" /> -->
     <meta
       name="twitter:title"
       content="Sustainability Portal - Environmental Reporting & Impact Tracking"
@@ -79,10 +84,8 @@
       name="twitter:description"
       content="Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data."
     />
-    <meta
-      name="twitter:image"
-      content="https://your-domain.com/twitter-image.jpg"
-    />
+    <!-- Update with your actual domain and image before deployment -->
+    <!-- <meta name="twitter:image" content="https://your-actual-domain.com/twitter-image.jpg" /> -->
     <meta name="twitter:creator" content="@sustainabilityportal" />
 
     <!-- Additional SEO Meta Tags -->
@@ -102,19 +105,20 @@
     <meta name="geo.region" content="US" />
     <meta name="geo.placename" content="United States" />
 
-    <!-- Structured Data - Organization -->
+    <!-- Structured Data - Update with your actual domain before deployment -->
+    <!-- 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sustainability Portal",
-        "url": "https://your-domain.com",
-        "logo": "https://your-domain.com/logo.png",
+        "url": "https://your-actual-domain.com",
+        "logo": "https://your-actual-domain.com/logo.png",
         "description": "Leading sustainability platform providing transparent environmental reporting and impact tracking",
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "Customer Service",
-          "email": "info@your-domain.com"
+          "email": "info@your-actual-domain.com"
         },
         "sameAs": [
           "https://twitter.com/sustainabilityportal",
@@ -124,21 +128,21 @@
       }
     </script>
 
-    <!-- Structured Data - WebSite -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Sustainability Portal",
-        "url": "https://your-domain.com",
+        "url": "https://your-actual-domain.com",
         "description": "Environmental reporting and sustainability impact tracking platform",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://your-domain.com/search?q={search_term_string}",
+          "target": "https://your-actual-domain.com/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
     </script>
+    -->
   </head>
   <body>
     <div id="root"></div>

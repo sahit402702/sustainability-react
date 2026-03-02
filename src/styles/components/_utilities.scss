@@ -88,7 +88,7 @@
       background: linear-gradient(
         135deg,
         $warning 0%,
-        darken($warning, 10%) 100%
+        #e8a317 100% // Darker warning
       );
     }
 
@@ -96,7 +96,7 @@
       background: linear-gradient(
         135deg,
         $danger 0%,
-        darken($danger, 10%) 100%
+        #b91c1c 100% // Darker danger
       );
     }
   }
@@ -265,4 +265,16 @@
     padding: 2px 4px;
     border-radius: 2px;
   }
+}
+
+// Performance Optimizations
+.performance-optimize {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+// Reduce layout shift for sections
+section {
+  contain: layout style;
+  will-change: auto;
 }

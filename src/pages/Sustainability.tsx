@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Nav, Breadcrumb } from "react-bootstrap";
+import { Container, Card, Nav, Breadcrumb } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import SEO from "@/components/SEO";
 import sustainabilityContent from "@/content/sustainability.json";

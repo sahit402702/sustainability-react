@@ -14,8 +14,9 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+    min-height: 400px; // Prevent layout shift
 
-    // Animated gradient overlay
+    // Animated gradient overlay - use will-change for GPU acceleration
     &::before {
       content: "";
       position: absolute;
@@ -29,9 +30,11 @@
         transparent 50%
       );
       animation: float 20s ease-in-out infinite;
+      will-change: transform;
+      transform: translateZ(0); // Force GPU acceleration
     }
 
-    // Floating geometric shapes
+    // Floating geometric shapes - use will-change
     &::after {
       content: "";
       position: absolute;
@@ -47,6 +50,8 @@
       border-radius: 50%;
       filter: blur(60px);
       animation: float 15s ease-in-out infinite reverse;
+      will-change: transform;
+      transform: translateZ(0); // Force GPU acceleration
     }
 
     @media (min-width: 768px) {
@@ -105,6 +110,7 @@
       margin-bottom: 1.75rem;
       line-height: 1.09375;
       text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      min-height: 4rem; // Prevent layout shift during font load
     }
 
     .hero-subtitle {
@@ -113,6 +119,7 @@
       margin-bottom: 2.5rem;
       line-height: $line-height-lg;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      min-height: 2.5rem; // Prevent layout shift during font load
 
       @media (min-width: 768px) {
         font-size: 1.25rem;
@@ -428,6 +435,7 @@
       margin-bottom: 2rem;
       transition: none !important;
       transform: none !important;
+      min-height: 320px; // Prevent layout shift
 
       &:hover {
         transform: none !important;
@@ -487,6 +495,7 @@
         position: relative;
         z-index: 2;
         line-height: 1.3;
+        min-height: 2.5rem; // Prevent layout shift
 
         @media (min-width: 576px) {
           font-size: 1.125rem;
@@ -509,6 +518,7 @@
         margin-bottom: 1.5rem;
         position: relative;
         z-index: 2;
+        min-height: 5rem; // Prevent layout shift
 
         @media (min-width: 576px) {
           font-size: 0.9375rem;
@@ -801,6 +811,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      min-height: 450px; // Prevent layout shift
 
       @media (min-width: 768px) {
         padding: 3rem 2rem;

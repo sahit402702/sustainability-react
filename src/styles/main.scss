@@ -16,35 +16,35 @@
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot";
 
-// 4. Import Bootstrap layout & components
+// 4. Import Bootstrap layout & components (ONLY WHAT WE USE)
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
-@import "bootstrap/scss/tables";
+// @import "bootstrap/scss/tables"; // NOT USED - REMOVED
 @import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
-@import "bootstrap/scss/dropdown";
-@import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/dropdown"; // NOT USED - REMOVED
+// @import "bootstrap/scss/button-group"; // NOT USED - REMOVED
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar";
 @import "bootstrap/scss/card";
 @import "bootstrap/scss/accordion";
 @import "bootstrap/scss/breadcrumb";
-@import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/pagination"; // NOT USED - REMOVED
 @import "bootstrap/scss/badge";
 @import "bootstrap/scss/alert";
-@import "bootstrap/scss/progress";
-@import "bootstrap/scss/list-group";
-@import "bootstrap/scss/close";
-@import "bootstrap/scss/toasts";
-@import "bootstrap/scss/modal";
-@import "bootstrap/scss/tooltip";
-@import "bootstrap/scss/popover";
-@import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/progress"; // NOT USED - REMOVED
+// @import "bootstrap/scss/list-group"; // NOT USED - REMOVED
+// @import "bootstrap/scss/close"; // NOT USED - REMOVED
+// @import "bootstrap/scss/toasts"; // NOT USED - REMOVED
+// @import "bootstrap/scss/modal"; // NOT USED - REMOVED
+// @import "bootstrap/scss/tooltip"; // NOT USED - REMOVED
+// @import "bootstrap/scss/popover"; // NOT USED - REMOVED
+// @import "bootstrap/scss/carousel"; // NOT USED - REMOVED
 @import "bootstrap/scss/spinners";
-@import "bootstrap/scss/offcanvas";
-@import "bootstrap/scss/placeholders";
+// @import "bootstrap/scss/offcanvas"; // NOT USED - REMOVED
+// @import "bootstrap/scss/placeholders"; // NOT USED - REMOVED
 
 // 5. Import Bootstrap helpers
 @import "bootstrap/scss/helpers";
