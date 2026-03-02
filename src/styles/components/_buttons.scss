@@ -84,7 +84,7 @@
   font-weight: $font-weight-semibold;
 
   &:hover {
-    background: darken($warning, 8%);
+    background: #e8a317; // Darker warning color
   }
 }
 

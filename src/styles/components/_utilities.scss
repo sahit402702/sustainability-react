@@ -88,7 +88,7 @@
       background: linear-gradient(
         135deg,
         $warning 0%,
-        darken($warning, 10%) 100%
+        #e8a317 100% // Darker warning
       );
     }
 
@@ -96,7 +96,7 @@
       background: linear-gradient(
         135deg,
         $danger 0%,
-        darken($danger, 10%) 100%
+        #b91c1c 100% // Darker danger
       );
     }
   }

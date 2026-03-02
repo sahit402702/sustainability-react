@@ -24,7 +24,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
           <Breadcrumb>
             {breadcrumbs.map((crumb, index) => (
               <Breadcrumb.Item
-                key={index}
+                key={`breadcrumb-${crumb.label}-${index}`}
                 linkAs={crumb.path ? Link : undefined}
                 linkProps={crumb.path ? { to: crumb.path } : undefined}
                 active={index === breadcrumbs.length - 1}
