@@ -328,7 +328,7 @@ const CarbonCalculator: React.FC = () => {
               <Card.Body>
                 {activeTab === "energy" && (
                   <div className="category-section energy-section">
-                    <h4 className="section-title mb-4">Energy Consumption</h4>
+                    <h2 className="section-title mb-4">Energy Consumption</h2>
 
                     <Form.Group className="mb-4">
                       <Form.Label>
@@ -408,7 +408,7 @@ const CarbonCalculator: React.FC = () => {
 
                 {activeTab === "transport" && (
                   <div className="category-section transport-section">
-                    <h4 className="section-title mb-4">Transportation</h4>
+                    <h2 className="section-title mb-4">Transportation</h2>
 
                     <div className="mb-4 p-3 bg-light rounded">
                       <Form.Label className="d-block mb-2 fw-semibold">
@@ -596,7 +596,7 @@ const CarbonCalculator: React.FC = () => {
 
                 {activeTab === "waste" && (
                   <div className="category-section waste-section">
-                    <h4 className="section-title mb-4">Waste Management</h4>
+                    <h2 className="section-title mb-4">Waste Management</h2>
 
                     <Form.Group className="mb-4">
                       <Form.Label>

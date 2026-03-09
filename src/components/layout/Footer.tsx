@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           </Col>
 
           <Col lg={4} md={6} className="footer-section">
-            <h4>Quick Links</h4>
+            <div className="footer-heading">Quick Links</div>
             <nav aria-label="Footer navigation">
               <ul>
                 <li>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
           </Col>
 
           <Col lg={4} md={12} className="footer-section">
-            <h4>About</h4>
+            <div className="footer-heading">About</div>
             <p>
               This portal provides comprehensive sustainability resources,
               compliance tools, and reporting frameworks to help SMEs meet

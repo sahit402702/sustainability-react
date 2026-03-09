@@ -52,9 +52,9 @@ const ResultsPanel: React.FC<ResultsPanelProps> = ({
       {answeredQuestions > 0 && (
         <Card className="results-summary">
           <Card.Header>
-            <h4 className="mb-0">
+            <h3 className="mb-0 h4">
               {applicableClauses.length > 0 ? '📋 Applicable Clauses' : '✓ No Clauses Apply'}
-            </h4>
+            </h3>
           </Card.Header>
           <Card.Body>
             {applicableClauses.length === 0 ? (
