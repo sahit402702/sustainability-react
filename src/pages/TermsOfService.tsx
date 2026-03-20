@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import PageHeader from "@/components/common/PageHeader";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -90,11 +91,11 @@ const TermsOfService: React.FC = () => {
               </p>
               <ul>
                 <li>
-                  Our <a href="/privacy-policy">Privacy Policy</a>, which
+                  Our <Link to="/privacy-policy">Privacy Policy</Link>, which
                   explains how we collect, use and store your personal data.
                 </li>
                 <li>
-                  Our <a href="/cookie-policy">Cookie Policy</a>, which sets out
+                  Our <Link to="/cookie-policy">Cookie Policy</Link>, which sets out
                   information about the cookies on our site.
                 </li>
               </ul>
@@ -376,7 +377,7 @@ const TermsOfService: React.FC = () => {
               <h2>How We May Use Your Personal Information</h2>
               <p>
                 We will only use your personal information as set out in our{" "}
-                <a href="/privacy-policy">Privacy Policy</a>.
+                <Link to="/privacy-policy">Privacy Policy</Link>.
               </p>
             </section>
 

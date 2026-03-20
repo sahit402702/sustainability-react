@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import PageHeader from "@/components/common/PageHeader";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -126,7 +127,7 @@ const PrivacyPolicy: React.FC = () => {
                 Technical Data about your equipment, browsing actions and
                 patterns if you have accepted analytics cookies. We collect this
                 data by using cookies. Please see our{" "}
-                <a href="/cookie-policy">cookie policy</a> for further details.
+                <Link to="/cookie-policy">cookie policy</Link> for further details.
               </p>
 
               <h3>Third parties</h3>
@@ -236,7 +237,7 @@ const PrivacyPolicy: React.FC = () => {
               <p>
                 For more information about the cookies we use and how to change
                 your cookie preferences, please see our{" "}
-                <a href="/cookie-policy">cookie policy</a>.
+                <Link to="/cookie-policy">cookie policy</Link>.
               </p>
             </section>
 
