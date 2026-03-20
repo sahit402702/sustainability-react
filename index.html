@@ -1,14 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Use local Cognizant favicon to avoid third-party cookies -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/cognizant-favicon.ico?v=2"
-    />
-    
+    <link rel="icon" type="image/x-icon" href="/cognizant-favicon.ico?v=2" />
+
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
@@ -20,111 +15,82 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Optimized Google Fonts - Using display=optional to prevent layout shift -->
+
+    <!-- Optimized Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional"
       rel="stylesheet"
     />
-    
+
     <!-- Preload critical images to reduce LCP -->
-    <link rel="preload" href="/assets/birkbeck_logo.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="/assets/cognizant_logo.svg" as="image" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/assets/birkbeck_logo.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link
+      rel="preload"
+      href="/assets/cognizant_logo.svg"
+      as="image"
+      type="image/svg+xml"
+    />
 
     <!-- Primary Meta Tags -->
-    <title>SME NetZero Hub</title>
-    <meta
-      name="title"
-      content="Sustainability Portal - Environmental Reporting & Impact Tracking"
-    />
+    <title>SME NetZero Hub - Environmental Reporting & Impact Tracking</title>
     <meta
       name="description"
-      content="Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data. Access comprehensive sustainability reports, case studies, and join our mission for a greener future."
+      content="Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data. Access comprehensive sustainability reports and join our mission for a greener future."
     />
     <meta
       name="keywords"
-      content="sustainability, environmental reporting, carbon footprint, ESG reporting, climate action, green initiatives, sustainability reports, environmental impact, carbon neutral, renewable energy, case studies"
+      content="sustainability, environmental reporting, carbon footprint, ESG reporting, climate action, green initiatives, sustainability reports, environmental impact, carbon neutral, renewable energy, SME, net zero"
     />
-    <meta name="author" content="Sustainability Portal" />
+    <meta name="author" content="SME NetZero Hub" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
 
-    <!-- Canonical URL - Update with your actual domain before deployment -->
-    <!-- <link rel="canonical" href="https://your-actual-domain.com/" /> -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.netzerosmehub.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <!-- Update with your actual domain before deployment -->
-    <!-- <meta property="og:url" content="https://your-actual-domain.com/" /> -->
+    <meta property="og:url" content="https://www.netzerosmehub.com/" />
     <meta
       property="og:title"
-      content="Sustainability Portal - Environmental Reporting & Impact Tracking"
+      content="SME NetZero Hub - Environmental Reporting & Impact Tracking"
     />
     <meta
       property="og:description"
       content="Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data."
     />
-    <!-- Update with your actual domain and image before deployment -->
-    <!-- <meta property="og:image" content="https://your-actual-domain.com/og-image.jpg" /> -->
+    <meta
+      property="og:image"
+      content="https://www.netzerosmehub.com/og-image.jpg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Sustainability Portal" />
+    <meta property="og:site_name" content="SME NetZero Hub" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- Update with your actual domain before deployment -->
-    <!-- <meta name="twitter:url" content="https://your-actual-domain.com/" /> -->
-    <meta
-      name="twitter:title"
-      content="Sustainability Portal - Environmental Reporting & Impact Tracking"
-    />
-    <meta
-      name="twitter:description"
-      content="Leading sustainability platform providing transparent environmental reporting, carbon footprint tracking, and measurable impact data."
-    />
-    <!-- Update with your actual domain and image before deployment -->
-    <!-- <meta name="twitter:image" content="https://your-actual-domain.com/twitter-image.jpg" /> -->
-    <meta name="twitter:creator" content="@sustainabilityportal" />
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#2C5F2D" />
+    <!-- Mobile App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="apple-mobile-web-app-title" content="Sustainability Portal" />
-    <meta name="application-name" content="Sustainability Portal" />
-    <meta name="msapplication-TileColor" content="#2C5F2D" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="apple-mobile-web-app-title" content="SME NetZero Hub" />
+    <meta name="application-name" content="SME NetZero Hub" />
 
-    <!-- Geo Tags (if location-specific) -->
-    <meta name="geo.region" content="US" />
-    <meta name="geo.placename" content="United States" />
-
-    <!-- Structured Data - Update with your actual domain before deployment -->
-    <!-- 
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Sustainability Portal",
-        "url": "https://your-actual-domain.com",
-        "logo": "https://your-actual-domain.com/logo.png",
-        "description": "Leading sustainability platform providing transparent environmental reporting and impact tracking",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "info@your-actual-domain.com"
-        },
-        "sameAs": [
-          "https://twitter.com/sustainabilityportal",
-          "https://linkedin.com/company/sustainabilityportal",
-          "https://github.com/sustainabilityportal"
-        ]
+        "name": "SME NetZero Hub",
+        "url": "https://www.netzerosmehub.com",
+        "logo": "https://www.netzerosmehub.com/assets/cognizant_logo.svg",
+        "description": "Leading sustainability platform providing transparent environmental reporting and impact tracking for SMEs"
       }
     </script>
 
@@ -132,17 +98,11 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Sustainability Portal",
-        "url": "https://your-actual-domain.com",
-        "description": "Environmental reporting and sustainability impact tracking platform",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://your-actual-domain.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "name": "SME NetZero Hub",
+        "url": "https://www.netzerosmehub.com",
+        "description": "Environmental reporting and sustainability impact tracking platform for SMEs"
       }
     </script>
-    -->
   </head>
   <body>
     <div id="root"></div>

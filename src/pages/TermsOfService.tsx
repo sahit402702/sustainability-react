@@ -20,7 +20,7 @@ const TermsOfService: React.FC = () => {
         title="Terms of Service"
         description="Terms of Service for SME Sustainability Portal"
         keywords="terms of service, terms and conditions, legal"
-        canonicalUrl="https://www.smereportingportal.org/terms-of-service"
+        canonicalUrl="https://www.netzerosmehub.com/terms-of-service"
         structuredData={structuredData}
       />
 
@@ -45,8 +45,8 @@ const TermsOfService: React.FC = () => {
               <h2>What's in These Terms</h2>
               <p>
                 These terms tell you the rules for using our website{" "}
-                <a href="https://www.smereportingportal.org">
-                  www.smereportingportal.org
+                <a href="https://www.netzerosmehub.com">
+                  www.netzerosmehub.com
                 </a>{" "}
                 (our site).
               </p>
